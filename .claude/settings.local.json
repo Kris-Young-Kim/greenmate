@@ -19,7 +19,37 @@
       "Bash(vercel deploy *)",
       "Bash(New-Item -ItemType Directory -Path \"D:\\\\developer\\\\greenmate\\\\app\\\\dashboard\" -Force)",
       "Bash(Out-Null)",
-      "Bash(Write-Host \"created\")"
+      "Bash(Write-Host \"created\")",
+      "Bash(grep -v \"^\\\\s*//\")",
+      "Bash(npx velite *)",
+      "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); [print\\(g['slug'], g['category'], g['title'][:30]\\) for g in data]\")",
+      "Bash(git add *)",
+      "Bash(git push *)",
+      "Bash(npx next *)",
+      "Bash(npx vercel *)",
+      "Bash(nslookup swgreen.shop 8.8.8.8)",
+      "Bash(nslookup www.swgreen.shop 8.8.8.8)",
+      "Bash(curl *)",
+      "Bash(Select-String -Pattern \"middleware|proxy\")",
+      "PowerShell(Copy-Item *)",
+      "mcp__plugin_playwright_playwright__browser_evaluate",
+      "mcp__plugin_playwright_playwright__browser_console_messages",
+      "mcp__plugin_playwright_playwright__browser_snapshot",
+      "Bash(vercel *)",
+      "Bash(nslookup *)",
+      "mcp__plugin_playwright_playwright__browser_click",
+      "Bash(New-Item -ItemType Directory -Force -Path \"D:\\\\developer\\\\greenmate\\\\public\\\\icons\")",
+      "Bash(Write-Host \"done\")",
+      "PowerShell(New-Item *)",
+      "mcp__plugin_playwright_playwright__browser_resize",
+      "Bash(git *)",
+      "PowerShell(Get-ChildItem D:\\\\developer\\\\greenmate\\\\src -Recurse -Depth 3 | Where-Object { $_.PSIsContainer } | Select-Object FullName)",
+      "PowerShell(Get-ChildItem D:\\\\developer\\\\greenmate -Depth 1 | Where-Object { $_.PSIsContainer } | Select-Object Name)",
+      "Skill(commit-commands:commit-push-pr)"
     ]
-  }
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "neon"
+  ]
 }

@@ -1,0 +1,60 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e2]:
+    - banner [ref=f2e3]:
+      - generic [ref=f2e4]:
+        - link "GreenMate" [ref=f2e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=f2e7]
+          - generic [ref=f2e10]: GreenMate
+        - navigation [ref=f2e11]:
+          - link "가드닝 가이드" [ref=f2e12] [cursor=pointer]:
+            - /url: /guide
+          - link "그린마트" [ref=f2e13] [cursor=pointer]:
+            - /url: /shop
+        - link [ref=f2e15] [cursor=pointer]:
+          - /url: /shop/cart
+          - img [ref=f2e16]
+    - main [ref=f2e20]:
+      - generic [ref=f2e21]:
+        - generic [ref=f2e22]:
+          - img [ref=f2e23]
+          - text: 가드닝 가이드
+        - heading "홈 가드닝 완전 정복" [level=1] [ref=f2e25]
+        - paragraph [ref=f2e26]: 식물 재배법부터 병충해 대처까지, 전문가의 실전 노하우를 무료로 읽어보세요.
+      - generic [ref=f2e27]:
+        - link "전체" [ref=f2e28] [cursor=pointer]:
+          - /url: /guide
+        - link "모종" [ref=f2e29] [cursor=pointer]:
+          - /url: /guide?category=모종
+        - link "초보자" [ref=f2e30] [cursor=pointer]:
+          - /url: /guide?category=초보자
+        - link "식물별" [ref=f2e31] [cursor=pointer]:
+          - /url: /guide?category=식물별
+        - link "계절별" [ref=f2e32] [cursor=pointer]:
+          - /url: /guide?category=계절별
+        - link "물주기" [ref=f2e33] [cursor=pointer]:
+          - /url: /guide?category=물주기
+        - link "병충해" [ref=f2e34] [cursor=pointer]:
+          - /url: /guide?category=병충해
+      - generic [ref=f2e35]:
+        - link "🪴 모종 모종으로 시작하는 베란다 텃밭 씨앗 대신 모종을 선택해야 하는 이유와, 모종 정식부터 첫 수확까지 단계별 가이드. 읽기" [ref=f2e36] [cursor=pointer]:
+          - /url: /guide/seedling-basics
+          - generic [ref=f2e37]: 🪴
+          - generic [ref=f2e38]:
+            - generic [ref=f2e39]: 모종
+            - heading "모종으로 시작하는 베란다 텃밭" [level=2] [ref=f2e40]
+            - paragraph [ref=f2e41]: 씨앗 대신 모종을 선택해야 하는 이유와, 모종 정식부터 첫 수확까지 단계별 가이드.
+          - generic [ref=f2e42]:
+            - text: 읽기
+            - img [ref=f2e43]
+        - link "🌱 모종 건강한 모종 고르는 법 모종 구매 시 반드시 확인해야 할 5가지 체크포인트. 좋은 모종을 고르면 절반은 성공! 읽기" [ref=f2e45] [cursor=pointer]:
+          - /url: /guide/seedling-selection
+          - generic [ref=f2e46]: 🌱
+          - generic [ref=f2e47]:
+            - generic [ref=f2e48]: 모종
+            - heading "건강한 모종 고르는 법" [level=2] [ref=f2e49]
+            - paragraph [ref=f2e50]: 모종 구매 시 반드시 확인해야 할 5가지 체크포인트. 좋은 모종을 고르면 절반은 성공!
+          - generic [ref=f2e51]:
+            - text: 읽기
+            - img [ref=f2e52]
+  - alert [ref=f2e54]

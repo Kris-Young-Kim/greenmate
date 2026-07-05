@@ -1,0 +1,90 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "GreenMate" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=e7]
+          - generic [ref=e10]: GreenMate
+        - navigation [ref=e11]:
+          - link "가드닝 가이드" [ref=e12] [cursor=pointer]:
+            - /url: /guide
+          - link "그린마트" [ref=e13] [cursor=pointer]:
+            - /url: /shop
+        - generic [ref=e14]:
+          - link [ref=e15] [cursor=pointer]:
+            - /url: /shop/cart
+            - img [ref=e16]
+          - button "로그인" [ref=e20]
+          - button "회원가입" [ref=e21]
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - img [ref=e26]
+          - text: AI 식물 케어
+        - heading "내 식물, 이젠 안 죽어" [level=1] [ref=e29]:
+          - text: 내 식물,
+          - text: 이젠 안 죽어
+        - paragraph [ref=e30]: AI 식물 전문가가 24시간 곁에 있어요. 물 주기부터 병충해 진단까지, GreenMate가 챙겨드립니다.
+        - generic [ref=e31]:
+          - button "무료로 시작하기" [ref=e32] [cursor=pointer]:
+            - text: 무료로 시작하기
+            - img
+          - button "로그인" [ref=e33] [cursor=pointer]
+        - paragraph [ref=e34]: 광고 없음 · 무료 시작 · 언제든 해지 가능
+      - generic [ref=e39]:
+        - generic [ref=e40]: 💧
+        - generic [ref=e41]: 💧
+        - generic [ref=e42]: 💧
+        - generic [ref=e43]: 또 시들었어...
+        - generic [ref=e44]: 🪴
+        - generic [ref=e46]:
+          - generic [ref=e47]: GREENMATE
+          - generic [ref=e48]:
+            - generic [ref=e49]: 💧 물 주기 알림
+            - generic [ref=e50]: 🌱 몬스테라
+            - generic [ref=e51]: 오늘 물 줄 날이에요!
+          - generic [ref=e52]:
+            - generic [ref=e53]: 🤖 AI 전문가
+            - generic [ref=e54]:
+              - text: 잎이 노래진다면
+              - text: 과습일 수 있어요 🤔
+          - generic [ref=e55]:
+            - generic [ref=e56]: 🗓
+            - generic [ref=e57]: 14일째
+        - generic:
+          - generic:
+            - generic: 내 식물, 이젠 안 죽어
+          - generic: AI가 지켜주는 홈 가드닝
+          - generic: 무료로 시작하기 →
+    - generic [ref=e59]:
+      - heading "식물 키우다 포기한 적 있으신가요?" [level=2] [ref=e60]
+      - paragraph [ref=e61]: 바쁜 일상에 물 주기를 깜빡하고, 잎이 노래지는 이유를 몰라 답답하셨죠. GreenMate는 그 모든 고민을 대신 해결합니다.
+    - generic [ref=e63]:
+      - heading "GreenMate 하나로 전부 해결" [level=2] [ref=e64]
+      - generic [ref=e65]:
+        - generic [ref=e66]:
+          - generic [ref=e67]: 🌱
+          - heading "식물 등록 & 성장 일지" [level=3] [ref=e68]
+          - paragraph [ref=e69]: 키우는 식물을 등록하고, 성장 과정을 날짜별로 기록해보세요.
+        - generic [ref=e70]:
+          - generic [ref=e71]: 💧
+          - heading "스마트 물 주기 알림" [level=3] [ref=e72]
+          - paragraph [ref=e73]: 식물 종류별 최적 주기를 계산해, 딱 맞는 타이밍에 알림을 보내드려요.
+        - generic [ref=e74]:
+          - generic [ref=e75]: 🤖
+          - heading "AI 식물 상담 채팅" [level=3] [ref=e76]
+          - paragraph [ref=e77]: 잎색 변화, 벌레, 과습 등 무엇이든 AI 전문가에게 바로 물어보세요.
+    - generic [ref=e78]:
+      - img [ref=e79]
+      - heading "오늘부터 식물과 더 가까워지세요" [level=2] [ref=e82]
+      - paragraph [ref=e83]: 무료로 시작하고, 언제든 해지 가능합니다.
+      - button "무료로 시작하기" [ref=e84] [cursor=pointer]:
+        - text: 무료로 시작하기
+        - img
+    - contentinfo [ref=e85]:
+      - generic [ref=e86]:
+        - img [ref=e87]
+        - generic [ref=e90]: GreenMate
+      - paragraph [ref=e91]: © 2025 GreenMate. 대한민국 서버 운영 · 개인정보 보호
+  - alert [ref=e92]

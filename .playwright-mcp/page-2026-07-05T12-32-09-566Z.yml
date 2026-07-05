@@ -1,0 +1,50 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e74]:
+    - banner [ref=f2e75]:
+      - generic [ref=f2e76]:
+        - link "GreenMate" [ref=f2e77] [cursor=pointer]:
+          - /url: /
+          - img [ref=f2e79]
+          - generic [ref=f2e82]: GreenMate
+        - navigation "주요 메뉴" [ref=f2e83]:
+          - link "가드닝 가이드" [ref=f2e84] [cursor=pointer]:
+            - /url: /guide
+            - img [ref=f2e85]
+            - text: 가드닝 가이드
+          - link "그린마트" [ref=f2e87] [cursor=pointer]:
+            - /url: /shop
+            - img [ref=f2e88]
+            - text: 그린마트
+        - generic [ref=f2e91]:
+          - link [ref=f2e92] [cursor=pointer]:
+            - /url: /shop/cart
+            - img [ref=f2e93]
+          - button "로그인" [ref=f2e97]
+          - button "회원가입" [ref=f2e98]
+    - main [ref=f2e99]:
+      - link "상품 목록" [ref=f2e100] [cursor=pointer]:
+        - /url: /shop
+        - img [ref=f2e101]
+        - text: 상품 목록
+      - generic [ref=f2e103]:
+        - generic [ref=f2e104]:
+          - generic [ref=f2e105]: 🌽
+          - generic [ref=f2e106]:
+            - generic [ref=f2e107]: 식재료
+            - heading "강원도찰옥수수(미백2호)" [level=1] [ref=f2e108]
+            - paragraph [ref=f2e109]: 30개 26,000원 / 50개 40,000원
+        - paragraph [ref=f2e110]: 강원도 해발 700m 고랭지에서 재배한 찰옥수수 미백2호. 당도 높고 쫀득한 식감이 특징. 수확 직후 냉동 보관으로 신선도 유지.
+        - paragraph [ref=f2e111]: "재고: 100개"
+        - generic [ref=f2e112]:
+          - paragraph [ref=f2e113]: 수량 선택
+          - generic [ref=f2e114]:
+            - button "30개 26,000원" [ref=f2e115]:
+              - generic [ref=f2e116]: 30개
+              - generic [ref=f2e117]: 26,000원
+            - button "50개 40,000원" [ref=f2e118]:
+              - generic [ref=f2e119]: 50개
+              - generic [ref=f2e120]: 40,000원
+          - button "수량을 선택해주세요" [disabled]:
+            - img
+            - text: 수량을 선택해주세요
+  - alert [ref=f2e71]

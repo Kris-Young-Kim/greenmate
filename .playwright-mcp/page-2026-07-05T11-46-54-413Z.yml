@@ -1,0 +1,359 @@
+- generic [ref=f15e2]:
+  - banner [ref=f15e3]:
+    - generic [ref=f15e4]:
+      - link "GreenMate" [ref=f15e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=f15e7]
+        - generic [ref=f15e10]: GreenMate
+      - navigation "주요 메뉴" [ref=f15e11]:
+        - link "가드닝 가이드" [ref=f15e12] [cursor=pointer]:
+          - /url: /guide
+          - img [ref=f15e13]
+          - text: 가드닝 가이드
+        - link "그린마트" [ref=f15e15] [cursor=pointer]:
+          - /url: /shop
+          - img [ref=f15e16]
+          - text: 그린마트
+      - link [ref=f15e20] [cursor=pointer]:
+        - /url: /shop/cart
+        - img [ref=f15e21]
+  - main [ref=f15e25]:
+    - generic [ref=f15e26]:
+      - heading "그린마트 🛒" [level=1] [ref=f15e27]
+      - paragraph [ref=f15e28]: 씨앗부터 농기구까지, 텃밭에 필요한 모든 것
+    - generic [ref=f15e29]:
+      - link "전체" [ref=f15e30] [cursor=pointer]:
+        - /url: /shop
+      - link "모종" [ref=f15e31] [cursor=pointer]:
+        - /url: /shop?category=%EB%AA%A8%EC%A2%85
+      - link "씨앗" [ref=f15e32] [cursor=pointer]:
+        - /url: /shop?category=%EC%94%A8%EC%95%97
+      - link "농기구" [ref=f15e33] [cursor=pointer]:
+        - /url: /shop?category=%EB%86%8D%EA%B8%B0%EA%B5%AC
+      - link "농자재" [ref=f15e34] [cursor=pointer]:
+        - /url: /shop?category=%EB%86%8D%EC%9E%90%EC%9E%AC
+      - link "비료" [ref=f15e35] [cursor=pointer]:
+        - /url: /shop?category=%EB%B9%84%EB%A3%8C
+    - generic [ref=f15e36]:
+      - generic [ref=f15e37]:
+        - link "🌶️ 청양고추 씨앗 (50립) 씨앗 매운맛이 강한 청양고추 씨앗. 발아율 85% 이상, 베란다 텃밭 최적화 품종." [ref=f15e38] [cursor=pointer]:
+          - /url: /shop/1
+          - generic [ref=f15e39]:
+            - generic [ref=f15e40]: 🌶️
+            - generic [ref=f15e41]:
+              - heading "청양고추 씨앗 (50립)" [level=3] [ref=f15e42]
+              - generic [ref=f15e43]: 씨앗
+          - paragraph [ref=f15e44]: 매운맛이 강한 청양고추 씨앗. 발아율 85% 이상, 베란다 텃밭 최적화 품종.
+        - generic [ref=f15e45]:
+          - generic [ref=f15e46]: 2,900원
+          - button "담기" [ref=f15e47]:
+            - img
+            - text: 담기
+      - generic [ref=f15e48]:
+        - link "🍅 방울토마토 씨앗 (30립) 씨앗 당도 높고 수확량 많은 방울토마토. 초보자도 쉽게 키울 수 있는 강건한 품종." [ref=f15e49] [cursor=pointer]:
+          - /url: /shop/2
+          - generic [ref=f15e50]:
+            - generic [ref=f15e51]: 🍅
+            - generic [ref=f15e52]:
+              - heading "방울토마토 씨앗 (30립)" [level=3] [ref=f15e53]
+              - generic [ref=f15e54]: 씨앗
+          - paragraph [ref=f15e55]: 당도 높고 수확량 많은 방울토마토. 초보자도 쉽게 키울 수 있는 강건한 품종.
+        - generic [ref=f15e56]:
+          - generic [ref=f15e57]: 3,500원
+          - button "담기" [ref=f15e58]:
+            - img
+            - text: 담기
+      - generic [ref=f15e59]:
+        - link "🥬 상추 모듬 씨앗 (치커리+버터헤드+적상추) 씨앗 세 가지 상추를 한 번에! 20일이면 수확 가능한 빠른 성장 품종 모음." [ref=f15e60] [cursor=pointer]:
+          - /url: /shop/3
+          - generic [ref=f15e61]:
+            - generic [ref=f15e62]: 🥬
+            - generic [ref=f15e63]:
+              - heading "상추 모듬 씨앗 (치커리+버터헤드+적상추)" [level=3] [ref=f15e64]
+              - generic [ref=f15e65]: 씨앗
+          - paragraph [ref=f15e66]: 세 가지 상추를 한 번에! 20일이면 수확 가능한 빠른 성장 품종 모음.
+        - generic [ref=f15e67]:
+          - generic [ref=f15e68]: 4,900원
+          - button "담기" [ref=f15e69]:
+            - img
+            - text: 담기
+      - generic [ref=f15e70]:
+        - link "🌿 바질 씨앗 (100립) 씨앗 이탈리아 요리의 필수 허브. 향이 진하고 성장이 빠른 스위트 바질." [ref=f15e71] [cursor=pointer]:
+          - /url: /shop/4
+          - generic [ref=f15e72]:
+            - generic [ref=f15e73]: 🌿
+            - generic [ref=f15e74]:
+              - heading "바질 씨앗 (100립)" [level=3] [ref=f15e75]
+              - generic [ref=f15e76]: 씨앗
+          - paragraph [ref=f15e77]: 이탈리아 요리의 필수 허브. 향이 진하고 성장이 빠른 스위트 바질.
+        - generic [ref=f15e78]:
+          - generic [ref=f15e79]: 2,500원
+          - button "담기" [ref=f15e80]:
+            - img
+            - text: 담기
+      - generic [ref=f15e81]:
+        - link "🥒 오이 씨앗 (20립) 씨앗 베란다에서도 풍성하게 열리는 미니 오이 품종. 지지대만 있으면 OK." [ref=f15e82] [cursor=pointer]:
+          - /url: /shop/5
+          - generic [ref=f15e83]:
+            - generic [ref=f15e84]: 🥒
+            - generic [ref=f15e85]:
+              - heading "오이 씨앗 (20립)" [level=3] [ref=f15e86]
+              - generic [ref=f15e87]: 씨앗
+          - paragraph [ref=f15e88]: 베란다에서도 풍성하게 열리는 미니 오이 품종. 지지대만 있으면 OK.
+        - generic [ref=f15e89]:
+          - generic [ref=f15e90]: 3,200원
+          - button "담기" [ref=f15e91]:
+            - img
+            - text: 담기
+      - generic [ref=f15e92]:
+        - link "🔧 스텐 모종삽 세트 (3종) 농기구 스테인리스 스틸 소재로 녹슬지 않는 모종삽·이식삽·고랑기 세트." [ref=f15e93] [cursor=pointer]:
+          - /url: /shop/6
+          - generic [ref=f15e94]:
+            - generic [ref=f15e95]: 🔧
+            - generic [ref=f15e96]:
+              - heading "스텐 모종삽 세트 (3종)" [level=3] [ref=f15e97]
+              - generic [ref=f15e98]: 농기구
+          - paragraph [ref=f15e99]: 스테인리스 스틸 소재로 녹슬지 않는 모종삽·이식삽·고랑기 세트.
+        - generic [ref=f15e100]:
+          - generic [ref=f15e101]: 12,900원
+          - button "담기" [ref=f15e102]:
+            - img
+            - text: 담기
+      - generic [ref=f15e103]:
+        - link "💦 압축 분무기 1.5L 농기구 한 번 펌핑으로 지속 분무. 병충해 방제·물주기 모두 사용 가능." [ref=f15e104] [cursor=pointer]:
+          - /url: /shop/7
+          - generic [ref=f15e105]:
+            - generic [ref=f15e106]: 💦
+            - generic [ref=f15e107]:
+              - heading "압축 분무기 1.5L" [level=3] [ref=f15e108]
+              - generic [ref=f15e109]: 농기구
+          - paragraph [ref=f15e110]: 한 번 펌핑으로 지속 분무. 병충해 방제·물주기 모두 사용 가능.
+        - generic [ref=f15e111]:
+          - generic [ref=f15e112]: 8,900원
+          - button "담기" [ref=f15e113]:
+            - img
+            - text: 담기
+      - generic [ref=f15e114]:
+        - link "📊 식물 수분·pH 측정기 농기구 토양 수분과 pH를 동시 측정. 배터리 불필요, 흙에 꽂으면 바로 측정." [ref=f15e115] [cursor=pointer]:
+          - /url: /shop/8
+          - generic [ref=f15e116]:
+            - generic [ref=f15e117]: 📊
+            - generic [ref=f15e118]:
+              - heading "식물 수분·pH 측정기" [level=3] [ref=f15e119]
+              - generic [ref=f15e120]: 농기구
+          - paragraph [ref=f15e121]: 토양 수분과 pH를 동시 측정. 배터리 불필요, 흙에 꽂으면 바로 측정.
+        - generic [ref=f15e122]:
+          - generic [ref=f15e123]: 15,900원
+          - button "담기" [ref=f15e124]:
+            - img
+            - text: 담기
+      - generic [ref=f15e125]:
+        - link "🧤 원예용 장갑 (M/L) 농기구 방수 코팅 처리로 흙이 묻지 않는 원예 전용 장갑. 손목까지 보호." [ref=f15e126] [cursor=pointer]:
+          - /url: /shop/9
+          - generic [ref=f15e127]:
+            - generic [ref=f15e128]: 🧤
+            - generic [ref=f15e129]:
+              - heading "원예용 장갑 (M/L)" [level=3] [ref=f15e130]
+              - generic [ref=f15e131]: 농기구
+          - paragraph [ref=f15e132]: 방수 코팅 처리로 흙이 묻지 않는 원예 전용 장갑. 손목까지 보호.
+        - generic [ref=f15e133]:
+          - generic [ref=f15e134]: 6,900원
+          - button "담기" [ref=f15e135]:
+            - img
+            - text: 담기
+      - generic [ref=f15e136]:
+        - link "🪣 프리미엄 원예 배양토 5L 농자재 배수성·보수성·통기성을 균형 있게 배합한 채소 재배 전용 배양토." [ref=f15e137] [cursor=pointer]:
+          - /url: /shop/10
+          - generic [ref=f15e138]:
+            - generic [ref=f15e139]: 🪣
+            - generic [ref=f15e140]:
+              - heading "프리미엄 원예 배양토 5L" [level=3] [ref=f15e141]
+              - generic [ref=f15e142]: 농자재
+          - paragraph [ref=f15e143]: 배수성·보수성·통기성을 균형 있게 배합한 채소 재배 전용 배양토.
+        - generic [ref=f15e144]:
+          - generic [ref=f15e145]: 7,900원
+          - button "담기" [ref=f15e146]:
+            - img
+            - text: 담기
+      - generic [ref=f15e147]:
+        - link "🪨 마사토 (소립) 3kg 농자재 배수층 조성에 필수. 화분 밑에 깔거나 흙에 혼합해 통기성 향상." [ref=f15e148] [cursor=pointer]:
+          - /url: /shop/11
+          - generic [ref=f15e149]:
+            - generic [ref=f15e150]: 🪨
+            - generic [ref=f15e151]:
+              - heading "마사토 (소립) 3kg" [level=3] [ref=f15e152]
+              - generic [ref=f15e153]: 농자재
+          - paragraph [ref=f15e154]: 배수층 조성에 필수. 화분 밑에 깔거나 흙에 혼합해 통기성 향상.
+        - generic [ref=f15e155]:
+          - generic [ref=f15e156]: 4,500원
+          - button "담기" [ref=f15e157]:
+            - img
+            - text: 담기
+      - generic [ref=f15e158]:
+        - link "⚪ 펄라이트 2L 농자재 흙의 배수성과 통기성을 높여주는 경량 화산석. 배양토에 20% 혼합 권장." [ref=f15e159] [cursor=pointer]:
+          - /url: /shop/12
+          - generic [ref=f15e160]:
+            - generic [ref=f15e161]: ⚪
+            - generic [ref=f15e162]:
+              - heading "펄라이트 2L" [level=3] [ref=f15e163]
+              - generic [ref=f15e164]: 농자재
+          - paragraph [ref=f15e165]: 흙의 배수성과 통기성을 높여주는 경량 화산석. 배양토에 20% 혼합 권장.
+        - generic [ref=f15e166]:
+          - generic [ref=f15e167]: 3,900원
+          - button "담기" [ref=f15e168]:
+            - img
+            - text: 담기
+      - generic [ref=f15e169]:
+        - link "💧 채소 전용 액체비료 500ml 비료 질소·인산·칼리 균형 배합. 물에 희석해 2주에 한 번 주면 성장 촉진." [ref=f15e170] [cursor=pointer]:
+          - /url: /shop/13
+          - generic [ref=f15e171]:
+            - generic [ref=f15e172]: 💧
+            - generic [ref=f15e173]:
+              - heading "채소 전용 액체비료 500ml" [level=3] [ref=f15e174]
+              - generic [ref=f15e175]: 비료
+          - paragraph [ref=f15e176]: 질소·인산·칼리 균형 배합. 물에 희석해 2주에 한 번 주면 성장 촉진.
+        - generic [ref=f15e177]:
+          - generic [ref=f15e178]: 9,900원
+          - button "담기" [ref=f15e179]:
+            - img
+            - text: 담기
+      - generic [ref=f15e180]:
+        - link "🌱 친환경 퇴비 발효 비료 1kg 비료 음식물 발효 퇴비 100%. 냄새 없이 천천히 분해되는 완효성 유기질 비료." [ref=f15e181] [cursor=pointer]:
+          - /url: /shop/14
+          - generic [ref=f15e182]:
+            - generic [ref=f15e183]: 🌱
+            - generic [ref=f15e184]:
+              - heading "친환경 퇴비 발효 비료 1kg" [level=3] [ref=f15e185]
+              - generic [ref=f15e186]: 비료
+          - paragraph [ref=f15e187]: 음식물 발효 퇴비 100%. 냄새 없이 천천히 분해되는 완효성 유기질 비료.
+        - generic [ref=f15e188]:
+          - generic [ref=f15e189]: 11,900원
+          - button "담기" [ref=f15e190]:
+            - img
+            - text: 담기
+      - generic [ref=f15e191]:
+        - link "💊 칼슘·마그네슘 복합 비료 200g 비료 배꼽썩음병 예방에 필수. 토마토·고추 결실기에 엽면 살포 또는 관주." [ref=f15e192] [cursor=pointer]:
+          - /url: /shop/15
+          - generic [ref=f15e193]:
+            - generic [ref=f15e194]: 💊
+            - generic [ref=f15e195]:
+              - heading "칼슘·마그네슘 복합 비료 200g" [level=3] [ref=f15e196]
+              - generic [ref=f15e197]: 비료
+          - paragraph [ref=f15e198]: 배꼽썩음병 예방에 필수. 토마토·고추 결실기에 엽면 살포 또는 관주.
+        - generic [ref=f15e199]:
+          - generic [ref=f15e200]: 8,500원
+          - button "담기" [ref=f15e201]:
+            - img
+            - text: 담기
+      - generic [ref=f15e202]:
+        - link "🍅 방울토마토 모종 모종 이미 발아된 건강한 방울토마토 모종. 정식 후 40~50일이면 수확 가능. 씨앗보다 한 달 단축." [ref=f15e203] [cursor=pointer]:
+          - /url: /shop/16
+          - generic [ref=f15e204]:
+            - generic [ref=f15e205]: 🍅
+            - generic [ref=f15e206]:
+              - heading "방울토마토 모종" [level=3] [ref=f15e207]
+              - generic [ref=f15e208]: 모종
+          - paragraph [ref=f15e209]: 이미 발아된 건강한 방울토마토 모종. 정식 후 40~50일이면 수확 가능. 씨앗보다 한 달 단축.
+        - generic [ref=f15e210]:
+          - generic [ref=f15e211]: 2,500원
+          - button "담기" [ref=f15e212]:
+            - img
+            - text: 담기
+      - generic [ref=f15e213]:
+        - link "🌶️ 청양고추 모종 모종 매운맛 강한 청양고추 모종. 튼튼한 줄기에 꽃눈 형성 시작. 빠른 수확이 목표라면 씨앗보다 모종!" [ref=f15e214] [cursor=pointer]:
+          - /url: /shop/17
+          - generic [ref=f15e215]:
+            - generic [ref=f15e216]: 🌶️
+            - generic [ref=f15e217]:
+              - heading "청양고추 모종" [level=3] [ref=f15e218]
+              - generic [ref=f15e219]: 모종
+          - paragraph [ref=f15e220]: 매운맛 강한 청양고추 모종. 튼튼한 줄기에 꽃눈 형성 시작. 빠른 수확이 목표라면 씨앗보다 모종!
+        - generic [ref=f15e221]:
+          - generic [ref=f15e222]: 2,200원
+          - button "담기" [ref=f15e223]:
+            - img
+            - text: 담기
+      - generic [ref=f15e224]:
+        - link "🥬 상추 모종 (4종 혼합) 모종 치커리·버터헤드·청상추·적상추 4종 한 포트. 정식 후 10일 내 수확 가능한 빠른 품종." [ref=f15e225] [cursor=pointer]:
+          - /url: /shop/18
+          - generic [ref=f15e226]:
+            - generic [ref=f15e227]: 🥬
+            - generic [ref=f15e228]:
+              - heading "상추 모종 (4종 혼합)" [level=3] [ref=f15e229]
+              - generic [ref=f15e230]: 모종
+          - paragraph [ref=f15e231]: 치커리·버터헤드·청상추·적상추 4종 한 포트. 정식 후 10일 내 수확 가능한 빠른 품종.
+        - generic [ref=f15e232]:
+          - generic [ref=f15e233]: 3,500원
+          - button "담기" [ref=f15e234]:
+            - img
+            - text: 담기
+      - generic [ref=f15e235]:
+        - link "🥒 오이 모종 모종 미니 오이 모종. 지지대 설치 후 정식하면 한 달 내 수확. 물 주기만 잘 지켜주면 왕성하게 자라요." [ref=f15e236] [cursor=pointer]:
+          - /url: /shop/19
+          - generic [ref=f15e237]:
+            - generic [ref=f15e238]: 🥒
+            - generic [ref=f15e239]:
+              - heading "오이 모종" [level=3] [ref=f15e240]
+              - generic [ref=f15e241]: 모종
+          - paragraph [ref=f15e242]: 미니 오이 모종. 지지대 설치 후 정식하면 한 달 내 수확. 물 주기만 잘 지켜주면 왕성하게 자라요.
+        - generic [ref=f15e243]:
+          - generic [ref=f15e244]: 2,800원
+          - button "담기" [ref=f15e245]:
+            - img
+            - text: 담기
+      - generic [ref=f15e246]:
+        - link "🍆 가지 모종 모종 부드러운 식감의 재래 가지 모종. 햇볕 잘 드는 곳에 두면 여름 내내 수확 가능." [ref=f15e247] [cursor=pointer]:
+          - /url: /shop/20
+          - generic [ref=f15e248]:
+            - generic [ref=f15e249]: 🍆
+            - generic [ref=f15e250]:
+              - heading "가지 모종" [level=3] [ref=f15e251]
+              - generic [ref=f15e252]: 모종
+          - paragraph [ref=f15e253]: 부드러운 식감의 재래 가지 모종. 햇볕 잘 드는 곳에 두면 여름 내내 수확 가능.
+        - generic [ref=f15e254]:
+          - generic [ref=f15e255]: 2,500원
+          - button "담기" [ref=f15e256]:
+            - img
+            - text: 담기
+      - generic [ref=f15e257]:
+        - link "🌿 바질 모종 모종 이탈리아 스위트 바질 모종. 씨앗보다 3주 빠른 수확. 주방 창가에 두면 요리할 때 바로 뜯어쓰기 가능." [ref=f15e258] [cursor=pointer]:
+          - /url: /shop/21
+          - generic [ref=f15e259]:
+            - generic [ref=f15e260]: 🌿
+            - generic [ref=f15e261]:
+              - heading "바질 모종" [level=3] [ref=f15e262]
+              - generic [ref=f15e263]: 모종
+          - paragraph [ref=f15e264]: 이탈리아 스위트 바질 모종. 씨앗보다 3주 빠른 수확. 주방 창가에 두면 요리할 때 바로 뜯어쓰기 가능.
+        - generic [ref=f15e265]:
+          - generic [ref=f15e266]: 2,000원
+          - button "담기" [ref=f15e267]:
+            - img
+            - text: 담기
+      - generic [ref=f15e268]:
+        - link "🪴 허브 모종 세트 (바질·로즈마리·민트) 모종 주방 창가 미니 허브 가든 완성 패키지. 세 종류를 한번에 길러 요리에 바로 활용하세요." [ref=f15e269] [cursor=pointer]:
+          - /url: /shop/22
+          - generic [ref=f15e270]:
+            - generic [ref=f15e271]: 🪴
+            - generic [ref=f15e272]:
+              - heading "허브 모종 세트 (바질·로즈마리·민트)" [level=3] [ref=f15e273]
+              - generic [ref=f15e274]: 모종
+          - paragraph [ref=f15e275]: 주방 창가 미니 허브 가든 완성 패키지. 세 종류를 한번에 길러 요리에 바로 활용하세요.
+        - generic [ref=f15e276]:
+          - generic [ref=f15e277]: 7,900원
+          - button "담기" [ref=f15e278]:
+            - img
+            - text: 담기
+      - generic [ref=f15e279]:
+        - link "🍓 사계딸기 모종 모종 사계성 딸기 모종. 베란다에서도 1년 내내 수확 가능. 초보자도 쉽게 키울 수 있는 강건한 품종." [ref=f15e280] [cursor=pointer]:
+          - /url: /shop/23
+          - generic [ref=f15e281]:
+            - generic [ref=f15e282]: 🍓
+            - generic [ref=f15e283]:
+              - heading "사계딸기 모종" [level=3] [ref=f15e284]
+              - generic [ref=f15e285]: 모종
+          - paragraph [ref=f15e286]: 사계성 딸기 모종. 베란다에서도 1년 내내 수확 가능. 초보자도 쉽게 키울 수 있는 강건한 품종.
+        - generic [ref=f15e287]:
+          - generic [ref=f15e288]: 3,500원
+          - button "담기" [ref=f15e289]:
+            - img
+            - text: 담기

@@ -1,0 +1,222 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e2]:
+    - banner [ref=f3e3]:
+      - generic [ref=f3e4]:
+        - link "GreenMate" [ref=f3e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=f3e7]
+          - generic [ref=f3e10]: GreenMate
+        - navigation "주요 메뉴" [ref=f3e11]:
+          - link "가드닝 가이드" [ref=f3e13] [cursor=pointer]:
+            - /url: /guide
+            - img [ref=f3e14]
+            - text: 가드닝 가이드
+            - img [ref=f3e16]
+          - link "그린마트" [ref=f3e19] [cursor=pointer]:
+            - /url: /shop
+            - img [ref=f3e20]
+            - text: 그린마트
+            - img [ref=f3e23]
+        - link [ref=f3e26] [cursor=pointer]:
+          - /url: /shop/cart
+          - img [ref=f3e27]
+    - generic [ref=f3e32]:
+      - complementary "카테고리 메뉴" [ref=f3e33]:
+        - paragraph [ref=f3e34]: 카테고리
+        - navigation [ref=f3e35]:
+          - link "전체 가이드" [ref=f3e36] [cursor=pointer]:
+            - /url: /guide
+          - link "모종 키우기" [ref=f3e37] [cursor=pointer]:
+            - /url: /guide?category=모종
+          - link "초보자 가이드" [ref=f3e38] [cursor=pointer]:
+            - /url: /guide?category=초보자
+          - link "식물별 재배법" [ref=f3e39] [cursor=pointer]:
+            - /url: /guide?category=식물별
+          - link "계절별 가드닝" [ref=f3e40] [cursor=pointer]:
+            - /url: /guide?category=계절별
+          - link "물주기 완전정복" [ref=f3e41] [cursor=pointer]:
+            - /url: /guide?category=물주기
+          - link "병충해 대처법" [ref=f3e42] [cursor=pointer]:
+            - /url: /guide?category=병충해
+      - main [ref=f3e43]:
+        - generic [ref=f3e44]:
+          - generic [ref=f3e45]:
+            - img [ref=f3e46]
+            - text: 가드닝 가이드
+          - heading "홈 가드닝 완전 정복" [level=1] [ref=f3e48]
+          - paragraph [ref=f3e49]: 식물 재배법부터 병충해 대처까지, 전문가의 실전 노하우를 무료로 읽어보세요.
+        - generic [ref=f3e50]:
+          - link "🌿 초보자 홈 가드닝 완전 초보 시작 가이드 식물을 처음 키우는 분을 위한 단계별 입문 가이드. 흙 고르기부터 첫 수확까지. 읽기" [ref=f3e51] [cursor=pointer]:
+            - /url: /guide/beginners
+            - generic [ref=f3e52]: 🌿
+            - generic [ref=f3e53]:
+              - generic [ref=f3e54]: 초보자
+              - heading "홈 가드닝 완전 초보 시작 가이드" [level=2] [ref=f3e55]
+              - paragraph [ref=f3e56]: 식물을 처음 키우는 분을 위한 단계별 입문 가이드. 흙 고르기부터 첫 수확까지.
+            - generic [ref=f3e57]:
+              - text: 읽기
+              - img [ref=f3e58]
+          - link "🌶️ 식물별 고추 베란다 재배 완전 가이드 청양고추부터 오이고추까지, 베란다에서 고추 키우는 법을 단계별로 알려드려요. 읽기" [ref=f3e60] [cursor=pointer]:
+            - /url: /guide/chili
+            - generic [ref=f3e61]: 🌶️
+            - generic [ref=f3e62]:
+              - generic [ref=f3e63]: 식물별
+              - heading "고추 베란다 재배 완전 가이드" [level=2] [ref=f3e64]
+              - paragraph [ref=f3e65]: 청양고추부터 오이고추까지, 베란다에서 고추 키우는 법을 단계별로 알려드려요.
+            - generic [ref=f3e66]:
+              - text: 읽기
+              - img [ref=f3e67]
+          - link "🥬 식물별 상추 재배 완벽 가이드 베란다에서 20일 만에 수확하는 상추 키우기. 씨앗부터 식탁까지 단계별 안내. 읽기" [ref=f3e69] [cursor=pointer]:
+            - /url: /guide/lettuce
+            - generic [ref=f3e70]: 🥬
+            - generic [ref=f3e71]:
+              - generic [ref=f3e72]: 식물별
+              - heading "상추 재배 완벽 가이드" [level=2] [ref=f3e73]
+              - paragraph [ref=f3e74]: 베란다에서 20일 만에 수확하는 상추 키우기. 씨앗부터 식탁까지 단계별 안내.
+            - generic [ref=f3e75]:
+              - text: 읽기
+              - img [ref=f3e76]
+          - link "🐛 병충해 홈 가드닝 병충해 완전 정복 집에서 흔히 발생하는 병충해 5가지 증상과 친환경 해결법. 조기 발견이 핵심이에요. 읽기" [ref=f3e78] [cursor=pointer]:
+            - /url: /guide/pests
+            - generic [ref=f3e79]: 🐛
+            - generic [ref=f3e80]:
+              - generic [ref=f3e81]: 병충해
+              - heading "홈 가드닝 병충해 완전 정복" [level=2] [ref=f3e82]
+              - paragraph [ref=f3e83]: 집에서 흔히 발생하는 병충해 5가지 증상과 친환경 해결법. 조기 발견이 핵심이에요.
+            - generic [ref=f3e84]:
+              - text: 읽기
+              - img [ref=f3e85]
+          - link "🪴 모종 모종으로 시작하는 베란다 텃밭 씨앗 대신 모종을 선택해야 하는 이유와, 모종 정식부터 첫 수확까지 단계별 가이드. 읽기" [ref=f3e87] [cursor=pointer]:
+            - /url: /guide/seedling-basics
+            - generic [ref=f3e88]: 🪴
+            - generic [ref=f3e89]:
+              - generic [ref=f3e90]: 모종
+              - heading "모종으로 시작하는 베란다 텃밭" [level=2] [ref=f3e91]
+              - paragraph [ref=f3e92]: 씨앗 대신 모종을 선택해야 하는 이유와, 모종 정식부터 첫 수확까지 단계별 가이드.
+            - generic [ref=f3e93]:
+              - text: 읽기
+              - img [ref=f3e94]
+          - link "🌱 모종 건강한 모종 고르는 법 모종 구매 시 반드시 확인해야 할 5가지 체크포인트. 좋은 모종을 고르면 절반은 성공! 읽기" [ref=f3e96] [cursor=pointer]:
+            - /url: /guide/seedling-selection
+            - generic [ref=f3e97]: 🌱
+            - generic [ref=f3e98]:
+              - generic [ref=f3e99]: 모종
+              - heading "건강한 모종 고르는 법" [level=2] [ref=f3e100]
+              - paragraph [ref=f3e101]: 모종 구매 시 반드시 확인해야 할 5가지 체크포인트. 좋은 모종을 고르면 절반은 성공!
+            - generic [ref=f3e102]:
+              - text: 읽기
+              - img [ref=f3e103]
+          - link "🌸 계절별 봄 홈 가드닝 시작 가이드 3월부터 5월, 식물 키우기 최적의 계절. 봄에 심어야 할 식물과 시작 타이밍 완벽 정리. 읽기" [ref=f3e105] [cursor=pointer]:
+            - /url: /guide/spring-tips
+            - generic [ref=f3e106]: 🌸
+            - generic [ref=f3e107]:
+              - generic [ref=f3e108]: 계절별
+              - heading "봄 홈 가드닝 시작 가이드" [level=2] [ref=f3e109]
+              - paragraph [ref=f3e110]: 3월부터 5월, 식물 키우기 최적의 계절. 봄에 심어야 할 식물과 시작 타이밍 완벽 정리.
+            - generic [ref=f3e111]:
+              - text: 읽기
+              - img [ref=f3e112]
+          - link "🍅 식물별 방울토마토 베란다 재배 가이드 집에서 빨간 방울토마토 수확하기. 지지대 설치부터 곁순 제거까지 핵심만 정리. 읽기" [ref=f3e114] [cursor=pointer]:
+            - /url: /guide/tomato
+            - generic [ref=f3e115]: 🍅
+            - generic [ref=f3e116]:
+              - generic [ref=f3e117]: 식물별
+              - heading "방울토마토 베란다 재배 가이드" [level=2] [ref=f3e118]
+              - paragraph [ref=f3e119]: 집에서 빨간 방울토마토 수확하기. 지지대 설치부터 곁순 제거까지 핵심만 정리.
+            - generic [ref=f3e120]:
+              - text: 읽기
+              - img [ref=f3e121]
+          - link "💧 물주기 식물 물주기 완벽 마스터 과습과 건조의 차이, 식물별 물주기 주기, 올바른 물주기 방법을 한번에 정리했어요. 읽기" [ref=f3e123] [cursor=pointer]:
+            - /url: /guide/watering
+            - generic [ref=f3e124]: 💧
+            - generic [ref=f3e125]:
+              - generic [ref=f3e126]: 물주기
+              - heading "식물 물주기 완벽 마스터" [level=2] [ref=f3e127]
+              - paragraph [ref=f3e128]: 과습과 건조의 차이, 식물별 물주기 주기, 올바른 물주기 방법을 한번에 정리했어요.
+            - generic [ref=f3e129]:
+              - text: 읽기
+              - img [ref=f3e130]
+  - contentinfo [ref=f3e132]:
+    - generic [ref=f3e133]:
+      - generic [ref=f3e134]:
+        - generic [ref=f3e135]:
+          - heading "서비스" [level=4] [ref=f3e136]
+          - list [ref=f3e137]:
+            - listitem [ref=f3e138]:
+              - link "홈" [ref=f3e139] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f3e140]:
+              - link "가드닝 가이드" [ref=f3e141] [cursor=pointer]:
+                - /url: /guide
+            - listitem [ref=f3e142]:
+              - link "그린마트" [ref=f3e143] [cursor=pointer]:
+                - /url: /shop
+            - listitem [ref=f3e144]:
+              - link "내 텃밭" [ref=f3e145] [cursor=pointer]:
+                - /url: /dashboard
+            - listitem [ref=f3e146]:
+              - link "AI 식물 상담" [ref=f3e147] [cursor=pointer]:
+                - /url: /chat
+        - generic [ref=f3e148]:
+          - heading "가드닝 가이드" [level=4] [ref=f3e149]
+          - list [ref=f3e150]:
+            - listitem [ref=f3e151]:
+              - link "초보자 가이드" [ref=f3e152] [cursor=pointer]:
+                - /url: /guide?category=초보자
+            - listitem [ref=f3e153]:
+              - link "모종 키우기" [ref=f3e154] [cursor=pointer]:
+                - /url: /guide?category=모종
+            - listitem [ref=f3e155]:
+              - link "식물별 재배법" [ref=f3e156] [cursor=pointer]:
+                - /url: /guide?category=식물별
+            - listitem [ref=f3e157]:
+              - link "계절별 가드닝" [ref=f3e158] [cursor=pointer]:
+                - /url: /guide?category=계절별
+            - listitem [ref=f3e159]:
+              - link "물주기 완전정복" [ref=f3e160] [cursor=pointer]:
+                - /url: /guide?category=물주기
+            - listitem [ref=f3e161]:
+              - link "병충해 대처법" [ref=f3e162] [cursor=pointer]:
+                - /url: /guide?category=병충해
+        - generic [ref=f3e163]:
+          - heading "그린마트" [level=4] [ref=f3e164]
+          - list [ref=f3e165]:
+            - listitem [ref=f3e166]:
+              - link "모종" [ref=f3e167] [cursor=pointer]:
+                - /url: /shop?category=모종
+            - listitem [ref=f3e168]:
+              - link "씨앗" [ref=f3e169] [cursor=pointer]:
+                - /url: /shop?category=씨앗
+            - listitem [ref=f3e170]:
+              - link "식재료" [ref=f3e171] [cursor=pointer]:
+                - /url: /shop?category=식재료
+            - listitem [ref=f3e172]:
+              - link "농기구" [ref=f3e173] [cursor=pointer]:
+                - /url: /shop?category=농기구
+            - listitem [ref=f3e174]:
+              - link "농자재" [ref=f3e175] [cursor=pointer]:
+                - /url: /shop?category=농자재
+            - listitem [ref=f3e176]:
+              - link "비료" [ref=f3e177] [cursor=pointer]:
+                - /url: /shop?category=비료
+        - generic [ref=f3e178]:
+          - heading "고객지원" [level=4] [ref=f3e179]
+          - list [ref=f3e180]:
+            - listitem [ref=f3e181]:
+              - link "공지사항" [ref=f3e182] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f3e183]:
+              - link "자주 묻는 질문" [ref=f3e184] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f3e185]:
+              - link "개인정보처리방침" [ref=f3e186] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f3e187]:
+              - link "이용약관" [ref=f3e188] [cursor=pointer]:
+                - /url: /
+      - generic [ref=f3e189]:
+        - generic [ref=f3e190]:
+          - img [ref=f3e192]
+          - generic [ref=f3e195]: GreenMate
+        - paragraph [ref=f3e196]: © 2025 GreenMate. 대한민국 서버 운영 · 개인정보 보호
+  - alert [ref=f3e197]

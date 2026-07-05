@@ -1,0 +1,86 @@
+- generic [active] [ref=f7e1]:
+  - generic [ref=f7e2]: 로딩 중...
+  - contentinfo [ref=f7e3]:
+    - generic [ref=f7e4]:
+      - generic [ref=f7e5]:
+        - generic [ref=f7e6]:
+          - heading "서비스" [level=4] [ref=f7e7]
+          - list [ref=f7e8]:
+            - listitem [ref=f7e9]:
+              - link "홈" [ref=f7e10] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f7e11]:
+              - link "가드닝 가이드" [ref=f7e12] [cursor=pointer]:
+                - /url: /guide
+            - listitem [ref=f7e13]:
+              - link "그린마트" [ref=f7e14] [cursor=pointer]:
+                - /url: /shop
+            - listitem [ref=f7e15]:
+              - link "내 텃밭" [ref=f7e16] [cursor=pointer]:
+                - /url: /dashboard
+            - listitem [ref=f7e17]:
+              - link "AI 식물 상담" [ref=f7e18] [cursor=pointer]:
+                - /url: /chat
+        - generic [ref=f7e19]:
+          - heading "가드닝 가이드" [level=4] [ref=f7e20]
+          - list [ref=f7e21]:
+            - listitem [ref=f7e22]:
+              - link "초보자 가이드" [ref=f7e23] [cursor=pointer]:
+                - /url: /guide?category=초보자
+            - listitem [ref=f7e24]:
+              - link "모종 키우기" [ref=f7e25] [cursor=pointer]:
+                - /url: /guide?category=모종
+            - listitem [ref=f7e26]:
+              - link "식물별 재배법" [ref=f7e27] [cursor=pointer]:
+                - /url: /guide?category=식물별
+            - listitem [ref=f7e28]:
+              - link "계절별 가드닝" [ref=f7e29] [cursor=pointer]:
+                - /url: /guide?category=계절별
+            - listitem [ref=f7e30]:
+              - link "물주기 완전정복" [ref=f7e31] [cursor=pointer]:
+                - /url: /guide?category=물주기
+            - listitem [ref=f7e32]:
+              - link "병충해 대처법" [ref=f7e33] [cursor=pointer]:
+                - /url: /guide?category=병충해
+        - generic [ref=f7e34]:
+          - heading "그린마트" [level=4] [ref=f7e35]
+          - list [ref=f7e36]:
+            - listitem [ref=f7e37]:
+              - link "모종" [ref=f7e38] [cursor=pointer]:
+                - /url: /shop?category=모종
+            - listitem [ref=f7e39]:
+              - link "농산물" [ref=f7e40] [cursor=pointer]:
+                - /url: /shop?category=농산물
+            - listitem [ref=f7e41]:
+              - link "씨앗" [ref=f7e42] [cursor=pointer]:
+                - /url: /shop?category=씨앗
+            - listitem [ref=f7e43]:
+              - link "농기구" [ref=f7e44] [cursor=pointer]:
+                - /url: /shop?category=농기구
+            - listitem [ref=f7e45]:
+              - link "농자재" [ref=f7e46] [cursor=pointer]:
+                - /url: /shop?category=농자재
+            - listitem [ref=f7e47]:
+              - link "비료" [ref=f7e48] [cursor=pointer]:
+                - /url: /shop?category=비료
+        - generic [ref=f7e49]:
+          - heading "고객지원" [level=4] [ref=f7e50]
+          - list [ref=f7e51]:
+            - listitem [ref=f7e52]:
+              - link "공지사항" [ref=f7e53] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f7e54]:
+              - link "자주 묻는 질문" [ref=f7e55] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f7e56]:
+              - link "개인정보처리방침" [ref=f7e57] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f7e58]:
+              - link "이용약관" [ref=f7e59] [cursor=pointer]:
+                - /url: /
+      - generic [ref=f7e60]:
+        - generic [ref=f7e61]:
+          - img [ref=f7e63]
+          - generic [ref=f7e66]: GreenMate
+        - paragraph [ref=f7e67]: © 2025 GreenMate. 대한민국 서버 운영 · 개인정보 보호
+  - alert [ref=f7e68]
