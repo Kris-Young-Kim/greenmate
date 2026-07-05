@@ -1,0 +1,163 @@
+- generic [active] [ref=f10e1]:
+  - generic [ref=f10e2]:
+    - banner [ref=f10e3]:
+      - generic [ref=f10e4]:
+        - link "GreenMate" [ref=f10e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=f10e7]
+          - generic [ref=f10e10]: GreenMate
+        - link [ref=f10e12] [cursor=pointer]:
+          - /url: /shop/cart
+          - img [ref=f10e13]
+    - generic [ref=f10e19]:
+      - generic [ref=f10e20]:
+        - img [ref=f10e21]
+        - text: 홈 가드닝 파트너
+      - heading "내 손으로 키우는 싱그러운 베란다 텃밭" [level=1] [ref=f10e24]:
+        - text: 내 손으로 키우는
+        - text: 싱그러운 베란다 텃밭
+      - paragraph [ref=f10e25]: 씨앗 하나에서 풍성한 수확까지. 반려식물 관리부터 AI 가드닝 상담까지 GreenMate가 함께합니다.
+      - generic [ref=f10e26]:
+        - button "무료로 시작하기" [ref=f10e27] [cursor=pointer]:
+          - text: 무료로 시작하기
+          - img
+        - button "로그인" [ref=f10e28] [cursor=pointer]
+      - paragraph [ref=f10e29]: 광고 없음 · 무료 시작 · 언제든 해지 가능
+    - generic [ref=f10e33]:
+      - heading "식물 키우다 포기한 적 있으신가요?" [level=2] [ref=f10e34]
+      - paragraph [ref=f10e35]: 바쁜 일상에 물 주기를 깜빡하고, 잎이 노래지는 이유를 몰라 답답하셨죠. GreenMate는 그 모든 고민을 대신 해결합니다.
+    - generic [ref=f10e37]:
+      - heading "GreenMate 하나로 전부 해결" [level=2] [ref=f10e38]
+      - generic [ref=f10e39]:
+        - generic [ref=f10e40]:
+          - generic [ref=f10e41]: 🌱
+          - heading "식물 등록 & 성장 일지" [level=3] [ref=f10e42]
+          - paragraph [ref=f10e43]: 키우는 식물을 등록하고, 성장 과정을 날짜별로 기록해보세요.
+        - generic [ref=f10e44]:
+          - generic [ref=f10e45]: 💧
+          - heading "스마트 물 주기 알림" [level=3] [ref=f10e46]
+          - paragraph [ref=f10e47]: 식물 종류별 최적 주기를 계산해, 딱 맞는 타이밍에 알림을 보내드려요.
+        - generic [ref=f10e48]:
+          - generic [ref=f10e49]: 🤖
+          - heading "AI 식물 상담 채팅" [level=3] [ref=f10e50]
+          - paragraph [ref=f10e51]: 잎색 변화, 벌레, 과습 등 무엇이든 AI 전문가에게 바로 물어보세요.
+    - generic [ref=f10e52]:
+      - img [ref=f10e53]
+      - heading "오늘부터, 우리 집 베란다에 텃밭을" [level=2] [ref=f10e56]
+      - paragraph [ref=f10e57]: 반려식물과 함께하는 싱그러운 일상, 지금 시작하세요.
+      - button "무료로 시작하기" [ref=f10e58] [cursor=pointer]:
+        - text: 무료로 시작하기
+        - img
+    - contentinfo [ref=f10e59]:
+      - generic [ref=f10e60]:
+        - img [ref=f10e61]
+        - generic [ref=f10e64]: GreenMate
+      - paragraph [ref=f10e65]: © 2025 GreenMate. 대한민국 서버 운영 · 개인정보 보호
+  - contentinfo [ref=f10e66]:
+    - generic [ref=f10e67]:
+      - generic [ref=f10e68]:
+        - generic [ref=f10e69]:
+          - heading "서비스" [level=4] [ref=f10e70]
+          - list [ref=f10e71]:
+            - listitem [ref=f10e72]:
+              - link "홈" [ref=f10e73] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f10e74]:
+              - link "가드닝 가이드" [ref=f10e75] [cursor=pointer]:
+                - /url: /guide
+            - listitem [ref=f10e76]:
+              - link "그린마트" [ref=f10e77] [cursor=pointer]:
+                - /url: /shop
+            - listitem [ref=f10e78]:
+              - link "내 텃밭" [ref=f10e79] [cursor=pointer]:
+                - /url: /dashboard
+            - listitem [ref=f10e80]:
+              - link "주문 내역" [ref=f10e81] [cursor=pointer]:
+                - /url: /my/orders
+            - listitem [ref=f10e82]:
+              - link "AI 식물 상담" [ref=f10e83] [cursor=pointer]:
+                - /url: /chat
+        - generic [ref=f10e84]:
+          - heading "가드닝 가이드" [level=4] [ref=f10e85]
+          - list [ref=f10e86]:
+            - listitem [ref=f10e87]:
+              - link "초보자 가이드" [ref=f10e88] [cursor=pointer]:
+                - /url: /guide?category=초보자
+            - listitem [ref=f10e89]:
+              - link "모종 키우기" [ref=f10e90] [cursor=pointer]:
+                - /url: /guide?category=모종
+            - listitem [ref=f10e91]:
+              - link "식물별 재배법" [ref=f10e92] [cursor=pointer]:
+                - /url: /guide?category=식물별
+            - listitem [ref=f10e93]:
+              - link "계절별 가드닝" [ref=f10e94] [cursor=pointer]:
+                - /url: /guide?category=계절별
+            - listitem [ref=f10e95]:
+              - link "물주기 완전정복" [ref=f10e96] [cursor=pointer]:
+                - /url: /guide?category=물주기
+            - listitem [ref=f10e97]:
+              - link "병충해 대처법" [ref=f10e98] [cursor=pointer]:
+                - /url: /guide?category=병충해
+        - generic [ref=f10e99]:
+          - heading "그린마트" [level=4] [ref=f10e100]
+          - list [ref=f10e101]:
+            - listitem [ref=f10e102]:
+              - link "모종" [ref=f10e103] [cursor=pointer]:
+                - /url: /shop?category=모종
+            - listitem [ref=f10e104]:
+              - link "농산물" [ref=f10e105] [cursor=pointer]:
+                - /url: /shop?category=농산물
+            - listitem [ref=f10e106]:
+              - link "씨앗" [ref=f10e107] [cursor=pointer]:
+                - /url: /shop?category=씨앗
+            - listitem [ref=f10e108]:
+              - link "농기구" [ref=f10e109] [cursor=pointer]:
+                - /url: /shop?category=농기구
+            - listitem [ref=f10e110]:
+              - link "농자재" [ref=f10e111] [cursor=pointer]:
+                - /url: /shop?category=농자재
+            - listitem [ref=f10e112]:
+              - link "비료" [ref=f10e113] [cursor=pointer]:
+                - /url: /shop?category=비료
+        - generic [ref=f10e114]:
+          - heading "고객지원" [level=4] [ref=f10e115]
+          - list [ref=f10e116]:
+            - listitem [ref=f10e117]:
+              - link "공지사항" [ref=f10e118] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f10e119]:
+              - link "자주 묻는 질문" [ref=f10e120] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f10e121]:
+              - link "개인정보처리방침" [ref=f10e122] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f10e123]:
+              - link "이용약관" [ref=f10e124] [cursor=pointer]:
+                - /url: /
+      - generic [ref=f10e125]:
+        - generic [ref=f10e126]:
+          - img [ref=f10e128]
+          - generic [ref=f10e131]: GreenMate
+        - paragraph [ref=f10e132]: © 2025 GreenMate. 대한민국 서버 운영 · 개인정보 보호
+  - navigation "하단 메뉴" [ref=f10e133]:
+    - generic [ref=f10e134]:
+      - link "홈" [ref=f10e135] [cursor=pointer]:
+        - /url: /
+        - img [ref=f10e136]
+        - generic [ref=f10e139]: 홈
+      - link "가이드" [ref=f10e140] [cursor=pointer]:
+        - /url: /guide
+        - img [ref=f10e141]
+        - generic [ref=f10e143]: 가이드
+      - link "그린마트" [ref=f10e144] [cursor=pointer]:
+        - /url: /shop
+        - img [ref=f10e145]
+        - generic [ref=f10e148]: 그린마트
+      - link "내텃밭" [ref=f10e149] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=f10e150]
+        - generic [ref=f10e153]: 내텃밭
+      - link "주문내역" [ref=f10e154] [cursor=pointer]:
+        - /url: /my/orders
+        - img [ref=f10e155]
+        - generic [ref=f10e158]: 주문내역

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation"
+import Image from "next/image"
 import Link from "next/link"
 import {
   ChevronLeft, MapPin, Leaf, Flame, Clock, Star,
@@ -12,6 +13,26 @@ import { SiteHeader } from "@/components/site-header"
 import { Button } from "@/components/ui/button"
 
 // ── 강원도찰옥수수 전용 상세 페이지 ──────────────────────────────────────
+const CORN = {
+  hero:       "/products/corn/mosa6AQK16.jpeg",
+  bowl:       "/products/corn/mosatnonth.jpeg",
+  hand:       "/products/corn/mosaqcDd92.jpeg",
+  field1:     "/products/corn/mosaOzhOUZ.jpeg",
+  field2:     "/products/corn/mosaYmVkS2.jpeg",
+  field3:     "/products/corn/mosa9l5oqT.jpeg",
+  smart:      "/products/corn/mosak2EbeB.jpeg",
+  onlyWhite:  "/products/corn/mosaijUeHh.jpeg",
+  superfood:  "/products/corn/mosaZVU9V0.jpeg",
+  cook:       "/products/corn/mosayOII1J.jpeg",
+  recipe:     "/products/corn/mosaed6g8I.jpeg",
+  selection:  "/products/corn/mosagSgIao.jpeg",
+  shipping:   "/products/corn/mosauzvGUj.jpeg",
+  diet:       "/products/corn/mosaPSGY6i.jpeg",
+  nutrition1: "/products/corn/mosaRGI4NI.jpeg",
+  nutrition2: "/products/corn/mosaIrXHMK.jpeg",
+  lutein:     "/products/corn/mosa0vu27i.jpeg",
+}
+
 function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<typeof getProduct>>> }) {
   const hasOptions = product.options && product.options.length > 0
 
@@ -27,18 +48,23 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
           상품 목록
         </Link>
 
-        {/* ① 히어로 */}
+        {/* ① 히어로 — 실사진 */}
         <div className="relative overflow-hidden rounded-3xl shadow-xl">
-          {/* 그라디언트 배경 */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#1a4a1a] via-[#2d6a2d] to-[#4a8a1a]" />
           <div className="absolute inset-0 opacity-30"
             style={{ backgroundImage: "radial-gradient(ellipse at 10% 90%, #f59e0b55, transparent 60%), radial-gradient(ellipse at 90% 10%, #84cc1655, transparent 60%)" }} />
 
           <div className="relative flex flex-col items-center px-8 py-10 text-center sm:flex-row sm:text-left sm:gap-8">
-            {/* 이모지 + 반짝 */}
             <div className="relative shrink-0">
-              <div className="flex size-36 items-center justify-center rounded-[2rem] bg-white/10 backdrop-blur-sm shadow-inner text-8xl select-none sm:size-44 sm:text-9xl">
-                🌽
+              <div className="relative size-36 overflow-hidden rounded-[2rem] shadow-lg ring-2 ring-white/20 sm:size-44">
+                <Image
+                  src={CORN.hero}
+                  alt="강원도찰옥수수 미백2호"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 144px, 176px"
+                  priority
+                />
               </div>
               <span className="absolute -top-2 -right-2 rounded-full bg-amber-400 px-2 py-0.5 text-[10px] font-black text-amber-900 shadow">
                 SUPER FOOD
@@ -56,8 +82,6 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
               <p className="mt-2 text-sm text-white/70 leading-relaxed">
                 해발 700m 강원도 청정 고랭지에서<br />당일 수확 후 바로 발송합니다.
               </p>
-
-              {/* 맛 5종 태그 */}
               <div className="mt-4 flex flex-wrap gap-1.5 justify-center sm:justify-start">
                 {["고소", "촉촉", "찰", "쫄깃", "달달"].map((t) => (
                   <span key={t}
@@ -70,7 +94,21 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
           </div>
         </div>
 
-        {/* ② 원산지·품종 4 카드 */}
+        {/* ② 사진 갤러리 스트립 */}
+        <div className="grid grid-cols-4 gap-1.5 overflow-hidden rounded-2xl">
+          {[
+            { src: CORN.bowl,   alt: "껍질 벗긴 흰 찰옥수수" },
+            { src: CORN.field1, alt: "강원도 옥수수 밭 전경" },
+            { src: CORN.hand,   alt: "갓 수확한 옥수수" },
+            { src: CORN.field2, alt: "고랭지 옥수수 밭" },
+          ].map(({ src, alt }) => (
+            <div key={src} className="relative aspect-square overflow-hidden rounded-xl">
+              <Image src={src} alt={alt} fill className="object-cover transition-transform hover:scale-105" sizes="25vw" />
+            </div>
+          ))}
+        </div>
+
+        {/* ③ 원산지·품종 4 카드 */}
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {[
             { icon: MapPin,   label: "원산지",   value: "강원도 고랭지",    sub: "해발 700m+" },
@@ -88,24 +126,31 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
           ))}
         </div>
 
-        {/* ③ 상품 소개 */}
+        {/* ④ 상품 소개 */}
         <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
           <h2 className="text-base font-bold">상품 소개</h2>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            <strong className="text-foreground">강원도찰옥수수 미백2호</strong>는 순백의 껍질과
-            쫄깃하고 달콤한 찰진 식감으로 사랑받는 프리미엄 품종입니다. 일교차가 크고 일조량이
-            풍부한 강원도 청정 고랭지에서 재배해 당도가 자연스럽게 높으며, 수분이 풍부해 식감이
-            촉촉합니다.
-          </p>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            식이섬유가 풍부해 소화 건강에도 좋고, 비타민 B군·철분·마그네슘 등 다양한 영양소를
-            함유한 <em className="not-italic font-semibold text-green-600">슈퍼푸드</em>로
-            주목받고 있습니다. 수확 당일 선별·포장하여 발송하므로 산지의 신선함이 그대로
-            식탁에 전달됩니다.
-          </p>
+          <div className="mt-3 flex gap-4">
+            <div className="flex-1">
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                <strong className="text-foreground">강원도찰옥수수 미백2호</strong>는 순백의 껍질과
+                쫄깃하고 달콤한 찰진 식감으로 사랑받는 프리미엄 품종입니다. 일교차가 크고 일조량이
+                풍부한 강원도 청정 고랭지에서 재배해 당도가 자연스럽게 높으며, 수분이 풍부해 식감이
+                촉촉합니다.
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                식이섬유가 풍부해 소화 건강에도 좋고, 비타민 B군·철분·마그네슘 등 다양한 영양소를
+                함유한 <em className="not-italic font-semibold text-green-600">슈퍼푸드</em>로
+                주목받고 있습니다. 수확 당일 선별·포장하여 발송하므로 산지의 신선함이 그대로
+                식탁에 전달됩니다.
+              </p>
+            </div>
+            <div className="relative hidden sm:block shrink-0 w-28 h-28 overflow-hidden rounded-2xl">
+              <Image src={CORN.onlyWhite} alt="오직 미백옥수수" fill className="object-cover" sizes="112px" />
+            </div>
+          </div>
         </div>
 
-        {/* ④ 맛 특징 — 5가지 */}
+        {/* ⑤ 맛 특징 — 5가지 */}
         <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6 shadow-sm">
           <h2 className="text-base font-bold text-amber-900">미백2호만의 맛</h2>
           <div className="mt-4 grid grid-cols-5 gap-2 text-center">
@@ -125,7 +170,7 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
           </div>
         </div>
 
-        {/* ⑤ 2단계 선별 과정 */}
+        {/* ⑥ 2단계 선별 과정 */}
         <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
           <h2 className="text-base font-bold">2단계 철저한 선별 과정</h2>
           <p className="mt-1 text-xs text-muted-foreground">높은 품질 기준을 통과한 옥수수만 출하합니다</p>
@@ -144,13 +189,21 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
               </div>
             ))}
           </div>
+          {/* 선별 과정 인포그래픽 */}
+          <div className="mt-4 relative w-full aspect-[3/1] overflow-hidden rounded-xl">
+            <Image src={CORN.selection} alt="2단계 선별 과정 인포그래픽" fill className="object-cover" sizes="(max-width: 768px) 100vw, 672px" />
+          </div>
         </div>
 
-        {/* ⑥ 슈퍼푸드·영양 정보 */}
+        {/* ⑦ 슈퍼푸드·영양 정보 */}
         <div className="rounded-2xl border border-green-200 bg-green-50 p-6 shadow-sm">
           <div className="flex items-center gap-2">
             <Sprout className="size-5 text-green-600" />
             <h2 className="text-base font-bold text-green-800">슈퍼푸드 영양 정보</h2>
+          </div>
+          {/* SUPER FOOD 인포그래픽 배너 */}
+          <div className="mt-3 relative w-full aspect-[3/1] overflow-hidden rounded-xl">
+            <Image src={CORN.superfood} alt="SUPER FOOD 인포그래픽" fill className="object-cover" sizes="(max-width: 768px) 100vw, 672px" />
           </div>
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
             {[
@@ -171,9 +224,22 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
               </div>
             ))}
           </div>
+          {/* 다이어트·루테인 인포그래픽 이미지 4종 */}
+          <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
+            {[
+              { src: CORN.diet,       alt: "다이어트 효과" },
+              { src: CORN.nutrition1, alt: "영양 정보" },
+              { src: CORN.nutrition2, alt: "영양 성분" },
+              { src: CORN.lutein,     alt: "루테인 눈 건강" },
+            ].map(({ src, alt }) => (
+              <div key={src} className="relative aspect-square overflow-hidden rounded-xl">
+                <Image src={src} alt={alt} fill className="object-cover" sizes="(max-width: 640px) 50vw, 25vw" />
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* ⑦ 조리 가이드 */}
+        {/* ⑧ 조리 가이드 */}
         <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
           <h2 className="text-base font-bold">이렇게 즐기세요</h2>
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -191,9 +257,18 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
               </div>
             ))}
           </div>
+          {/* 굽기 실사진 + 레시피 인포그래픽 */}
+          <div className="mt-4 grid grid-cols-2 gap-2">
+            <div className="relative aspect-video overflow-hidden rounded-xl">
+              <Image src={CORN.cook} alt="옥수수 굽기" fill className="object-cover" sizes="50vw" />
+            </div>
+            <div className="relative aspect-video overflow-hidden rounded-xl">
+              <Image src={CORN.recipe} alt="조리 방법 인포그래픽" fill className="object-cover" sizes="50vw" />
+            </div>
+          </div>
         </div>
 
-        {/* ⑧ 배송·신선도 보장 */}
+        {/* ⑨ 배송·신선도 보장 */}
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <div className="flex items-start gap-3 rounded-2xl border border-border bg-card p-5 shadow-sm">
             <Truck className="mt-0.5 size-5 shrink-0 text-primary" />
@@ -216,8 +291,42 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
             </div>
           </div>
         </div>
+        {/* 배송 인포그래픽 */}
+        <div className="relative w-full aspect-[3/1] overflow-hidden rounded-2xl">
+          <Image src={CORN.shipping} alt="배송 안내 인포그래픽" fill className="object-cover" sizes="(max-width: 768px) 100vw, 672px" />
+        </div>
 
-        {/* ⑨ 옵션 선택 + 구매 */}
+        {/* ⑩ 산지 스마트 농업 */}
+        <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2">
+            <div className="relative aspect-video sm:aspect-auto">
+              <Image src={CORN.smart} alt="스마트 농업 관리" fill className="object-cover" sizes="(max-width: 640px) 100vw, 50vw" />
+            </div>
+            <div className="p-5 flex flex-col justify-center gap-2">
+              <p className="text-xs font-semibold text-primary uppercase tracking-wide">스마트 농업</p>
+              <h3 className="text-base font-bold">디지털로 관리하는 품질</h3>
+              <p className="text-xs leading-relaxed text-muted-foreground">
+                스마트 농업 기술로 생육 상태를 실시간 모니터링하여
+                최적의 환경에서 옥수수를 재배합니다.
+                데이터 기반 재배로 품질을 일관되게 유지합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ⑪ 산지 밭 전경 */}
+        <div className="rounded-2xl overflow-hidden shadow-sm">
+          <div className="relative w-full aspect-[21/9]">
+            <Image src={CORN.field3} alt="강원도 고랭지 옥수수 밭 전경" fill className="object-cover" sizes="(max-width: 768px) 100vw, 672px" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute bottom-4 left-4 text-white">
+              <p className="text-xs font-semibold opacity-80">강원도 고랭지 농장</p>
+              <p className="text-sm font-bold">해발 700m, 청정 자연에서 자란 옥수수</p>
+            </div>
+          </div>
+        </div>
+
+        {/* ⑫ 옵션 선택 + 구매 */}
         <div className="rounded-2xl border-2 border-primary/30 bg-card p-6 shadow-sm">
           <div className="flex items-center justify-between">
             <span className="text-sm font-semibold text-muted-foreground">{product.category}</span>
@@ -235,7 +344,9 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
             />
           ) : (
             <>
-              <p className="mt-2 text-2xl font-black text-primary">{product.price.toLocaleString()}원</p>
+              {product.stock > 0 && (
+                <p className="mt-2 text-2xl font-black text-primary">{product.price.toLocaleString()}원</p>
+              )}
               <div className="mt-4 flex gap-3">
                 <AddToCartButton product={product} size="default" />
                 <Button variant="outline" nativeButton={false} render={<Link href="/shop/cart" />}>
@@ -274,12 +385,12 @@ function GenericDetailPage({ product }: { product: NonNullable<Awaited<ReturnTyp
                 {product.category}
               </span>
               <h1 className="mt-2 text-2xl font-bold">{product.name}</h1>
-              {!hasOptions && (
+              {!hasOptions && product.stock > 0 && (
                 <p className="mt-1 text-2xl font-semibold text-primary">
                   {product.price.toLocaleString()}원
                 </p>
               )}
-              {hasOptions && (
+              {hasOptions && product.stock > 0 && (
                 <p className="mt-1 text-base text-muted-foreground">
                   {product.options!.map((o) => `${o.label} ${o.price.toLocaleString()}원`).join(" / ")}
                 </p>

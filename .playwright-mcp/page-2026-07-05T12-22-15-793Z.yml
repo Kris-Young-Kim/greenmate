@@ -1,0 +1,65 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "GreenMate" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=e7]
+          - generic [ref=e10]: GreenMate
+        - navigation "주요 메뉴" [ref=e11]:
+          - link "가드닝 가이드" [ref=e12] [cursor=pointer]:
+            - /url: /guide
+            - img [ref=e13]
+            - text: 가드닝 가이드
+          - link "그린마트" [ref=e15] [cursor=pointer]:
+            - /url: /shop
+            - img [ref=e16]
+            - text: 그린마트
+        - link [ref=e20] [cursor=pointer]:
+          - /url: /shop/cart
+          - img [ref=e21]
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - img [ref=e29]
+        - text: 홈 가드닝 파트너
+      - heading "내 손으로 키우는 싱그러운 베란다 텃밭" [level=1] [ref=e32]:
+        - text: 내 손으로 키우는
+        - text: 싱그러운 베란다 텃밭
+      - paragraph [ref=e33]: 씨앗 하나에서 풍성한 수확까지. 반려식물 관리부터 AI 가드닝 상담까지 GreenMate가 함께합니다.
+      - generic [ref=e34]:
+        - button "무료로 시작하기" [ref=e35] [cursor=pointer]:
+          - text: 무료로 시작하기
+          - img
+        - button "로그인" [ref=e36] [cursor=pointer]
+      - paragraph [ref=e37]: 광고 없음 · 무료 시작 · 언제든 해지 가능
+    - generic [ref=e41]:
+      - heading "식물 키우다 포기한 적 있으신가요?" [level=2] [ref=e42]
+      - paragraph [ref=e43]: 바쁜 일상에 물 주기를 깜빡하고, 잎이 노래지는 이유를 몰라 답답하셨죠. GreenMate는 그 모든 고민을 대신 해결합니다.
+    - generic [ref=e45]:
+      - heading "GreenMate 하나로 전부 해결" [level=2] [ref=e46]
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - generic [ref=e49]: 🌱
+          - heading "식물 등록 & 성장 일지" [level=3] [ref=e50]
+          - paragraph [ref=e51]: 키우는 식물을 등록하고, 성장 과정을 날짜별로 기록해보세요.
+        - generic [ref=e52]:
+          - generic [ref=e53]: 💧
+          - heading "스마트 물 주기 알림" [level=3] [ref=e54]
+          - paragraph [ref=e55]: 식물 종류별 최적 주기를 계산해, 딱 맞는 타이밍에 알림을 보내드려요.
+        - generic [ref=e56]:
+          - generic [ref=e57]: 🤖
+          - heading "AI 식물 상담 채팅" [level=3] [ref=e58]
+          - paragraph [ref=e59]: 잎색 변화, 벌레, 과습 등 무엇이든 AI 전문가에게 바로 물어보세요.
+    - generic [ref=e60]:
+      - img [ref=e61]
+      - heading "오늘부터, 우리 집 베란다에 텃밭을" [level=2] [ref=e64]
+      - paragraph [ref=e65]: 반려식물과 함께하는 싱그러운 일상, 지금 시작하세요.
+      - button "무료로 시작하기" [ref=e66] [cursor=pointer]:
+        - text: 무료로 시작하기
+        - img
+    - contentinfo [ref=e67]:
+      - generic [ref=e68]:
+        - img [ref=e69]
+        - generic [ref=e72]: GreenMate
+      - paragraph [ref=e73]: © 2025 GreenMate. 대한민국 서버 운영 · 개인정보 보호
+  - alert [ref=e74]

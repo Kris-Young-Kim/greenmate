@@ -1,0 +1,26 @@
+- generic [active] [ref=f17e1]:
+  - generic [ref=f17e2]:
+    - banner [ref=f17e3]:
+      - generic [ref=f17e4]:
+        - link "GreenMate" [ref=f17e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=f17e7]
+          - generic [ref=f17e10]: GreenMate
+        - navigation "주요 메뉴" [ref=f17e11]:
+          - link "가드닝 가이드" [ref=f17e12] [cursor=pointer]:
+            - /url: /guide
+            - img [ref=f17e13]
+            - text: 가드닝 가이드
+          - link "그린마트" [ref=f17e15] [cursor=pointer]:
+            - /url: /shop
+            - img [ref=f17e16]
+            - text: 그린마트
+        - link [ref=f17e20] [cursor=pointer]:
+          - /url: /shop/cart
+          - img [ref=f17e21]
+    - main [ref=f17e25]:
+      - paragraph [ref=f17e26]: 🛒
+      - heading "장바구니가 비어 있어요" [level=2] [ref=f17e27]
+      - paragraph [ref=f17e28]: 마음에 드는 상품을 담아보세요!
+      - button "그린마트 둘러보기" [ref=f17e29] [cursor=pointer]
+  - alert [ref=f17e30]

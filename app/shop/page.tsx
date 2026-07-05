@@ -79,7 +79,11 @@ export default async function ShopPage({
                   >
                     <Link href={`/shop/${product.id}`} className="group flex-1">
                       <div className="flex items-center gap-3">
-                        <ProductPlaceholder size="sm" />
+                        <ProductPlaceholder
+                          size="sm"
+                          src={product.id === 27 ? "/products/corn/mosatnonth.jpeg" : undefined}
+                          alt={product.id === 27 ? product.name : undefined}
+                        />
                         <div className="min-w-0">
                           <h3 className="line-clamp-2 font-semibold text-foreground transition-colors group-hover:text-primary">
                             {product.name}
@@ -94,7 +98,9 @@ export default async function ShopPage({
                       </p>
                     </Link>
                     <div className="flex items-center justify-between pt-2">
-                      {product.options && product.options.length > 0 ? (
+                      {product.stock === 0 ? (
+                        <span />
+                      ) : product.options && product.options.length > 0 ? (
                         <span className="text-sm text-muted-foreground">
                           {product.options.map((o) => o.price.toLocaleString() + "원").join(" / ")}
                         </span>

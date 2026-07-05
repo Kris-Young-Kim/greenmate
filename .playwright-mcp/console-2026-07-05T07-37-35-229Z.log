@@ -1,0 +1,3 @@
+[    1753ms] [WARNING] Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview @ https://enabled-sponge-16.clerk.accounts.dev/npm/@clerk/clerk-js@6/dist/clerk.browser.js:11
+[    1990ms] [WARNING] Note: Some companies are required to obtain a license to use Remotion. See: https://remotion.dev/license
+Pass the `acknowledgeRemotionLicense` prop to `<Player />` function to make this message disappear. @ https://swgreen.shop/_next/static/chunks/02l434tiy32i4.js:15

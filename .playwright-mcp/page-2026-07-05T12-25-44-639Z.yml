@@ -1,0 +1,83 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e2]:
+    - banner [ref=f1e3]:
+      - generic [ref=f1e4]:
+        - link "GreenMate" [ref=f1e5] [cursor=pointer]:
+          - /url: /
+          - img [ref=f1e7]
+          - generic [ref=f1e10]: GreenMate
+        - navigation "주요 메뉴" [ref=f1e11]:
+          - link "가드닝 가이드" [ref=f1e12] [cursor=pointer]:
+            - /url: /guide
+            - img [ref=f1e13]
+            - text: 가드닝 가이드
+          - link "그린마트" [ref=f1e15] [cursor=pointer]:
+            - /url: /shop
+            - img [ref=f1e16]
+            - text: 그린마트
+        - link [ref=f1e20] [cursor=pointer]:
+          - /url: /shop/cart
+          - img [ref=f1e21]
+    - main [ref=f1e25]:
+      - generic [ref=f1e26]:
+        - heading "그린마트 🛒" [level=1] [ref=f1e27]
+        - paragraph [ref=f1e28]: 씨앗부터 농기구까지, 텃밭에 필요한 모든 것
+      - generic [ref=f1e29]:
+        - link "전체" [ref=f1e30] [cursor=pointer]:
+          - /url: /shop
+        - link "모종" [ref=f1e31] [cursor=pointer]:
+          - /url: /shop?category=%EB%AA%A8%EC%A2%85
+        - link "씨앗" [ref=f1e32] [cursor=pointer]:
+          - /url: /shop?category=%EC%94%A8%EC%95%97
+        - link "식재료" [ref=f1e33] [cursor=pointer]:
+          - /url: /shop?category=%EC%8B%9D%EC%9E%AC%EB%A3%8C
+        - link "농기구" [ref=f1e34] [cursor=pointer]:
+          - /url: /shop?category=%EB%86%8D%EA%B8%B0%EA%B5%AC
+        - link "농자재" [ref=f1e35] [cursor=pointer]:
+          - /url: /shop?category=%EB%86%8D%EC%9E%90%EC%9E%AC
+        - link "비료" [ref=f1e36] [cursor=pointer]:
+          - /url: /shop?category=%EB%B9%84%EB%A3%8C
+      - generic [ref=f1e37]:
+        - generic [ref=f1e38]:
+          - link "🌽 옥수수 씨앗 (30립) 식재료 달콤한 단옥수수 씨앗. 파종 후 70~80일이면 수확 가능. 넓은 화분이나 텃밭 직접 파종 추천." [ref=f1e39] [cursor=pointer]:
+            - /url: /shop/24
+            - generic [ref=f1e40]:
+              - generic [ref=f1e41]: 🌽
+              - generic [ref=f1e42]:
+                - heading "옥수수 씨앗 (30립)" [level=3] [ref=f1e43]
+                - generic [ref=f1e44]: 식재료
+            - paragraph [ref=f1e45]: 달콤한 단옥수수 씨앗. 파종 후 70~80일이면 수확 가능. 넓은 화분이나 텃밭 직접 파종 추천.
+          - generic [ref=f1e46]:
+            - generic [ref=f1e47]: 3,800원
+            - button "담기" [ref=f1e48]:
+              - img
+              - text: 담기
+        - generic [ref=f1e49]:
+          - link "🫘 국산 콩 메주 1kg 식재료 100% 국산 콩으로 만든 전통 메주. 된장·간장 직접 담그기에 사용. 자연 발효된 정품 메주." [ref=f1e50] [cursor=pointer]:
+            - /url: /shop/25
+            - generic [ref=f1e51]:
+              - generic [ref=f1e52]: 🫘
+              - generic [ref=f1e53]:
+                - heading "국산 콩 메주 1kg" [level=3] [ref=f1e54]
+                - generic [ref=f1e55]: 식재료
+            - paragraph [ref=f1e56]: 100% 국산 콩으로 만든 전통 메주. 된장·간장 직접 담그기에 사용. 자연 발효된 정품 메주.
+          - generic [ref=f1e57]:
+            - generic [ref=f1e58]: 15,000원
+            - button "담기" [ref=f1e59]:
+              - img
+              - text: 담기
+        - generic [ref=f1e60]:
+          - link "🌶️ 국산 고추가루 500g 식재료 직접 수확한 홍고추를 건조·분쇄한 국산 고춧가루. 김치·찌개·양념에 두루 사용 가능." [ref=f1e61] [cursor=pointer]:
+            - /url: /shop/26
+            - generic [ref=f1e62]:
+              - generic [ref=f1e63]: 🌶️
+              - generic [ref=f1e64]:
+                - heading "국산 고추가루 500g" [level=3] [ref=f1e65]
+                - generic [ref=f1e66]: 식재료
+            - paragraph [ref=f1e67]: 직접 수확한 홍고추를 건조·분쇄한 국산 고춧가루. 김치·찌개·양념에 두루 사용 가능.
+          - generic [ref=f1e68]:
+            - generic [ref=f1e69]: 12,000원
+            - button "담기" [ref=f1e70]:
+              - img
+              - text: 담기
+  - alert [ref=f1e71]

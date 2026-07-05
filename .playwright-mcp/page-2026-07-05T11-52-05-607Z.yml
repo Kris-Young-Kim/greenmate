@@ -1,0 +1,112 @@
+- generic [ref=f18e2]:
+  - banner [ref=f18e3]:
+    - generic [ref=f18e4]:
+      - link "GreenMate" [ref=f18e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=f18e7]
+        - generic [ref=f18e10]: GreenMate
+      - navigation "주요 메뉴" [ref=f18e11]:
+        - link "가드닝 가이드" [ref=f18e12] [cursor=pointer]:
+          - /url: /guide
+          - img [ref=f18e13]
+          - text: 가드닝 가이드
+        - link "그린마트" [ref=f18e15] [cursor=pointer]:
+          - /url: /shop
+          - img [ref=f18e16]
+          - text: 그린마트
+      - link [ref=f18e20] [cursor=pointer]:
+        - /url: /shop/cart
+        - img [ref=f18e21]
+  - main [ref=f18e25]:
+    - button "가이드 목록" [ref=f18e27] [cursor=pointer]:
+      - img
+      - text: 가이드 목록
+    - generic [ref=f18e28]:
+      - generic [ref=f18e29]: 🌿
+      - generic [ref=f18e30]:
+        - generic [ref=f18e31]:
+          - img [ref=f18e32]
+          - text: 초보자
+        - generic [ref=f18e34]:
+          - img [ref=f18e35]
+          - text: 2025년 7월 1일
+      - heading "홈 가드닝 완전 초보 시작 가이드" [level=1] [ref=f18e37]
+      - paragraph [ref=f18e38]: 식물을 처음 키우는 분을 위한 단계별 입문 가이드. 흙 고르기부터 첫 수확까지.
+    - heading "홈 가드닝, 어렵지 않아요" [level=2] [ref=f18e39]
+    - paragraph [ref=f18e40]:
+      - text: 처음 식물을 키울 때 가장 흔한 실패 원인은
+      - strong [ref=f18e41]: 물을 너무 많이 주는 것
+      - text: 과
+      - strong [ref=f18e42]: 햇빛 부족
+      - text: 이에요. 이 두 가지만 잡아도 절반은 성공입니다.
+    - heading "필요한 준비물" [level=2] [ref=f18e43]
+    - paragraph [ref=f18e44]: 시작 전 아래 준비물을 갖춰두세요.
+    - list [ref=f18e45]:
+      - listitem [ref=f18e46]:
+        - strong [ref=f18e47]: 화분
+        - text: ": 배수 구멍이 있는 것 (필수)"
+      - listitem [ref=f18e48]:
+        - strong [ref=f18e49]: 배양토
+        - text: ": 원예용 배양토 (마트에서 쉽게 구입 가능)"
+      - listitem [ref=f18e50]:
+        - strong [ref=f18e51]: 씨앗 또는 모종
+        - text: ": 초보에겐 모종 추천"
+      - listitem [ref=f18e52]:
+        - strong [ref=f18e53]: 물뿌리개
+        - text: ": 물줄기가 얇은 것이 좋아요"
+      - listitem [ref=f18e54]:
+        - strong [ref=f18e55]: 받침대
+        - text: ": 물이 넘쳐도 괜찮도록"
+    - heading "3단계 시작법" [level=2] [ref=f18e56]
+    - heading "1단계 — 화분과 흙 준비" [level=3] [ref=f18e57]
+    - paragraph [ref=f18e58]: 배수 구멍이 있는 화분에 자갈을 1~2cm 깔고, 그 위에 배양토를 80% 정도 채워요. 흙은 너무 꽉 다지지 않아도 됩니다.
+    - heading "2단계 — 심기" [level=3] [ref=f18e59]
+    - paragraph [ref=f18e60]: 모종을 심을 때는 기존 화분의 흙과 새 화분 흙의 높이가 같도록 맞춰줍니다. 심은 뒤 손으로 흙을 살짝 눌러 뿌리가 잘 자리 잡도록 해주세요.
+    - heading "3단계 — 물주기 & 햇빛" [level=3] [ref=f18e61]
+    - paragraph [ref=f18e62]:
+      - text: 심은 직후에는 물을 충분히 줍니다. 이후에는
+      - strong [ref=f18e63]: 흙 표면이 마른 것을 확인한 후
+      - text: 물을 주세요. 창가 밝은 곳에 두되, 한여름 직사광선은 피하는 게 좋아요.
+    - heading "초보에게 추천하는 식물" [level=2] [ref=f18e64]
+    - table [ref=f18e66]:
+      - rowgroup [ref=f18e67]:
+        - row "식물 난이도 특징" [ref=f18e68]:
+          - columnheader "식물" [ref=f18e69]
+          - columnheader "난이도" [ref=f18e70]
+          - columnheader "특징" [ref=f18e71]
+      - rowgroup [ref=f18e72]:
+        - row "상추 ⭐ 20일이면 수확 가능, 실패가 거의 없어요" [ref=f18e73]:
+          - cell "상추" [ref=f18e74]
+          - cell "⭐" [ref=f18e75]
+          - cell "20일이면 수확 가능, 실패가 거의 없어요" [ref=f18e76]
+        - row "바질 ⭐⭐ 요리에 활용 가능, 햇빛만 잘 주면 OK" [ref=f18e77]:
+          - cell "바질" [ref=f18e78]
+          - cell "⭐⭐" [ref=f18e79]
+          - cell "요리에 활용 가능, 햇빛만 잘 주면 OK" [ref=f18e80]
+        - row "방울토마토 ⭐⭐ 열매 달리는 재미, 지지대 필요" [ref=f18e81]:
+          - cell "방울토마토" [ref=f18e82]
+          - cell "⭐⭐" [ref=f18e83]
+          - cell "열매 달리는 재미, 지지대 필요" [ref=f18e84]
+        - row "고추 ⭐⭐ 한국 식탁에 자주 올라오는 필수템" [ref=f18e85]:
+          - cell "고추" [ref=f18e86]
+          - cell "⭐⭐" [ref=f18e87]
+          - cell "한국 식탁에 자주 올라오는 필수템" [ref=f18e88]
+    - heading "자주 묻는 질문" [level=2] [ref=f18e89]
+    - paragraph [ref=f18e90]:
+      - strong [ref=f18e91]: Q. 물은 얼마나 자주 줘야 하나요?
+      - text: 흙 표면 1
+      - deletion [ref=f18e92]: 2cm를 손가락으로 눌러보아 건조하면 줍니다. 보통 여름엔 1
+      - text: 2일, 겨울엔 3~5일에 한 번이에요.
+    - paragraph [ref=f18e93]:
+      - strong [ref=f18e94]: Q. 잎이 노래지면 어떻게 해야 하나요?
+      - text: 과습이 가장 흔한 원인입니다. 물주기를 줄이고 통풍이 잘 되는 곳으로 옮겨보세요.
+    - paragraph [ref=f18e95]:
+      - strong [ref=f18e96]: Q. 실내에서도 잘 자라나요?
+      - text: 창가에서 하루 4시간 이상 햇빛을 받으면 대부분의 채소는 잘 자랍니다. 부족하다면 식물용 LED를 활용하세요.
+    - generic [ref=f18e97]:
+      - paragraph [ref=f18e98]: 직접 키워보고 싶으신가요?
+      - paragraph [ref=f18e99]: GreenMate에서 식물을 등록하고 AI 전문가에게 물어보세요.
+      - button "무료로 시작하기" [ref=f18e100] [cursor=pointer]
+    - button "가이드 목록으로" [ref=f18e102] [cursor=pointer]:
+      - img
+      - text: 가이드 목록으로
