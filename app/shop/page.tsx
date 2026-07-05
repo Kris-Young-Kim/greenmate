@@ -79,7 +79,11 @@ export default async function ShopPage({
                   >
                     <Link href={`/shop/${product.id}`} className="group flex-1">
                       <div className="flex items-center gap-3">
-                        <ProductPlaceholder size="sm" />
+                        <ProductPlaceholder
+                          size="sm"
+                          src={product.id === 27 ? "/products/corn/mosatnonth.jpeg" : undefined}
+                          alt={product.id === 27 ? product.name : undefined}
+                        />
                         <div className="min-w-0">
                           <h3 className="line-clamp-2 font-semibold text-foreground transition-colors group-hover:text-primary">
                             {product.name}
