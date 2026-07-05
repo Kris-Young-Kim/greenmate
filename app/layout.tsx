@@ -17,9 +17,9 @@ const fraunces = Fraunces({
 })
 
 export const metadata: Metadata = {
-  title: 'GreenMate — Home Gardening Companion',
+  title: 'GreenMate — 홈 가드닝 파트너',
   description:
-    'Track your indoor plant seedlings, log waterings, and get AI gardening advice with GreenMate.',
+    'GreenMate로 텃밭 새싹을 기록하고, 물 주기를 관리하고, AI 가드닝 조언을 받아보세요.',
   generator: 'v0.app',
 }
 
@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${nunito.variable} ${fraunces.variable} bg-background`}>
+    <html lang="ko" className={`${nunito.variable} ${fraunces.variable} bg-background`}>
       <body className="font-sans antialiased">
         <ClerkProvider>
           {children}

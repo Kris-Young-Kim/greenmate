@@ -12,12 +12,12 @@ import { Textarea } from "@/components/ui/textarea"
 import { cn } from "@/lib/utils"
 import { MessageContent } from "@/components/message-content"
 import type { Plant } from "@/lib/db/schema"
-import { plantEmoji, daysSincePlanted, waterStatus } from "@/lib/plant-utils"
+import { plantEmoji, plantDisplayName, daysSincePlanted, waterStatus } from "@/lib/plant-utils"
 
 const QUICK_QUESTIONS = [
-  { emoji: "🌱", label: "My leaves are yellow" },
-  { emoji: "💧", label: "How often to water?" },
-  { emoji: "🐛", label: "Bug help!" },
+  { emoji: "🌱", label: "잎이 노랗게 변해요" },
+  { emoji: "💧", label: "물은 얼마나 자주 줘야 해요?" },
+  { emoji: "🐛", label: "벌레가 생겼어요!" },
 ]
 
 export function ChatInterface({ plant }: { plant: Plant }) {
@@ -37,7 +37,7 @@ export function ChatInterface({ plant }: { plant: Plant }) {
         parts: [
           {
             type: "text" as const,
-            text: `Hi! I'm your GreenMate AI expert. 🌿 I'm here to help you care for **${plant.nickname}**, your ${plant.type} on Day ${daysSincePlanted(plant.plantedDate)}. Ask me anything!`,
+            text: `안녕하세요! 저는 GreenMate AI 전문가예요. 🌿 **${plant.nickname}**(${plantDisplayName(plant.type)}, ${daysSincePlanted(plant.plantedDate)}일째)의 케어를 도와드릴게요. 무엇이든 물어보세요!`,
           },
         ],
       },
@@ -80,7 +80,7 @@ export function ChatInterface({ plant }: { plant: Plant }) {
           variant="ghost"
           size="icon"
           nativeButton={false}
-          render={<Link href="/" aria-label="Back to dashboard" />}
+          render={<Link href="/dashboard" aria-label="내 텃밭으로 돌아가기" />}
         >
           <ArrowLeft className="size-5" />
         </Button>
@@ -99,8 +99,7 @@ export function ChatInterface({ plant }: { plant: Plant }) {
             </h1>
           </div>
           <p className="text-xs text-muted-foreground">
-            {plantEmoji(plant.type)} {plant.type} · Day{" "}
-            {daysSincePlanted(plant.plantedDate)}
+            {plantEmoji(plant.type)} {plantDisplayName(plant.type)} · {daysSincePlanted(plant.plantedDate)}일째
           </p>
         </div>
 
@@ -114,9 +113,7 @@ export function ChatInterface({ plant }: { plant: Plant }) {
           )}
         >
           <Droplets className="size-3" />
-          {status.neverWatered
-            ? "Not watered"
-            : status.label.replace("Last watered: ", "")}
+          {status.label}
         </Badge>
       </header>
 
@@ -207,7 +204,7 @@ export function ChatInterface({ plant }: { plant: Plant }) {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder={`Ask GreenMate AI anything about your ${plant.type.toLowerCase()}...`}
+            placeholder={`${plantDisplayName(plant.type)}에 대해 무엇이든 물어보세요...`}
             rows={1}
             className="max-h-32 min-h-11 flex-1 resize-none rounded-2xl bg-card"
           />

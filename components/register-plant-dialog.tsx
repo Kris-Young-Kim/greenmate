@@ -23,7 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { PLANT_TYPES, plantEmoji } from "@/lib/plant-utils"
+import { PLANT_TYPES, plantEmoji, plantDisplayName } from "@/lib/plant-utils"
 import { createPlant } from "@/app/actions/plants"
 
 function todayISO() {
@@ -48,8 +48,8 @@ export function RegisterPlantDialog() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
-    if (!nickname.trim()) return setError("Please give your plant a nickname.")
-    if (!type) return setError("Please choose a plant type.")
+    if (!nickname.trim()) return setError("식물 별명을 입력해주세요.")
+    if (!type) return setError("식물 종류를 선택해주세요.")
 
     startTransition(async () => {
       try {
@@ -57,7 +57,7 @@ export function RegisterPlantDialog() {
         reset()
         setOpen(false)
       } catch (err) {
-        setError(err instanceof Error ? err.message : "Something went wrong.")
+        setError(err instanceof Error ? err.message : "오류가 발생했어요.")
       }
     })
   }
@@ -76,7 +76,7 @@ export function RegisterPlantDialog() {
         }
       >
         <Plus className="size-4" />
-        Register New Plant
+        새 식물 등록
       </DialogTrigger>
 
       <DialogContent className="sm:max-w-md">
@@ -86,20 +86,20 @@ export function RegisterPlantDialog() {
               <Sprout className="size-5" />
             </span>
             <DialogTitle className="font-serif text-lg">
-              Register a New Plant
+              새 식물 등록하기
             </DialogTitle>
           </div>
           <DialogDescription>
-            Add a seedling to your garden and start tracking its journey.
+            식물을 등록하고 성장과 물 주기를 기록해보세요.
           </DialogDescription>
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="grid gap-4 py-1">
           <div className="grid gap-2">
-            <Label htmlFor="nickname">Nickname</Label>
+            <Label htmlFor="nickname">별명</Label>
             <Input
               id="nickname"
-              placeholder="e.g. Veranda Lettuce"
+              placeholder="예: 베란다 상추"
               value={nickname}
               onChange={(e) => setNickname(e.target.value)}
               autoComplete="off"
@@ -107,16 +107,16 @@ export function RegisterPlantDialog() {
           </div>
 
           <div className="grid gap-2">
-            <Label htmlFor="plant-type">Plant Type</Label>
+            <Label htmlFor="plant-type">식물 종류</Label>
             <Select value={type} onValueChange={(v) => setType(v as string)}>
               <SelectTrigger id="plant-type" className="h-9 w-full">
-                <SelectValue placeholder="Choose a plant type" />
+                <SelectValue placeholder="식물 종류 선택" />
               </SelectTrigger>
               <SelectContent>
                 {PLANT_TYPES.map((t) => (
                   <SelectItem key={t} value={t}>
                     <span className="mr-1">{plantEmoji(t)}</span>
-                    {t}
+                    {plantDisplayName(t)}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -124,7 +124,7 @@ export function RegisterPlantDialog() {
           </div>
 
           <div className="grid gap-2">
-            <Label htmlFor="planted-date">Planted Date</Label>
+            <Label htmlFor="planted-date">심은 날짜</Label>
             <Input
               id="planted-date"
               type="date"
@@ -143,10 +143,10 @@ export function RegisterPlantDialog() {
 
           <DialogFooter className="mt-2">
             <DialogClose render={<Button type="button" variant="outline" />}>
-              Cancel
+              취소
             </DialogClose>
             <Button type="submit" disabled={isPending}>
-              {isPending ? "Planting..." : "Add Plant"}
+              {isPending ? "등록 중..." : "등록하기"}
             </Button>
           </DialogFooter>
         </form>

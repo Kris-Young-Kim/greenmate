@@ -24,14 +24,13 @@ export default async function ChatPage({
   if (!plant) {
     return (
       <div className="flex min-h-[100dvh] flex-col items-center justify-center gap-4 bg-background px-6 text-center">
-        <h1 className="font-serif text-2xl text-foreground">Plant not found</h1>
+        <h1 className="font-serif text-2xl text-foreground">식물을 찾을 수 없어요</h1>
         <p className="max-w-sm text-muted-foreground">
-          We couldn&apos;t find that plant. Head back to your garden to pick one
-          to consult about.
+          해당 식물을 찾을 수 없어요. 텃밭으로 돌아가서 식물을 선택해주세요.
         </p>
-        <Button nativeButton={false} render={<Link href="/" />} className="gap-2">
+        <Button nativeButton={false} render={<Link href="/dashboard" />} className="gap-2">
           <ArrowLeft className="size-4" />
-          Back to Garden
+          텃밭으로 돌아가기
         </Button>
       </div>
     )

@@ -16,8 +16,20 @@ const PLANT_EMOJI: Record<string, string> = {
   Paprika: "🫑",
 }
 
+const PLANT_DISPLAY_NAME: Record<string, string> = {
+  Lettuce: "상추",
+  Chili: "고추",
+  Tomato: "토마토",
+  Cucumber: "오이",
+  Paprika: "파프리카",
+}
+
 export function plantEmoji(type: string): string {
   return PLANT_EMOJI[type] ?? "🌱"
+}
+
+export function plantDisplayName(type: string): string {
+  return PLANT_DISPLAY_NAME[type] ?? type
 }
 
 function startOfDay(d: Date): Date {
@@ -40,16 +52,16 @@ export type WaterStatus = {
 
 export function waterStatus(lastWatered: Date | string | null): WaterStatus {
   if (!lastWatered) {
-    return { label: "Not watered yet", urgent: true, neverWatered: true }
+    return { label: "아직 물을 안 줬어요", urgent: true, neverWatered: true }
   }
   const last = startOfDay(new Date(lastWatered))
   const today = startOfDay(new Date())
   const days = Math.floor((today.getTime() - last.getTime()) / 86_400_000)
 
-  if (days <= 0) return { label: "Watered today", urgent: false, neverWatered: false }
-  if (days === 1) return { label: "Last watered: 1 day ago", urgent: false, neverWatered: false }
-  if (days <= 2) return { label: `Last watered: ${days} days ago`, urgent: false, neverWatered: false }
-  return { label: "Drying up!", urgent: true, neverWatered: false }
+  if (days <= 0) return { label: "오늘 물 줬어요", urgent: false, neverWatered: false }
+  if (days === 1) return { label: "1일 전에 물 줬어요", urgent: false, neverWatered: false }
+  if (days <= 2) return { label: `${days}일 전에 물 줬어요`, urgent: false, neverWatered: false }
+  return { label: "물이 부족해요!", urgent: true, neverWatered: false }
 }
 
 /** True when the plant has already been watered on the current calendar day. */

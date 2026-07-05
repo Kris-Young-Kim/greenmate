@@ -13,7 +13,13 @@
       "Bash(vercel link *)",
       "Bash(vercel inspect *)",
       "Bash(curl -s \"https://ai-gateway.vercel.sh/v1/models\")",
-      "Bash(python3 -c \"import sys,json; data=json.load\\(sys.stdin\\); [print\\(m['id']\\) for m in data['data'] if m['id'].startswith\\('anthropic/'\\)]\")"
+      "Bash(python3 -c \"import sys,json; data=json.load\\(sys.stdin\\); [print\\(m['id']\\) for m in data['data'] if m['id'].startswith\\('anthropic/'\\)]\")",
+      "Bash(python3 -c ' *)",
+      "Bash(vercel redeploy *)",
+      "Bash(vercel deploy *)",
+      "Bash(New-Item -ItemType Directory -Path \"D:\\\\developer\\\\greenmate\\\\app\\\\dashboard\" -Force)",
+      "Bash(Out-Null)",
+      "Bash(Write-Host \"created\")"
     ]
   }
 }

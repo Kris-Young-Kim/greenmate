@@ -22,13 +22,21 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <Show when="signed-out">
             <SignInButton>
-              <Button variant="ghost" size="sm">Sign in</Button>
+              <Button variant="ghost" size="sm">로그인</Button>
             </SignInButton>
             <SignUpButton>
-              <Button size="sm">Sign up</Button>
+              <Button size="sm">회원가입</Button>
             </SignUpButton>
           </Show>
           <Show when="signed-in">
+            <Button
+              variant="ghost"
+              size="sm"
+              nativeButton={false}
+              render={<Link href="/dashboard" />}
+            >
+              내 텃밭
+            </Button>
             <UserButton />
           </Show>
         </div>

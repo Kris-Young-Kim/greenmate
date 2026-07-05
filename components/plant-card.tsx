@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils"
 import type { Plant } from "@/lib/db/schema"
 import {
   plantEmoji,
+  plantDisplayName,
   daysSincePlanted,
   waterStatus,
   wateredToday,
@@ -53,7 +54,7 @@ export function PlantCard({ plant }: { plant: Plant }) {
                 {plant.nickname}
               </h3>
               <Badge variant="secondary" className="mt-1">
-                {plant.type}
+                {plantDisplayName(plant.type)}
               </Badge>
             </div>
           </div>
@@ -62,7 +63,7 @@ export function PlantCard({ plant }: { plant: Plant }) {
             className="gap-1 border-primary/30 text-primary"
           >
             <CalendarDays className="size-3" />
-            Day {day}
+            {day}일째
           </Badge>
         </div>
 
@@ -92,12 +93,12 @@ export function PlantCard({ plant }: { plant: Plant }) {
           {done ? (
             <>
               <Check className="size-5" />
-              Watered Today
+              오늘 물 줬어요
             </>
           ) : (
             <>
               <Droplets className="size-5" />
-              Water Today
+              물 주기
             </>
           )}
         </Button>
@@ -111,7 +112,7 @@ export function PlantCard({ plant }: { plant: Plant }) {
           render={<Link href={`/chat?plantId=${plant.id}`} />}
         >
           <MessageCircle className="size-4" />
-          Consult AI
+          AI 상담
         </Button>
       </CardFooter>
     </Card>
