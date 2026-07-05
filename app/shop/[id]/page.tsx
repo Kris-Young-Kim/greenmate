@@ -9,6 +9,7 @@ import { getProduct } from "@/app/actions/shop"
 import { AddToCartButton } from "@/components/add-to-cart-button"
 import { ProductOptionSelector } from "@/components/product-option-selector"
 import { ProductPlaceholder } from "@/components/product-placeholder"
+import { PriceTag, OptionPriceTag } from "@/components/price-tag"
 import { SiteHeader } from "@/components/site-header"
 import { Button } from "@/components/ui/button"
 
@@ -345,7 +346,9 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
           ) : (
             <>
               {product.stock > 0 && (
-                <p className="mt-2 text-2xl font-black text-primary">{product.price.toLocaleString()}원</p>
+                <div className="mt-2">
+                  <PriceTag price={product.price} size="lg" />
+                </div>
               )}
               <div className="mt-4 flex gap-3">
                 <AddToCartButton product={product} size="default" />
@@ -386,14 +389,14 @@ function GenericDetailPage({ product }: { product: NonNullable<Awaited<ReturnTyp
               </span>
               <h1 className="mt-2 text-2xl font-bold">{product.name}</h1>
               {!hasOptions && product.stock > 0 && (
-                <p className="mt-1 text-2xl font-semibold text-primary">
-                  {product.price.toLocaleString()}원
-                </p>
+                <div className="mt-1">
+                  <PriceTag price={product.price} size="md" />
+                </div>
               )}
               {hasOptions && product.stock > 0 && (
-                <p className="mt-1 text-base text-muted-foreground">
-                  {product.options!.map((o) => `${o.label} ${o.price.toLocaleString()}원`).join(" / ")}
-                </p>
+                <div className="mt-1">
+                  <OptionPriceTag options={product.options!} size="md" />
+                </div>
               )}
             </div>
           </div>

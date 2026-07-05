@@ -2,6 +2,7 @@ import Link from "next/link"
 import { getProducts } from "@/app/actions/shop"
 import { AddToCartButton } from "@/components/add-to-cart-button"
 import { ProductPlaceholder } from "@/components/product-placeholder"
+import { PriceTag, OptionPriceTag } from "@/components/price-tag"
 import { SiteHeader } from "@/components/site-header"
 import { Snb } from "@/components/snb"
 
@@ -101,11 +102,9 @@ export default async function ShopPage({
                       {product.stock === 0 ? (
                         <span />
                       ) : product.options && product.options.length > 0 ? (
-                        <span className="text-sm text-muted-foreground">
-                          {product.options.map((o) => o.price.toLocaleString() + "원").join(" / ")}
-                        </span>
+                        <OptionPriceTag options={product.options} size="sm" />
                       ) : (
-                        <span className="text-lg font-bold">{product.price.toLocaleString()}원</span>
+                        <PriceTag price={product.price} size="sm" />
                       )}
                       {product.stock === 0 ? (
                         <span className="rounded-xl bg-muted px-4 py-2 text-sm font-semibold text-muted-foreground">
