@@ -1,6 +1,8 @@
+"use client"
+
 import Link from "next/link"
 import { Sprout } from "lucide-react"
-import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
+import { SignInButton, SignUpButton, Show, UserButton } from "@clerk/nextjs"
 
 import { Button } from "@/components/ui/button"
 
@@ -18,17 +20,17 @@ export function SiteHeader() {
         </Link>
 
         <div className="flex items-center gap-2">
-          <SignedOut>
+          <Show when="signed-out">
             <SignInButton>
               <Button variant="ghost" size="sm">Sign in</Button>
             </SignInButton>
             <SignUpButton>
               <Button size="sm">Sign up</Button>
             </SignUpButton>
-          </SignedOut>
-          <SignedIn>
+          </Show>
+          <Show when="signed-in">
             <UserButton afterSignOutUrl="/" />
-          </SignedIn>
+          </Show>
         </div>
       </div>
     </header>
