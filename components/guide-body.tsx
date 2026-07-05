@@ -1,10 +1,12 @@
 "use client"
 
 import ReactMarkdown from "react-markdown"
+import remarkGfm from "remark-gfm"
 
 export function GuideBody({ content }: { content: string }) {
   return (
     <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
       components={{
         h2: ({ children }) => (
           <h2 className="font-serif text-2xl text-foreground mt-10 mb-4 first:mt-0">

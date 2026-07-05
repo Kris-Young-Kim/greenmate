@@ -17,16 +17,16 @@ export default function LandingPage() {
           <div className="flex flex-col items-start gap-5">
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
               <Sprout className="size-4" />
-              AI 식물 케어
+              홈 가드닝 파트너
             </span>
 
             <h1 className="font-serif text-4xl font-semibold text-foreground text-balance sm:text-5xl lg:text-[3.25rem] lg:leading-tight">
-              내 식물,<br />이젠 안 죽어
+              내 손으로 키우는<br />싱그러운 베란다 텃밭
             </h1>
 
             <p className="max-w-md text-lg text-muted-foreground text-pretty leading-relaxed">
-              AI 식물 전문가가 24시간 곁에 있어요. 물 주기부터 병충해 진단까지,
-              GreenMate가 챙겨드립니다.
+              씨앗 하나에서 풍성한 수확까지. 반려식물 관리부터
+              AI 가드닝 상담까지 GreenMate가 함께합니다.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -103,10 +103,10 @@ export default function LandingPage() {
       <section className="bg-primary px-4 py-24 text-center text-primary-foreground">
         <Leaf className="mx-auto mb-6 size-10 opacity-70" />
         <h2 className="font-serif text-3xl font-semibold text-balance sm:text-4xl">
-          오늘부터 식물과 더 가까워지세요
+          오늘부터, 우리 집 베란다에 텃밭을
         </h2>
         <p className="mt-4 text-primary-foreground/70">
-          무료로 시작하고, 언제든 해지 가능합니다.
+          반려식물과 함께하는 싱그러운 일상, 지금 시작하세요.
         </p>
         <Button
           size="lg"

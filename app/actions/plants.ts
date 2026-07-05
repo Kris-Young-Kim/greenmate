@@ -2,7 +2,7 @@
 
 import { auth } from "@clerk/nextjs/server"
 import { db } from "@/lib/db"
-import { plants } from "@/lib/db/schema"
+import { plants, plantLogs } from "@/lib/db/schema"
 import { and, desc, eq } from "drizzle-orm"
 import { revalidatePath } from "next/cache"
 
@@ -17,6 +17,16 @@ async function requireUserId(): Promise<string> {
 export async function getPlants() {
   const userId = await requireUserId()
   return db.select().from(plants).where(eq(plants.userId, userId)).orderBy(desc(plants.createdAt))
+}
+
+export async function getPlant(id: number) {
+  const userId = await requireUserId()
+  const rows = await db
+    .select()
+    .from(plants)
+    .where(and(eq(plants.id, id), eq(plants.userId, userId)))
+    .limit(1)
+  return rows[0] ?? null
 }
 
 export async function createPlant(formData: {
@@ -47,4 +57,36 @@ export async function waterPlant(id: number) {
     .set({ lastWatered: new Date() })
     .where(and(eq(plants.id, id), eq(plants.userId, userId)))
   revalidatePath("/")
+}
+
+export async function getLogs(plantId: number) {
+  const userId = await requireUserId()
+  return db
+    .select()
+    .from(plantLogs)
+    .where(and(eq(plantLogs.plantId, plantId), eq(plantLogs.userId, userId)))
+    .orderBy(desc(plantLogs.logDate))
+}
+
+export async function createLog(data: { plantId: number; logDate: string; memo: string }) {
+  const userId = await requireUserId()
+  const memo = data.memo?.trim()
+  if (!memo) throw new Error("메모를 입력해주세요")
+  if (!data.logDate) throw new Error("날짜를 선택해주세요")
+
+  await db.insert(plantLogs).values({
+    plantId: data.plantId,
+    userId,
+    logDate: data.logDate,
+    memo,
+  })
+  revalidatePath(`/dashboard/${data.plantId}`)
+}
+
+export async function deleteLog(id: number, plantId: number) {
+  const userId = await requireUserId()
+  await db
+    .delete(plantLogs)
+    .where(and(eq(plantLogs.id, id), eq(plantLogs.userId, userId)))
+  revalidatePath(`/dashboard/${plantId}`)
 }

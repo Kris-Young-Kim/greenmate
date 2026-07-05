@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useTransition, useState } from "react"
-import { Droplets, Check, MessageCircle, CalendarDays, AlertTriangle } from "lucide-react"
+import { Droplets, Check, MessageCircle, CalendarDays, AlertTriangle, BookOpen } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -17,10 +17,12 @@ import {
   wateredToday,
 } from "@/lib/plant-utils"
 import { waterPlant } from "@/app/actions/plants"
+import { useToastStore } from "@/lib/toast-store"
 
 export function PlantCard({ plant }: { plant: Plant }) {
   const [isPending, startTransition] = useTransition()
   const [justWatered, setJustWatered] = useState(false)
+  const addToast = useToastStore((s) => s.addToast)
 
   const done = wateredToday(plant.lastWatered) || justWatered
   const status = waterStatus(justWatered ? new Date() : plant.lastWatered)
@@ -32,8 +34,10 @@ export function PlantCard({ plant }: { plant: Plant }) {
     startTransition(async () => {
       try {
         await waterPlant(plant.id)
+        addToast(`💧 ${plant.nickname} 물 주기 완료!`)
       } catch {
         setJustWatered(false)
+        addToast("물 주기에 실패했어요.", "error")
       }
     })
   }
@@ -104,11 +108,20 @@ export function PlantCard({ plant }: { plant: Plant }) {
         </Button>
       </CardContent>
 
-      <CardFooter className="bg-muted/40 p-0">
+      <CardFooter className="bg-muted/40 p-0 divide-x divide-border">
         <Button
           variant="ghost"
           nativeButton={false}
-          className="h-11 w-full gap-2 rounded-none rounded-b-xl text-primary hover:bg-secondary/60"
+          className="h-11 flex-1 gap-2 rounded-none rounded-bl-xl text-primary hover:bg-secondary/60"
+          render={<Link href={`/dashboard/${plant.id}`} />}
+        >
+          <BookOpen className="size-4" />
+          다이어리
+        </Button>
+        <Button
+          variant="ghost"
+          nativeButton={false}
+          className="h-11 flex-1 gap-2 rounded-none rounded-br-xl text-primary hover:bg-secondary/60"
           render={<Link href={`/chat?plantId=${plant.id}`} />}
         >
           <MessageCircle className="size-4" />

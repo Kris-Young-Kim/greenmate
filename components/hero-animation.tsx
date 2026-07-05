@@ -84,7 +84,7 @@ function PlantStory() {
           letterSpacing: "1px",
         }}
       >
-        또 시들었어...
+        물 주기를 깜빡했어...
       </div>
 
       {/* ── Plant (all acts) ── */}
@@ -218,8 +218,8 @@ function PlantStory() {
             transform: `scale(${hlScale})`,
           }}
         >
-          <div style={{ fontSize: 46, fontWeight: 900, color: "#1B3A2D", letterSpacing: "-0.5px" }}>
-            내 식물, 이젠 안 죽어
+          <div style={{ fontSize: 40, fontWeight: 900, color: "#1B3A2D", letterSpacing: "-0.5px" }}>
+            내 손으로 키우는 싱그러운 텃밭
           </div>
         </div>
 
@@ -280,6 +280,8 @@ export function HeroAnimation() {
       style={{ width: "100%", borderRadius: 24, overflow: "hidden" }}
       autoPlay
       loop
+      acknowledgeRemotionLicense
+      numberOfSharedAudioTags={0}
     />
   )
 }

@@ -7,7 +7,7 @@ const guides = defineCollection({
     .object({
       title: s.string().max(100),
       description: s.string().max(300),
-      category: s.enum(["식물별", "계절별", "병충해", "물주기", "초보자"]),
+      category: s.enum(["식물별", "계절별", "병충해", "물주기", "초보자", "모종"]),
       emoji: s.string().default("🌱"),
       publishedAt: s.isodate(),
       slug: s.path(),
