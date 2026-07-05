@@ -221,8 +221,13 @@ export default function CheckoutPage() {
           onClick={handlePay}
           disabled={!ready || loading || !addrComplete}
         >
-          {loading ? "처리 중..." : !addrComplete ? "배송지를 입력해주세요" : `${amount.toLocaleString()}원 결제하기`}
+          {loading ? "처리 중..." : `${amount.toLocaleString()}원 결제하기`}
         </Button>
+        {!addrComplete && (
+          <p className="mt-2 text-center text-xs text-muted-foreground">
+            배송지 정보를 모두 입력하면 결제할 수 있습니다
+          </p>
+        )}
       </div>
     </main>
   )
