@@ -29,7 +29,7 @@ export function SiteHeader() {
             </SignUpButton>
           </Show>
           <Show when="signed-in">
-            <UserButton afterSignOutUrl="/" />
+            <UserButton />
           </Show>
         </div>
       </div>
