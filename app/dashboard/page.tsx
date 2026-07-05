@@ -6,6 +6,7 @@ import { PlantCard } from "@/components/plant-card"
 import { getPlants } from "@/app/actions/plants"
 
 export const dynamic = "force-dynamic"
+export const metadata = { robots: { index: false, follow: false } }
 
 export default async function DashboardPage() {
   const plants = await getPlants()

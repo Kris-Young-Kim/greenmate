@@ -1,9 +1,22 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { Sprout, ArrowRight, Leaf } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { SiteHeader } from "@/components/site-header"
 import { HeroAnimationWrapper } from "@/components/hero-animation-wrapper"
+
+export const metadata: Metadata = {
+  title: { absolute: "GreenMate — 홈 가드닝 파트너" },
+  description: "씨앗 하나에서 풍성한 수확까지. 반려식물 관리부터 AI 가드닝 상담, 텃밭 쇼핑까지 GreenMate가 함께합니다.",
+  alternates: { canonical: "https://swgreen.shop" },
+  openGraph: {
+    title: "GreenMate — 홈 가드닝 파트너",
+    description: "씨앗 하나에서 풍성한 수확까지. 반려식물 관리부터 AI 가드닝 상담까지.",
+    url: "https://swgreen.shop",
+    type: "website",
+  },
+}
 
 export default function LandingPage() {
   return (

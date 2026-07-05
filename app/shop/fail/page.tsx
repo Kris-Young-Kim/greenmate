@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
+export const metadata = { robots: { index: false, follow: false } }
+
 export default async function FailPage({
   searchParams,
 }: {

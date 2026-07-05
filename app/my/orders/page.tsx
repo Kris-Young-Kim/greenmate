@@ -3,6 +3,8 @@ import { Package, MapPin } from "lucide-react"
 import { getMyOrders } from "@/app/actions/shop"
 import { Button } from "@/components/ui/button"
 
+export const metadata = { robots: { index: false, follow: false } }
+
 const STATUS_LABEL: Record<string, string> = {
   pending: "결제 대기",
   paid: "결제 완료",

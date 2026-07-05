@@ -1,5 +1,18 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { getProducts } from "@/app/actions/shop"
+
+export const metadata: Metadata = {
+  title: "그린마트 쇼핑몰",
+  description: "씨앗부터 농기구, 신선한 강원도 농산물까지. 텃밭에 필요한 모든 것을 그린마트에서 만나보세요.",
+  alternates: { canonical: "https://swgreen.shop/shop" },
+  openGraph: {
+    title: "그린마트 쇼핑몰 — GreenMate",
+    description: "씨앗부터 농기구, 신선한 강원도 농산물까지. 텃밭에 필요한 모든 것.",
+    url: "https://swgreen.shop/shop",
+    type: "website",
+  },
+}
 import { AddToCartButton } from "@/components/add-to-cart-button"
 import { ProductPlaceholder } from "@/components/product-placeholder"
 import { PriceTag, OptionPriceTag } from "@/components/price-tag"

@@ -17,9 +17,24 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = await params
   const guide = guides.find((g) => g.slug === slug)
   if (!guide) return {}
+  const canonical = `https://swgreen.shop/guide/${slug}`
   return {
-    title: `${guide.title} — GreenMate 가이드`,
+    title: guide.title,
     description: guide.description,
+    alternates: { canonical },
+    openGraph: {
+      title: guide.title,
+      description: guide.description,
+      url: canonical,
+      type: "article",
+      publishedTime: guide.publishedAt,
+      authors: ["GreenMate"],
+    },
+    twitter: {
+      card: "summary",
+      title: guide.title,
+      description: guide.description,
+    },
   }
 }
 

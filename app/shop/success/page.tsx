@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { redirect } from "next/navigation"
 import { MapPin } from "lucide-react"
+
+export const metadata = { robots: { index: false, follow: false } }
 import { confirmPaymentWithToss, getOrderByTossId } from "@/app/actions/shop"
 import { CartClearer } from "@/components/cart-clearer"
 import { Button } from "@/components/ui/button"

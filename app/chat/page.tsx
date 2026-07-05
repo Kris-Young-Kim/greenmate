@@ -3,6 +3,8 @@ import { ArrowLeft } from "lucide-react"
 
 import { db } from "@/lib/db"
 import { plants } from "@/lib/db/schema"
+
+export const metadata = { robots: { index: false, follow: false } }
 import { eq } from "drizzle-orm"
 import { Button } from "@/components/ui/button"
 import { ChatInterface } from "@/components/chat-interface"

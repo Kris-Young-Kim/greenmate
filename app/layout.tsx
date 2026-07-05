@@ -22,20 +22,47 @@ const fraunces = Fraunces({
   display: "swap",
 })
 
+const SITE_URL = "https://swgreen.shop"
+const SITE_NAME = "GreenMate"
+const DEFAULT_DESC = "GreenMate로 텃밭 새싹을 기록하고, 물 주기를 관리하고, AI 가드닝 조언을 받아보세요."
+const OG_IMAGE = "/icons/icon-512.png"
+
 export const metadata: Metadata = {
-  title: "GreenMate — 홈 가드닝 파트너",
-  description:
-    "GreenMate로 텃밭 새싹을 기록하고, 물 주기를 관리하고, AI 가드닝 조언을 받아보세요.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "GreenMate — 홈 가드닝 파트너",
+    template: `%s — ${SITE_NAME}`,
+  },
+  description: DEFAULT_DESC,
+  keywords: ["홈 가드닝", "텃밭", "반려식물", "베란다 농사", "식물 키우기", "AI 가드닝", "그린마트"],
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    type: "website",
+    locale: "ko_KR",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: "GreenMate — 홈 가드닝 파트너",
+    description: DEFAULT_DESC,
+    images: [{ url: OG_IMAGE, width: 512, height: 512, alt: SITE_NAME }],
+  },
+  twitter: {
+    card: "summary",
+    site: "@greenmate_kr",
+    title: "GreenMate — 홈 가드닝 파트너",
+    description: DEFAULT_DESC,
+    images: [OG_IMAGE],
+  },
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "GreenMate",
+    title: SITE_NAME,
     startupImage: "/apple-touch-icon.png",
   },
-  formatDetection: {
-    telephone: true,
-  },
+  formatDetection: { telephone: true },
   icons: {
     apple: "/apple-touch-icon.png",
     icon: [

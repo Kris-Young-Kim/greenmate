@@ -6,8 +6,15 @@ import { Snb } from "@/components/snb"
 import { guides } from "@/.velite"
 
 export const metadata = {
-  title: "가드닝 가이드 — GreenMate",
+  title: "가드닝 가이드",
   description: "홈 가드닝 실전 가이드. 식물별 재배법부터 병충해 대처까지 전문가 정보를 무료로 읽어보세요.",
+  alternates: { canonical: "https://swgreen.shop/guide" },
+  openGraph: {
+    title: "가드닝 가이드 — GreenMate",
+    description: "홈 가드닝 실전 가이드. 식물별 재배법부터 병충해 대처까지.",
+    url: "https://swgreen.shop/guide",
+    type: "website",
+  },
 }
 
 const CATEGORIES = ["전체", "모종", "초보자", "식물별", "계절별", "물주기", "병충해"] as const

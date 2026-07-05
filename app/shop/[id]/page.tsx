@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation"
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import {
@@ -426,6 +427,47 @@ function GenericDetailPage({ product }: { product: NonNullable<Awaited<ReturnTyp
       </main>
     </div>
   )
+}
+
+// ── 메타데이터 ──────────────────────────────────────────────────────────
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}): Promise<Metadata> {
+  const { id } = await params
+  const product = await getProduct(Number(id))
+  if (!product) return {}
+
+  const canonical = `https://swgreen.shop/shop/${id}`
+  const ogImage =
+    product.id === 27
+      ? { url: "/products/corn/mosa6AQK16.jpeg", width: 800, height: 600, alt: product.name }
+      : { url: "/icons/icon-512.png", width: 512, height: 512, alt: product.name }
+
+  const priceText =
+    product.options && product.options.length > 0
+      ? product.options.map((o) => `${o.label} ${o.price.toLocaleString()}원`).join(", ")
+      : `${product.price.toLocaleString()}원`
+
+  return {
+    title: product.name,
+    description: `${product.description} ${priceText}. 그린마트에서 만나보세요.`,
+    alternates: { canonical },
+    openGraph: {
+      title: product.name,
+      description: product.description,
+      url: canonical,
+      type: "website",
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.name,
+      description: product.description,
+      images: [ogImage.url],
+    },
+  }
 }
 
 // ── 라우트 엔트리 ───────────────────────────────────────────────────────
