@@ -63,6 +63,7 @@ export const metadata: Metadata = {
     title: SITE_NAME,
     startupImage: "/apple-touch-icon.png",
   },
+  verification: { other: { "naver-site-verification": "16b4ebc9cd6a8f472027bf436f19a631c3b26218" } },
   formatDetection: { telephone: true },
   icons: {
     apple: "/apple-touch-icon.png",
