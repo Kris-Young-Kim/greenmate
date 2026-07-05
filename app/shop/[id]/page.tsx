@@ -114,7 +114,7 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
           {[
             { icon: MapPin,   label: "원산지",   value: "강원도 문막",      sub: "문막읍 일대" },
             { icon: Star,     label: "품종",     value: "미백2호",          sub: "순백의 찰옥수수" },
-            { icon: Leaf,     label: "재배",     value: "친환경 농법",      sub: "GAP 인증" },
+            { icon: Leaf,     label: "재배",     value: "친환경 농법",      sub: "" },
             { icon: Clock,    label: "발송",     value: "당일 수확 발송",   sub: "오전 수확 → 오후 출고" },
           ].map(({ icon: Icon, label, value, sub }) => (
             <div key={label}
