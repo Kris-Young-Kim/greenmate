@@ -12,105 +12,94 @@
 | AI 채팅 백엔드 (Claude Haiku, 식물 컨텍스트 주입) | ✅ 완료 |
 | Vercel 배포 | ✅ 완료 |
 | 전체 UI 한국어 전환 | ✅ 완료 |
+| 랜딩페이지 (Phase 4) | ✅ 완료 |
+| 가드닝 가이드 콘텐츠 페이지 (Phase 5) | ✅ 완료 |
+| 그린마트 쇼핑몰 + PWA (Phase 6) | ✅ 완료 |
 | 채팅 기록 저장 (chats 테이블) | ⏳ 보류 |
 
 ---
 
-## Phase 4 — 랜딩페이지 (Remotion 애니메이션)
+## Phase 4 — 랜딩페이지 ✅ 완료
 
-> 목표: 비로그인 방문자에게 GreenMate 가치를 10초 안에 전달, 회원가입 유도
-
-### 아키텍처
-- `/` → 공개 랜딩페이지 (현재 대시보드 → `/dashboard`로 이동)
-- `app/landing/` 폴더에 섹션 컴포넌트 분리
-
-### 작업 목록
-- [ ] 라우트 분리: 현재 `app/page.tsx`(대시보드) → `app/dashboard/page.tsx`로 이동
-- [ ] `app/page.tsx`를 랜딩페이지로 교체
-- [ ] `pnpm add remotion @remotion/player` 설치
-- [ ] Pretendard 웹폰트 추가 (`next/font/local` or CDN)
-- [ ] Remotion 3막 애니메이션 컴포넌트 제작
-  - 1막 (0–3s): 축 처진 화분 🪴 + "또 시들었어..." 텍스트
-  - 2막 (3–7s): 앱 UI 목업 슬라이드인 + AI 채팅 말풍선
-  - 3막 (7–10s): "내 식물, 이젠 안 죽어" + CTA 버튼
-- [ ] 랜딩 섹션 컴포넌트 7개 제작
-  - `HeroSection` — Remotion Player + 헤드라인 + CTA
-  - `ProblemSection` — 공감대 형성 ("식물 키우다 포기한 적 있으신가요?")
-  - `FeaturesSection` — 3카드 (식물 일지 / 물주기 알림 / AI 상담)
-  - `DemoSection` — 앱 스크린샷 슬라이드
-  - `SocialProofSection` — 후기 + 수치 배지
-  - `CtaSection` — 회원가입 유도
-  - `Footer`
-- [ ] proxy.ts에서 `/dashboard` 인증 라우트 보호 설정 업데이트
+- [x] 라우트 분리: `app/page.tsx` → 랜딩페이지
+- [x] `app/dashboard/page.tsx` 로 대시보드 이동
+- [x] 히어로 섹션 + CTA
+- [x] 피처 섹션 (식물 일지 / AI 상담 / 그린마트)
+- [x] `SiteHeader` 네비게이션 구성
 
 ---
 
-## Phase 5 — 정보/콘텐츠 페이지
+## Phase 5 — 가드닝 가이드 콘텐츠 ✅ 완료
 
-> 목표: 홈 가드닝 실용 정보 제공 → SEO 유입 → 앱 전환
-
-### 기술 선택
-- **MDX** + **Velite** (콘텐츠 레이어) — 마크다운으로 글 작성, 자동 타입세이프 파싱
-- `/guide` 라우트에 카테고리별 정렬
-
-### 콘텐츠 카테고리
-- 🌱 **식물별 가이드** — 상추, 고추, 토마토, 오이, 파프리카 각각 재배법
-- 📅 **계절별 팁** — 봄/여름/가을/겨울 홈 가드닝 전략
-- 🐛 **병충해 대처** — 증상별 원인 + 해결법
-- 💧 **물주기 마스터** — 식물 종류별 적정 주기 + 과습/건조 구별법
-- 🌿 **초보자 가이드** — 첫 텃밭 시작하는 법
-
-### 작업 목록
-- [ ] `pnpm add velite` 설치 및 `velite.config.ts` 구성
-- [ ] `/app/guide/page.tsx` — 가이드 목록 페이지 (카테고리 필터)
-- [ ] `/app/guide/[slug]/page.tsx` — 개별 가이드 상세 페이지
-- [ ] MDX 콘텐츠 파일 초기 10편 작성 (`content/guides/`)
-- [ ] `SiteHeader`에 "가드닝 가이드" 네비게이션 링크 추가
-- [ ] OG 이미지 자동 생성 (`@vercel/og`) — SEO 강화
-- [ ] sitemap.xml 자동 생성
+- [x] Velite + MDX 콘텐츠 레이어 구성
+- [x] `/guide` 목록 페이지 (카테고리 필터 + SNB)
+- [x] `/guide/[slug]` 상세 페이지
+- [x] 초기 가이드 콘텐츠 7편 작성
+- [x] `SiteHeader` 가드닝 가이드 링크 추가
 
 ---
 
-## Phase 6 — 이커머스 (씨앗·농기구·농자재·비료 판매)
+## Phase 6 — 이커머스 ✅ 완료
 
-> 목표: GreenMate 생태계 내에서 상품 구매까지 완결
+> Medusa.js 대신 Drizzle ORM 직접 사용 (경량화, Vercel 배포 최적화)
 
-### 기술 선택 (권장: Medusa.js 헤드리스 커머스)
-- **커머스 엔진**: Medusa.js (오픈소스, 자체 호스팅) — 재고/주문/반품 로직 내장
-- **결제**: 토스페이먼츠 (국내 표준, Medusa 플러그인 존재)
-- **배송**: CJ대한통운 / 롯데택배 API 연동
-- **스토어 프론트**: GreenMate Next.js에 Medusa Storefront API로 연결
-
-### 대안: Shopify Headless
-- 장점: 안정성, 글로벌 결제, 앱 생태계
-- 단점: 월 구독료, 한국 결제(토스) 연동 커스터마이징 필요
-
-### 판매 카테고리
-- 🌾 **씨앗** — 채소류, 허브류, 화훼류
-- 🔧 **농기구** — 소형 삽, 분무기, 화분, 흙 측정기
-- 🧪 **농자재** — 배양토, 마사토, 원예용 흙
-- 💊 **비료** — 액체비료, 고체비료, 친환경 퇴비
-
-### 작업 목록
-- [ ] Medusa.js 서버 별도 구축 (Railway 또는 Fly.io 배포)
-- [ ] Medusa Storefront API → GreenMate 연결
-- [ ] `/shop` 라우트 — 상품 목록 페이지 (카테고리 필터, 검색)
-- [ ] `/shop/[productId]` — 상품 상세 페이지
-- [ ] 장바구니 상태 관리 (Zustand 또는 Medusa Cart API)
-- [ ] 토스페이먼츠 결제 모듈 연동
-- [ ] 주문 내역 페이지 (`/my/orders`)
-- [ ] AI 상담 → 상품 추천 연결 (채팅에서 "이 비료 어때요?" → 상품 카드 표시)
+- [x] products / orders / order_items 테이블 설계
+- [x] `/shop` 상품 목록 (카테고리 필터 + SNB)
+- [x] `/shop/[id]` 상품 상세 페이지
+- [x] 강원도찰옥수수 전용 상세 페이지 (커스텀 레이아웃)
+- [x] 장바구니 (Zustand + localStorage)
+- [x] 토스페이먼츠 결제 연동
+- [x] `/shop/checkout`, `/shop/success`, `/shop/fail`
+- [x] `/my/orders` 주문 내역 페이지
+- [x] PWA 지원 (manifest, 오프라인 대응)
 
 ---
 
-## 전체 일정 (권장 순서)
+## Phase 7 — 상품 페이지 고도화 ✅ 완료 (2026-07-05)
 
-```
-현재 완료     ████████████░░░░░░░░░░  MVP 핵심 기능
-Phase 4      2주           랜딩페이지 + 회원가입 전환 최적화
-Phase 5      3주           콘텐츠/SEO → 오가닉 유입 확보
-Phase 6      8주+          이커머스 (Medusa 설정 2주 + 프론트 6주)
-```
+- [x] 강원도찰옥수수 실사진 17장 적용 (`docs/sungwonfnd.modoo.at` → `public/products/corn/`)
+- [x] `ProductPlaceholder` — `src` / `alt` prop 추가, 실사진 렌더링 지원
+- [x] 상품 목록 썸네일: 상품 27 → 흰 옥수수 볼 실사진
+- [x] 상세 페이지: 히어로 실사진, 4컷 갤러리, 인포그래픽 섹션 (선별·영양·조리·배송·파노라마)
+- [x] 품절 상품 가격 표시 제거 (목록·상세 모두)
+- [x] 할인 프로모션 가격 표시 (`PriceTag`, `OptionPriceTag`, `calcPromo`)
+- [x] 원산지 수정: 고랭지 → 강원도 문막 일대
+- [x] GAP 인증 문구 삭제
+- [x] 해발 700m 문구 삭제
+
+---
+
+## Phase 8 — SEO ✅ 완료 (2026-07-05)
+
+- [x] `metadataBase` 설정 (`https://swgreen.shop`)
+- [x] `title` template (`%s — GreenMate`)
+- [x] 글로벌 OG / Twitter Card 메타 태그
+- [x] `robots.ts` — 크롤링 허용/차단 경로 설정
+- [x] `sitemap.ts` — 동적 XML 사이트맵 (/, /shop, /guide + 상품·가이드 전체)
+- [x] 공개 페이지별 title / description / canonical / OG 메타
+  - `/`, `/shop`, `/shop/[id]`, `/guide`, `/guide/[slug]`
+- [x] `/shop/[id]` `generateMetadata` — 상품명·설명·OG 이미지 동적 생성
+- [x] noindex 처리: dashboard, chat, cart, checkout, success, fail, my/orders
+- [x] `lang="ko"` / `viewport` 메타 (기존 적용)
+
+---
+
+## 미완료 항목
+
+### SEO 추가 작업
+- [ ] **JSON-LD 구조화 데이터** — script 태그 삽입 허용을 위해 보안 훅 설정 조정 후 구현
+  - WebSite 스키마 (root layout)
+  - Product 스키마 (`/shop/[id]`)
+  - Article + BreadcrumbList 스키마 (`/guide/[slug]`)
+- [ ] **OG 이미지** 1200×630 전용 이미지 제작 (현재 icon-512.png 임시 사용)
+- [ ] **Google Search Console** 등록 및 sitemap.xml 제출
+- [ ] **Naver Search Advisor** 등록
+
+### 기능
+- [ ] 채팅 기록 저장 (chats 테이블)
+- [ ] AI 채팅 → 상품 추천 카드 연결
+- [ ] 상품 27 외 다른 상품에도 실사진 추가
+- [ ] 관리자 상품 등록/수정 UI
 
 ---
 
@@ -122,9 +111,7 @@ Phase 6      8주+          이커머스 (Medusa 설정 2주 + 프론트 6주)
 | Auth | Clerk |
 | DB | Neon Postgres + Drizzle ORM |
 | AI | Claude Haiku (`@ai-sdk/anthropic`) |
-| 애니메이션 | Remotion + @remotion/player |
 | 콘텐츠 | MDX + Velite |
-| 커머스 | Medusa.js (헤드리스) |
 | 결제 | 토스페이먼츠 |
 | UI | shadcn/ui + Tailwind CSS |
-| 배포 | Vercel (프론트) + Railway (Medusa) |
+| 배포 | Vercel |
