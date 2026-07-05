@@ -45,7 +45,8 @@
       "Bash(git *)",
       "PowerShell(Get-ChildItem D:\\\\developer\\\\greenmate\\\\src -Recurse -Depth 3 | Where-Object { $_.PSIsContainer } | Select-Object FullName)",
       "PowerShell(Get-ChildItem D:\\\\developer\\\\greenmate -Depth 1 | Where-Object { $_.PSIsContainer } | Select-Object Name)",
-      "Skill(commit-commands:commit-push-pr)"
+      "Skill(commit-commands:commit-push-pr)",
+      "Bash(gh pr *)"
     ]
   },
   "enableAllProjectMcpServers": true,
