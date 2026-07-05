@@ -81,7 +81,7 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
                 <span className="text-amber-300"> 미백2호</span>
               </h1>
               <p className="mt-2 text-sm text-white/70 leading-relaxed">
-                해발 700m 강원도 청정 고랭지에서<br />당일 수확 후 바로 발송합니다.
+                강원도 문막 일대에서<br />당일 수확 후 바로 발송합니다.
               </p>
               <div className="mt-4 flex flex-wrap gap-1.5 justify-center sm:justify-start">
                 {["고소", "촉촉", "찰", "쫄깃", "달달"].map((t) => (
@@ -101,7 +101,7 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
             { src: CORN.bowl,   alt: "껍질 벗긴 흰 찰옥수수" },
             { src: CORN.field1, alt: "강원도 옥수수 밭 전경" },
             { src: CORN.hand,   alt: "갓 수확한 옥수수" },
-            { src: CORN.field2, alt: "고랭지 옥수수 밭" },
+            { src: CORN.field2, alt: "문막 옥수수 밭" },
           ].map(({ src, alt }) => (
             <div key={src} className="relative aspect-square overflow-hidden rounded-xl">
               <Image src={src} alt={alt} fill className="object-cover transition-transform hover:scale-105" sizes="25vw" />
@@ -112,7 +112,7 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
         {/* ③ 원산지·품종 4 카드 */}
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {[
-            { icon: MapPin,   label: "원산지",   value: "강원도 고랭지",    sub: "해발 700m+" },
+            { icon: MapPin,   label: "원산지",   value: "강원도 문막",      sub: "문막읍 일대" },
             { icon: Star,     label: "품종",     value: "미백2호",          sub: "순백의 찰옥수수" },
             { icon: Leaf,     label: "재배",     value: "친환경 농법",      sub: "GAP 인증" },
             { icon: Clock,    label: "발송",     value: "당일 수확 발송",   sub: "오전 수확 → 오후 출고" },
@@ -135,7 +135,7 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
               <p className="text-sm leading-relaxed text-muted-foreground">
                 <strong className="text-foreground">강원도찰옥수수 미백2호</strong>는 순백의 껍질과
                 쫄깃하고 달콤한 찰진 식감으로 사랑받는 프리미엄 품종입니다. 일교차가 크고 일조량이
-                풍부한 강원도 청정 고랭지에서 재배해 당도가 자연스럽게 높으며, 수분이 풍부해 식감이
+                풍부한 강원도 문막 일대에서 재배해 당도가 자연스럽게 높으며, 수분이 풍부해 식감이
                 촉촉합니다.
               </p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -318,11 +318,11 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
         {/* ⑪ 산지 밭 전경 */}
         <div className="rounded-2xl overflow-hidden shadow-sm">
           <div className="relative w-full aspect-[21/9]">
-            <Image src={CORN.field3} alt="강원도 고랭지 옥수수 밭 전경" fill className="object-cover" sizes="(max-width: 768px) 100vw, 672px" />
+            <Image src={CORN.field3} alt="강원도 문막 옥수수 밭 전경" fill className="object-cover" sizes="(max-width: 768px) 100vw, 672px" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4 text-white">
-              <p className="text-xs font-semibold opacity-80">강원도 고랭지 농장</p>
-              <p className="text-sm font-bold">해발 700m, 청정 자연에서 자란 옥수수</p>
+              <p className="text-xs font-semibold opacity-80">강원도 문막 농장</p>
+              <p className="text-sm font-bold">문막읍 일대, 청정 자연에서 자란 옥수수</p>
             </div>
           </div>
         </div>
