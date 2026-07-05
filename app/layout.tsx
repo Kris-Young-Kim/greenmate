@@ -2,6 +2,7 @@ import { ClerkProvider } from "@clerk/nextjs"
 import { Analytics } from "@vercel/analytics/next"
 import type { Metadata, Viewport } from "next"
 import { Nunito, Fraunces } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
 
 import { BottomNav } from "@/components/bottom-nav"
@@ -90,6 +91,19 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${nunito.variable} ${fraunces.variable} bg-background`} suppressHydrationWarning>
       <body className="font-sans antialiased" suppressHydrationWarning>
+        {/* GTM noscript fallback */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NRQHQNMG"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        <Script
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-NRQHQNMG"
+          strategy="afterInteractive"
+        />
         <ClerkProvider>
           {children}
           <SiteFooter />
