@@ -98,7 +98,9 @@ export default async function ShopPage({
                       </p>
                     </Link>
                     <div className="flex items-center justify-between pt-2">
-                      {product.options && product.options.length > 0 ? (
+                      {product.stock === 0 ? (
+                        <span />
+                      ) : product.options && product.options.length > 0 ? (
                         <span className="text-sm text-muted-foreground">
                           {product.options.map((o) => o.price.toLocaleString() + "원").join(" / ")}
                         </span>
