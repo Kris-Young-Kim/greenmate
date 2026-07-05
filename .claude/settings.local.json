@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude mcp *)",
+      "Skill(update-config)",
+      "Bash(command -v clerk)",
+      "Bash(clerk --version)",
+      "PowerShell(npm install *)",
+      "PowerShell(clerk *)"
+    ]
+  }
+}
