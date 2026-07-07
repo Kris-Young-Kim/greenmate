@@ -6,6 +6,7 @@ import { eq, desc, asc } from "drizzle-orm"
 import { auth } from "@clerk/nextjs/server"
 import type { CartItem } from "@/lib/cart-store"
 import type { ShippingAddress } from "@/lib/db/schema"
+import { SHIPPING_FEE } from "@/lib/constants"
 
 export async function getProducts(category?: string) {
   const rows = await db.select().from(products).orderBy(asc(products.sortOrder), asc(products.id))
@@ -25,7 +26,7 @@ export async function createOrder(cartItems: CartItem[], shippingAddress: Shippi
   if (!userId) throw new Error("Unauthorized")
 
   const tossOrderId = crypto.randomUUID()
-  const total = cartItems.reduce((sum, i) => sum + i.price * i.quantity, 0)
+  const total = cartItems.reduce((sum, i) => sum + i.price * i.quantity, 0) + SHIPPING_FEE
 
   const [order] = await db
     .insert(orders)

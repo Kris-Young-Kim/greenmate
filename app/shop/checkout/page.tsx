@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { useAuth } from "@clerk/nextjs"
 import { useCart } from "@/lib/cart-store"
 import { createOrder } from "@/app/actions/shop"
+import { SHIPPING_FEE } from "@/lib/constants"
 import { Button } from "@/components/ui/button"
 import type { ShippingAddress } from "@/lib/db/schema"
 
@@ -51,7 +52,8 @@ export default function CheckoutPage() {
   const paymentWidgetRef = useRef<any>(null)
   const [ready, setReady] = useState(false)
   const [loading, setLoading] = useState(false)
-  const amount = totalAmount()
+  const subtotal = totalAmount()
+  const amount = subtotal + SHIPPING_FEE
 
   const [addr, setAddr] = useState<ShippingAddress>({
     name: "",
@@ -155,6 +157,10 @@ export default function CheckoutPage() {
               <span>{(item.price * item.quantity).toLocaleString()}원</span>
             </div>
           ))}
+          <div className="flex justify-between text-sm">
+            <span className="text-muted-foreground">배송비</span>
+            <span>{SHIPPING_FEE.toLocaleString()}원</span>
+          </div>
         </div>
         <div className="mt-3 flex justify-between border-t border-border pt-3 font-bold">
           <span>총 결제금액</span>

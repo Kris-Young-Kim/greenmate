@@ -54,7 +54,10 @@
       "Bash(Invoke-WebRequest http://localhost:3001 -UseBasicParsing -TimeoutSec 5)",
       "Bash(Select-Object -ExpandProperty StatusCode)",
       "PowerShell(Start-Process -FilePath \"npx\" -ArgumentList \"next\",\"dev\",\"--port\",\"3001\" -WorkingDirectory \"D:\\\\developer\\\\greenmate\" -WindowStyle Hidden; Start-Sleep 12; try { \\(Invoke-WebRequest http://localhost:3001 -UseBasicParsing -TimeoutSec 5\\).StatusCode } catch { \"not ready\" })",
-      "PowerShell(Start-Sleep 8; try { \\(Invoke-WebRequest http://localhost:3001 -UseBasicParsing -TimeoutSec 5\\).StatusCode } catch { \"not ready\" })"
+      "PowerShell(Start-Sleep 8; try { \\(Invoke-WebRequest http://localhost:3001 -UseBasicParsing -TimeoutSec 5\\).StatusCode } catch { \"not ready\" })",
+      "Bash(node -e \"require\\('zod'\\); console.log\\('ok'\\)\")",
+      "Bash(node -e \"const ai=require\\('./node_modules/ai/dist/index.js'\\); console.log\\(Object.keys\\(ai\\).filter\\(k=>k.toLowerCase\\(\\).includes\\('schema'\\)||k.toLowerCase\\(\\).includes\\('tool'\\)\\).join\\('\\\\n'\\)\\)\")",
+      "Bash(node -e \"const {jsonSchema,tool}=require\\('./node_modules/ai/dist/index.js'\\); console.log\\(typeof jsonSchema, typeof tool\\)\")"
     ]
   },
   "enableAllProjectMcpServers": true,

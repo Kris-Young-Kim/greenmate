@@ -7,6 +7,7 @@ import {
   Truck, ShieldCheck, CheckCircle2, Sprout, Wheat,
 } from "lucide-react"
 import { getProduct } from "@/app/actions/shop"
+import { SHIPPING_FEE } from "@/lib/constants"
 import { AddToCartButton } from "@/components/add-to-cart-button"
 import { ProductOptionSelector } from "@/components/product-option-selector"
 import { ProductPlaceholder } from "@/components/product-placeholder"
@@ -41,7 +42,7 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
-      <main className="mx-auto max-w-3xl px-4 py-10 sm:px-6 space-y-4">
+      <main className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
         <Link
           href="/shop"
           className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
@@ -49,6 +50,48 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
           <ChevronLeft className="size-4" />
           상품 목록
         </Link>
+
+        <div className="mt-4 lg:flex lg:items-start lg:gap-8">
+          {/* ⑫ 구매 패널 — 모바일: 콘텐츠 위, 데스크톱: 우측 고정 사이드바 */}
+          <div className="mb-4 lg:order-2 lg:mb-0 lg:w-80 lg:shrink-0 lg:sticky lg:top-20">
+            <div className="rounded-2xl border-2 border-primary/30 bg-card p-6 shadow-sm">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-semibold text-muted-foreground">{product.category}</span>
+                {product.stock > 0
+                  ? <span className="text-xs font-medium text-green-600">재고 있음 ({product.stock}개)</span>
+                  : <span className="text-xs font-medium text-red-500">품절</span>
+                }
+              </div>
+
+              {hasOptions ? (
+                <ProductOptionSelector
+                  productId={product.id}
+                  productName={product.name}
+                  options={product.options!}
+                />
+              ) : (
+                <>
+                  {product.stock > 0 && (
+                    <div className="mt-2">
+                      <PriceTag price={product.price} size="lg" />
+                    </div>
+                  )}
+                  <div className="mt-4 flex gap-3">
+                    <AddToCartButton product={product} size="default" />
+                    <Button variant="outline" nativeButton={false} render={<Link href="/shop/cart" />}>
+                      장바구니 보기
+                    </Button>
+                  </div>
+                </>
+              )}
+              <p className="mt-3 text-xs text-muted-foreground">
+                배송비 {SHIPPING_FEE.toLocaleString()}원 별도
+              </p>
+            </div>
+          </div>
+
+          {/* 콘텐츠 섹션 ①-⑪ */}
+          <div className="min-w-0 flex-1 space-y-4 lg:order-1">
 
         {/* ① 히어로 — 실사진 */}
         <div className="relative overflow-hidden rounded-3xl shadow-xl">
@@ -298,19 +341,19 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
           <Image src={CORN.shipping} alt="배송 안내 인포그래픽" fill className="object-cover" sizes="(max-width: 768px) 100vw, 672px" />
         </div>
 
-        {/* ⑩ 산지 스마트 농업 */}
+        {/* ⑩ 산지 노지 재배 */}
         <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-sm">
           <div className="grid grid-cols-1 sm:grid-cols-2">
             <div className="relative aspect-video sm:aspect-auto">
-              <Image src={CORN.smart} alt="스마트 농업 관리" fill className="object-cover" sizes="(max-width: 640px) 100vw, 50vw" />
+              <Image src={CORN.smart} alt="강원도 문막 노지 재배 현장" fill className="object-cover" sizes="(max-width: 640px) 100vw, 50vw" />
             </div>
             <div className="p-5 flex flex-col justify-center gap-2">
-              <p className="text-xs font-semibold text-primary uppercase tracking-wide">스마트 농업</p>
-              <h3 className="text-base font-bold">디지털로 관리하는 품질</h3>
+              <p className="text-xs font-semibold text-primary uppercase tracking-wide">노지 재배</p>
+              <h3 className="text-base font-bold">햇볕 아래 정성으로 키웠습니다</h3>
               <p className="text-xs leading-relaxed text-muted-foreground">
-                스마트 농업 기술로 생육 상태를 실시간 모니터링하여
-                최적의 환경에서 옥수수를 재배합니다.
-                데이터 기반 재배로 품질을 일관되게 유지합니다.
+                일조량이 풍부한 강원도 문막 노지에서
+                농부의 손길로 하나하나 정성껏 재배했습니다.
+                자연 그대로의 환경이 옥수수 본연의 단맛과 찰진 식감을 만듭니다.
               </p>
             </div>
           </div>
@@ -328,38 +371,8 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
           </div>
         </div>
 
-        {/* ⑫ 옵션 선택 + 구매 */}
-        <div className="rounded-2xl border-2 border-primary/30 bg-card p-6 shadow-sm">
-          <div className="flex items-center justify-between">
-            <span className="text-sm font-semibold text-muted-foreground">{product.category}</span>
-            {product.stock > 0
-              ? <span className="text-xs font-medium text-green-600">재고 있음 ({product.stock}개)</span>
-              : <span className="text-xs font-medium text-red-500">품절</span>
-            }
-          </div>
-
-          {hasOptions ? (
-            <ProductOptionSelector
-              productId={product.id}
-              productName={product.name}
-              options={product.options!}
-            />
-          ) : (
-            <>
-              {product.stock > 0 && (
-                <div className="mt-2">
-                  <PriceTag price={product.price} size="lg" />
-                </div>
-              )}
-              <div className="mt-4 flex gap-3">
-                <AddToCartButton product={product} size="default" />
-                <Button variant="outline" nativeButton={false} render={<Link href="/shop/cart" />}>
-                  장바구니 보기
-                </Button>
-              </div>
-            </>
-          )}
-        </div>
+          </div>{/* end 콘텐츠 섹션 */}
+        </div>{/* end flex */}
       </main>
     </div>
   )

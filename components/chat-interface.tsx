@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import { Textarea } from "@/components/ui/textarea"
 import { cn } from "@/lib/utils"
 import { MessageContent } from "@/components/message-content"
+import { ProductRecommendCard, type RecommendProduct } from "@/components/product-recommend-card"
 import type { Plant, Chat } from "@/lib/db/schema"
 import { plantEmoji, plantDisplayName, daysSincePlanted, waterStatus } from "@/lib/plant-utils"
 
@@ -125,45 +126,65 @@ export function ChatInterface({ plant, history = [] }: { plant: Plant; history?:
 
       {/* Messages */}
       <div ref={scrollRef} className="flex-1 space-y-4 overflow-y-auto px-4 py-5">
-        {messages.map((m) => (
-          <div
-            key={m.id}
-            className={cn(
-              "flex",
-              m.role === "user" ? "justify-end" : "justify-start",
-            )}
-          >
-            {m.role === "assistant" && (
-              <span className="mr-2 mt-1 flex size-7 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                <Sprout className="size-4" />
-              </span>
-            )}
+        {messages.map((m) => {
+          const textContent = m.parts
+            .filter((p) => p.type === "text")
+            .map((p) => (p as { type: "text"; text: string }).text)
+            .join("")
+
+          // tool-invocation parts (dynamic-tool or tool-recommendProducts)
+          const recommendedProducts: RecommendProduct[] = m.parts
+            .filter((p: any) => {
+              const isDynamic =
+                p.type === "dynamic-tool" && p.toolName === "recommendProducts"
+              const isStatic = p.type === "tool-recommendProducts"
+              return (
+                (isDynamic || isStatic) &&
+                p.state === "output-available" &&
+                Array.isArray(p.output?.products)
+              )
+            })
+            .flatMap((p: any) => p.output.products as RecommendProduct[])
+
+          return (
             <div
+              key={m.id}
               className={cn(
-                "max-w-[80%] rounded-2xl px-4 py-2.5 text-sm shadow-sm",
-                m.role === "user"
-                  ? "rounded-br-md bg-primary text-primary-foreground"
-                  : "rounded-bl-md bg-card text-card-foreground ring-1 ring-border",
+                "flex",
+                m.role === "user" ? "justify-end" : "justify-start",
               )}
             >
-              {m.role === "assistant" ? (
-                <MessageContent
-                  text={m.parts
-                    .filter((p) => p.type === "text")
-                    .map((p) => (p as { type: "text"; text: string }).text)
-                    .join("")}
-                />
-              ) : (
-                <p className="leading-relaxed">
-                  {m.parts
-                    .filter((p) => p.type === "text")
-                    .map((p) => (p as { type: "text"; text: string }).text)
-                    .join("")}
-                </p>
+              {m.role === "assistant" && (
+                <span className="mr-2 mt-1 flex size-7 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                  <Sprout className="size-4" />
+                </span>
               )}
+              <div
+                className={cn(
+                  "max-w-[80%] rounded-2xl px-4 py-2.5 text-sm shadow-sm",
+                  m.role === "user"
+                    ? "rounded-br-md bg-primary text-primary-foreground"
+                    : "rounded-bl-md bg-card text-card-foreground ring-1 ring-border",
+                )}
+              >
+                {m.role === "assistant" ? (
+                  <>
+                    {textContent && <MessageContent text={textContent} />}
+                    {recommendedProducts.length > 0 && (
+                      <div className={cn("flex flex-col gap-2", textContent && "mt-3")}>
+                        {recommendedProducts.map((product) => (
+                          <ProductRecommendCard key={product.id} product={product} />
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <p className="leading-relaxed">{textContent}</p>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
 
         {isLoading && (
           <div className="flex justify-start">

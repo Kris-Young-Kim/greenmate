@@ -7,6 +7,7 @@ import { ProductPlaceholder } from "@/components/product-placeholder"
 import { SiteHeader } from "@/components/site-header"
 import { useCart } from "@/lib/cart-store"
 import { useToastStore } from "@/lib/toast-store"
+import { SHIPPING_FEE } from "@/lib/constants"
 
 export default function CartPage() {
   const { items, updateQuantity, removeItem, totalAmount } = useCart()
@@ -90,9 +91,19 @@ export default function CartPage() {
         </div>
 
         <div className="mt-6 rounded-2xl border border-border bg-card p-6">
-          <div className="flex items-center justify-between text-xl font-bold">
+          <div className="space-y-2 text-sm">
+            <div className="flex justify-between text-muted-foreground">
+              <span>상품금액</span>
+              <span>{totalAmount().toLocaleString()}원</span>
+            </div>
+            <div className="flex justify-between text-muted-foreground">
+              <span>배송비</span>
+              <span>{SHIPPING_FEE.toLocaleString()}원</span>
+            </div>
+          </div>
+          <div className="mt-3 flex items-center justify-between border-t border-border pt-3 text-xl font-bold">
             <span>합계</span>
-            <span>{totalAmount().toLocaleString()}원</span>
+            <span>{(totalAmount() + SHIPPING_FEE).toLocaleString()}원</span>
           </div>
           <Button
             className="mt-5 h-14 w-full text-base"
