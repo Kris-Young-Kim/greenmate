@@ -91,7 +91,7 @@
   - WebSite 스키마 (root layout)
   - Product + BreadcrumbList 스키마 (`/shop/[id]`)
   - Article + BreadcrumbList 스키마 (`/guide/[slug]`)
-- [ ] **OG 이미지** 1200×630 전용 이미지 제작 (현재 icon-512.png 임시 사용)
+- [x] **OG 이미지** 1200×630 전용 이미지 제작 — 완료 (2026-07-07)
 - [ ] **Google Search Console** 등록 및 sitemap.xml 제출
 - [ ] **Naver Search Advisor** 등록
 

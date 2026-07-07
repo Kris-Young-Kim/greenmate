@@ -58,8 +58,8 @@ function CornDetailPage({ product }: { product: NonNullable<Awaited<ReturnType<t
               <div className="flex items-center justify-between">
                 <span className="text-lg font-semibold text-muted-foreground">{product.category}</span>
                 {product.stock > 0
-                  ? <span className="text-sm font-medium text-green-600">재고 있음 ({product.stock}개)</span>
-                  : <span className="text-sm font-medium text-red-500">품절</span>
+                  ? <span className="text-sm font-medium text-green-600">판매 중</span>
+                  : <span className="text-sm font-medium text-red-500">판매 종료</span>
                 }
               </div>
 

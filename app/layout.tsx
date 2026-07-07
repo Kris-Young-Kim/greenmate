@@ -55,14 +55,14 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: "GreenMate — 홈 가드닝 파트너",
     description: DEFAULT_DESC,
-    images: [{ url: OG_IMAGE, width: 512, height: 512, alt: SITE_NAME }],
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: SITE_NAME }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     site: "@greenmate_kr",
     title: "GreenMate — 홈 가드닝 파트너",
     description: DEFAULT_DESC,
-    images: [OG_IMAGE],
+    images: ["/opengraph-image.png"],
   },
   manifest: "/manifest.webmanifest",
   appleWebApp: {
@@ -71,7 +71,10 @@ export const metadata: Metadata = {
     title: SITE_NAME,
     startupImage: "/apple-touch-icon.png",
   },
-  verification: { other: { "naver-site-verification": ["16b4ebc9cd6a8f472027bf436f19a631c3b26218", "9cf72da9fb1c08e434eb67374fb8b2d7ddd94d87"] } },
+  verification: {
+    google: "mhkPvjNvvkDjBOIib_gOlgfwIe6wYrw7C7nvNF7Kuqc",
+    other: { "naver-site-verification": ["16b4ebc9cd6a8f472027bf436f19a631c3b26218", "9cf72da9fb1c08e434eb67374fb8b2d7ddd94d87"] },
+  },
   formatDetection: { telephone: true },
   icons: {
     apple: "/apple-touch-icon.png",
