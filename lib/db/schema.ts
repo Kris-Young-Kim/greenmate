@@ -53,6 +53,15 @@ export const orderItems = pgTable("order_items", {
   productName: text("product_name").notNull(),
 })
 
+export const chats = pgTable("chats", {
+  id: serial("id").primaryKey(),
+  plantId: integer("plant_id").notNull(),
+  userId: text("user_id").notNull(),
+  role: text("role").notNull(), // "user" | "assistant"
+  content: text("content").notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+})
+
 export const plantLogs = pgTable("plant_logs", {
   id: serial("id").primaryKey(),
   plantId: integer("plant_id").notNull(),
@@ -67,3 +76,4 @@ export type Product = typeof products.$inferSelect
 export type Order = typeof orders.$inferSelect
 export type OrderItem = typeof orderItems.$inferSelect
 export type PlantLog = typeof plantLogs.$inferSelect
+export type Chat = typeof chats.$inferSelect

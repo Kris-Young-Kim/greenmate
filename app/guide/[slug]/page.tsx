@@ -49,8 +49,37 @@ export default async function GuideDetailPage({ params }: Props) {
     day: "numeric",
   })
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: guide.title,
+    description: guide.description,
+    datePublished: guide.publishedAt,
+    author: { "@type": "Organization", name: "GreenMate", url: "https://swgreen.shop" },
+    publisher: {
+      "@type": "Organization",
+      name: "GreenMate",
+      url: "https://swgreen.shop",
+      logo: { "@type": "ImageObject", url: "https://swgreen.shop/icons/icon-512.png" },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://swgreen.shop/guide/${slug}` },
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "홈", item: "https://swgreen.shop" },
+      { "@type": "ListItem", position: 2, name: "가드닝 가이드", item: "https://swgreen.shop/guide" },
+      { "@type": "ListItem", position: 3, name: guide.title, item: `https://swgreen.shop/guide/${slug}` },
+    ],
+  }
+
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+      <div className="min-h-screen bg-background">
       <SiteHeader />
 
       <main className="mx-auto w-full max-w-3xl px-4 py-12 sm:px-6">
@@ -125,5 +154,6 @@ export default async function GuideDetailPage({ params }: Props) {
         </div>
       </main>
     </div>
+    </>
   )
 }

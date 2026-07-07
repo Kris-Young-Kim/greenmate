@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react"
 
 import { db } from "@/lib/db"
 import { plants } from "@/lib/db/schema"
+import { getChatHistory } from "@/app/actions/chat"
 
 export const metadata = { robots: { index: false, follow: false } }
 import { eq } from "drizzle-orm"
@@ -23,6 +24,8 @@ export default async function ChatPage({
     ? (await db.select().from(plants).where(eq(plants.id, id)).limit(1))[0]
     : undefined
 
+  const history = plant ? await getChatHistory(plant.id) : []
+
   if (!plant) {
     return (
       <div className="flex min-h-[100dvh] flex-col items-center justify-center gap-4 bg-background px-6 text-center">
@@ -38,5 +41,5 @@ export default async function ChatPage({
     )
   }
 
-  return <ChatInterface plant={plant} />
+  return <ChatInterface plant={plant} history={history} />
 }

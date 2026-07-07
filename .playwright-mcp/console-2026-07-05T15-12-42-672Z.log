@@ -1,0 +1,3 @@
+[     422ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=4yEcJeBQXHdjnVsn5Yod&redirect_uri=https://searchadvisor.naver.com/auth/callback&state=8d52e09d90270e45c7285c27631ca6a99ba30928:0
+[     432ms] [WARNING] setPolicyInfo {versionInfo: Object, sdkInfo: Object, sentryInfo: Object} @ https://ssl.pstatic.net/tveta/libs/glad/prod/gfp-core.js:0
+[  235201ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://searchadvisor.naver.com/api-board/verify:0

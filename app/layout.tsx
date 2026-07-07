@@ -28,6 +28,14 @@ const SITE_NAME = "GreenMate"
 const DEFAULT_DESC = "GreenMate로 텃밭 새싹을 기록하고, 물 주기를 관리하고, AI 가드닝 조언을 받아보세요."
 const OG_IMAGE = "/icons/icon-512.png"
 
+const WEBSITE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: DEFAULT_DESC,
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -92,6 +100,10 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${nunito.variable} ${fraunces.variable} bg-background`} suppressHydrationWarning>
       <body className="font-sans antialiased" suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_SCHEMA).replace(/</g, "\\u003c") }}
+        />
         {/* GTM noscript fallback */}
         <noscript>
           <iframe

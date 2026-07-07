@@ -1,0 +1,99 @@
+- generic [ref=f6e5]:
+  - main [ref=f6e6]:
+    - generic [ref=f6e7]:
+      - generic [ref=f6e8]:
+        - generic [ref=f6e10]:
+          - generic [ref=f6e12]:
+            - heading "NAVER" [level=1] [ref=f6e13]:
+              - link "NAVER" [ref=f6e14] [cursor=pointer]:
+                - /url: https://www.naver.com
+                - img "NAVER" [ref=f6e15]
+            - generic [ref=f6e16]:
+              - link "Search Advisor" [ref=f6e17] [cursor=pointer]:
+                - /url: /
+              - link "웹마스터 도구" [ref=f6e18] [cursor=pointer]:
+                - /url: /console/board
+          - generic [ref=f6e19]:
+            - link "웹마스터 가이드" [ref=f6e20] [cursor=pointer]:
+              - /url: /guide
+              - generic [ref=f6e21]:
+                - generic [ref=f6e22]: list_alt
+                - text: 웹마스터 가이드
+            - generic [ref=f6e25]:
+              - generic [ref=f6e26]: young****
+              - button [ref=f6e27] [cursor=pointer]:
+                - generic [ref=f6e30]: power_settings_new
+        - separator [ref=f6e31]
+        - tablist [ref=f6e33]:
+          - generic [ref=f6e35]:
+            - tab "사이트 관리" [selected] [ref=f6e38] [cursor=pointer]
+            - tab "간단체크" [ref=f6e39] [cursor=pointer]
+            - tab "도구 설정" [ref=f6e40] [cursor=pointer]
+      - separator [ref=f6e41]
+      - generic [ref=f6e106]:
+        - strong [ref=f6e108]:
+          - text: 사이트 소유확인
+          - separator [ref=f6e109]
+        - generic [ref=f6e110]:
+          - generic [ref=f6e112]: https://www.swgreen.shop
+          - generic [ref=f6e113]:
+            - paragraph [ref=f6e114]: 사이트 소유 확인 방법을 선택하고 안내에 따라 적용한 후 [소유확인]을 클릭해 주세요.
+            - list [ref=f6e115]:
+              - listitem [ref=f6e116]: "* HTML 파일 업로드 방식을 권장해드립니다."
+              - listitem [ref=f6e117]: "* 네이버 블로그 처럼 호스팅 서버에 파일 업로드 할 수 없고, 웹페이지의 HTML 태그 수정할 수 없는 사이트는 소유확인 할 수 없습니다."
+        - radiogroup [ref=f6e123]:
+          - generic [ref=f6e124] [cursor=pointer]:
+            - generic [ref=f6e125]:
+              - generic [ref=f6e126]: radio_button_checked
+              - radio "HTML 파일 업로드" [checked] [ref=f6e127]
+            - generic [ref=f6e130]: HTML 파일 업로드
+          - generic [ref=f6e131]:
+            - list [ref=f6e132]:
+              - listitem [ref=f6e133]:
+                - text: "1."
+                - link "HTML 확인 파일" [ref=f6e134] [cursor=pointer]:
+                  - /url: "#"
+                - text: 을 다운로드합니다.
+              - listitem [ref=f6e135]: 2. HTML 확인 파일을 루트 디렉토리인 https://www.swgreen.shop에 업로드합니다.
+              - listitem [ref=f6e136]:
+                - text: "3."
+                - link "https://www.swgreen.shop/naver13cf58767c8dc6744ed04804dd5d320f.html" [ref=f6e137] [cursor=pointer]:
+                  - /url: https://www.swgreen.shop/naver13cf58767c8dc6744ed04804dd5d320f.html
+                - text: 을 방문하여 HTML 확인 파일이 업로드되었는지 확인해 주세요.
+            - paragraph [ref=f6e138]:
+              - text: 자세한 설명은
+              - link "도움말" [ref=f6e139] [cursor=pointer]:
+                - /url: https://help.naver.com/alias/webmastertool/webmastertool_15.naver
+              - text: 및
+              - link "스마트봇에게 물어보세요" [ref=f6e140] [cursor=pointer]:
+                - /url: https://talk.naver.com/ct/w4o52y
+          - generic [ref=f6e141] [cursor=pointer]:
+            - generic [ref=f6e142]:
+              - generic [ref=f6e143]: radio_button_unchecked
+              - radio "HTML 태그" [ref=f6e144]
+            - generic [ref=f6e147]: HTML 태그
+          - generic [ref=f6e148]:
+            - paragraph [ref=f6e149]: 아래의 메타 태그를 복사해 사이트 홈페이지의 <head>섹션에 붙여 넣어주세요.
+            - generic [ref=f6e150]: <meta name="naver-site-verification" content="16b4ebc9cd6a8f472027bf436f19a631c3b26218" />
+            - paragraph [ref=f6e151]:
+              - text: 자세한 설명은
+              - link "도움말" [ref=f6e152] [cursor=pointer]:
+                - /url: https://help.naver.com/alias/webmastertool/webmastertool_63.naver
+              - text: 및
+              - link "스마트봇에게 물어보세요" [ref=f6e153] [cursor=pointer]:
+                - /url: https://talk.naver.com/ct/w4o52y
+        - generic [ref=f6e154]:
+          - link "취소" [ref=f6e155] [cursor=pointer]:
+            - /url: /console/board
+            - generic [ref=f6e156]: 취소
+          - button "소유확인" [ref=f6e157] [cursor=pointer]:
+            - generic [ref=f6e158]: 소유확인
+  - contentinfo [ref=f6e100]:
+    - generic [ref=f6e101]:
+      - link "이용약관" [ref=f6e102] [cursor=pointer]:
+        - /url: /policy/terms
+      - link "책임한계와 법적고지" [ref=f6e103] [cursor=pointer]:
+        - /url: https://policy.naver.com/rules/disclaimer.html
+      - link "고객센터" [ref=f6e104] [cursor=pointer]:
+        - /url: https://help.naver.com/alias/webmastertool/main.naver
+      - generic [ref=f6e105]: ©NAVER Corp.

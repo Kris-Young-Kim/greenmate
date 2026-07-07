@@ -1,0 +1,17 @@
+[     572ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3001/_next/static/chunks/07vw_next_dist_13_qw0k._.js:2477
+[     771ms] [LOG] [HMR] connected @ http://localhost:3001/_next/static/chunks/07vw_next_dist_13_qw0k._.js:2477
+[    1250ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://clerk.swgreen.shop/v1/client?__clerk_api_version=2026-05-12&_clerk_js_version=6.24.0:0
+[    1253ms] [ERROR] e: Clerk: Production Keys are only allowed for domain "swgreen.shop". 
+API Error: The Request HTTP Origin header must be equal to or a subdomain of the requesting URL.
+    at https://clerk.swgreen.shop/npm/@clerk/clerk-js@6/dist/clerk.browser.js:17:8981
+    at ia._baseFetch (https://clerk.swgreen.shop/npm/@clerk/clerk-js@6/dist/clerk.browser.js:18:38)
+    at async is.execute (https://clerk.swgreen.shop/npm/@clerk/clerk-js@6/dist/clerk.browser.js:17:6812)
+    at async rk._baseGet (https://clerk.swgreen.shop/npm/@clerk/clerk-js@6/dist/clerk.browser.js:18:497)
+    at async Promise.all (index 1)
+    at async #eb (https://clerk.swgreen.shop/npm/@clerk/clerk-js@6/dist/clerk.browser.js:18:221140)
+    at async sI.load (https://clerk.swgreen.shop/npm/@clerk/clerk-js@6/dist/clerk.browser.js:18:178380)
+    at async IsomorphicClerk.getEntryChunks (http://localhost:3001/_next/static/chunks/0d5u_%40clerk_react_dist_0twv0-p._.js:3122:17) @ http://localhost:3001/_next/static/chunks/07vw_next_dist_13_qw0k._.js:3318
+[    8398ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3001/_next/static/chunks/07vw_next_dist_13_qw0k._.js:2477
+[    9989ms] [LOG] [Fast Refresh] done in 1694ms @ http://localhost:3001/_next/static/chunks/07vw_next_dist_13_qw0k._.js:2477
+[   88231ms] [WARNING] The resource http://localhost:3001/_next/static/media/03bda585a99c6450-s.p.0zzh68k1~whtc.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3001/:0
+[   88231ms] [WARNING] The resource http://localhost:3001/_next/static/media/07454f8ad8aaac57-s.p.0tqkxa-w3pk~c.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3001/:0

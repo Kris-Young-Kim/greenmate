@@ -87,16 +87,16 @@
 ## 미완료 항목
 
 ### SEO 추가 작업
-- [ ] **JSON-LD 구조화 데이터** — script 태그 삽입 허용을 위해 보안 훅 설정 조정 후 구현
+- [x] **JSON-LD 구조화 데이터** — 완료 (2026-07-07)
   - WebSite 스키마 (root layout)
-  - Product 스키마 (`/shop/[id]`)
+  - Product + BreadcrumbList 스키마 (`/shop/[id]`)
   - Article + BreadcrumbList 스키마 (`/guide/[slug]`)
 - [ ] **OG 이미지** 1200×630 전용 이미지 제작 (현재 icon-512.png 임시 사용)
 - [ ] **Google Search Console** 등록 및 sitemap.xml 제출
 - [ ] **Naver Search Advisor** 등록
 
 ### 기능
-- [ ] 채팅 기록 저장 (chats 테이블)
+- [x] 채팅 기록 저장 (chats 테이블) — 완료 (2026-07-07)
 - [ ] AI 채팅 → 상품 추천 카드 연결
 - [ ] 상품 27 외 다른 상품에도 실사진 추가
 - [ ] 관리자 상품 등록/수정 UI

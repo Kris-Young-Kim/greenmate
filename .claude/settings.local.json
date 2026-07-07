@@ -46,7 +46,15 @@
       "PowerShell(Get-ChildItem D:\\\\developer\\\\greenmate\\\\src -Recurse -Depth 3 | Where-Object { $_.PSIsContainer } | Select-Object FullName)",
       "PowerShell(Get-ChildItem D:\\\\developer\\\\greenmate -Depth 1 | Where-Object { $_.PSIsContainer } | Select-Object Name)",
       "Skill(commit-commands:commit-push-pr)",
-      "Bash(gh pr *)"
+      "Bash(gh pr *)",
+      "mcp__plugin_playwright_playwright__browser_handle_dialog",
+      "mcp__plugin_playwright_playwright__browser_type",
+      "Bash(npx drizzle-kit *)",
+      "Bash(Start-Sleep 8)",
+      "Bash(Invoke-WebRequest http://localhost:3001 -UseBasicParsing -TimeoutSec 5)",
+      "Bash(Select-Object -ExpandProperty StatusCode)",
+      "PowerShell(Start-Process -FilePath \"npx\" -ArgumentList \"next\",\"dev\",\"--port\",\"3001\" -WorkingDirectory \"D:\\\\developer\\\\greenmate\" -WindowStyle Hidden; Start-Sleep 12; try { \\(Invoke-WebRequest http://localhost:3001 -UseBasicParsing -TimeoutSec 5\\).StatusCode } catch { \"not ready\" })",
+      "PowerShell(Start-Sleep 8; try { \\(Invoke-WebRequest http://localhost:3001 -UseBasicParsing -TimeoutSec 5\\).StatusCode } catch { \"not ready\" })"
     ]
   },
   "enableAllProjectMcpServers": true,

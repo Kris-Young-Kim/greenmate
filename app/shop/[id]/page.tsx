@@ -471,6 +471,8 @@ export async function generateMetadata({
 }
 
 // ── 라우트 엔트리 ───────────────────────────────────────────────────────
+const SITE_URL = "https://swgreen.shop"
+
 export default async function ProductPage({
   params,
 }: {
@@ -480,6 +482,54 @@ export default async function ProductPage({
   const product = await getProduct(Number(id))
   if (!product) notFound()
 
-  if (product.id === 27) return <CornDetailPage product={product} />
-  return <GenericDetailPage product={product} />
+  const lowestPrice = product.options?.length
+    ? Math.min(...product.options.map((o) => o.price))
+    : product.price
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    url: `${SITE_URL}/shop/${id}`,
+    image:
+      product.id === 27
+        ? `${SITE_URL}/products/corn/mosa6AQK16.jpeg`
+        : `${SITE_URL}/icons/icon-512.png`,
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "KRW",
+      price: lowestPrice,
+      availability:
+        product.stock > 0
+          ? "https://schema.org/InStock"
+          : "https://schema.org/OutOfStock",
+      url: `${SITE_URL}/shop/${id}`,
+    },
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "홈", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "그린마트", item: `${SITE_URL}/shop` },
+      { "@type": "ListItem", position: 3, name: product.name, item: `${SITE_URL}/shop/${id}` },
+    ],
+  }
+
+  const Page = product.id === 27 ? CornDetailPage : GenericDetailPage
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema).replace(/</g, "\\u003c") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }}
+      />
+      <Page product={product} />
+    </>
+  )
 }

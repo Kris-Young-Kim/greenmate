@@ -1,287 +1,469 @@
-"use client"
+// Server Component — no "use client" needed
+// All animation via CSS keyframes defined in globals.css
 
-import { Player } from "@remotion/player"
-import {
-  AbsoluteFill,
-  interpolate,
-  spring,
-  useCurrentFrame,
-  useVideoConfig,
-} from "remotion"
+const PARTICLES = [
+  { char: "🍃", left: "7%",  dur: "7s",   delay: "0s"   },
+  { char: "🌿", left: "22%", dur: "9s",   delay: "2.5s" },
+  { char: "🍃", left: "48%", dur: "6s",   delay: "4s"   },
+  { char: "✨", left: "68%", dur: "5s",   delay: "1.2s" },
+  { char: "🌱", left: "85%", dur: "8s",   delay: "3.2s" },
+  { char: "🍃", left: "36%", dur: "6.5s", delay: "5.5s" },
+]
 
-// ─── Remotion composition ────────────────────────────────────────────────────
-
-function PlantStory() {
-  const frame = useCurrentFrame()
-  const { fps } = useVideoConfig()
-
-  const sp = (f: number, from: number, to: number, damping = 14, stiffness = 120) =>
-    spring({ frame: f, fps, config: { damping, stiffness }, from, to })
-
-  const lerp = (
-    f: number,
-    ins: number[],
-    outs: number[],
-  ) =>
-    interpolate(f, ins, outs, {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    })
-
-  // ── Background: warm beige → green-tinted ──────────────────────────────────
-  const bgR = Math.round(lerp(frame, [75, 115], [240, 234]))
-  const bgG = Math.round(lerp(frame, [75, 115], [237, 244]))
-  const bgB = Math.round(lerp(frame, [75, 115], [232, 238]))
-
-  // ── Act 1: Wilting plant (0–89) ────────────────────────────────────────────
-  const plantOpacity  = lerp(frame, [0, 15], [0, 1])
-  const plantRotate   = lerp(frame, [15, 89, 130], [0, -12, 0])
-  const text1Opacity  = lerp(frame, [30, 50, 65, 85], [0, 1, 1, 0])
-  const dropOpacity   = lerp(frame, [10, 40, 68, 88], [0, 0.28, 0.28, 0])
-
-  // ── Act 2: App mockup (80–210) ─────────────────────────────────────────────
-  const phoneXOffset  = sp(frame - 82, 320, 0, 16, 110)
-  const phoneOpacity  = lerp(frame, [80, 100, 188, 208], [0, 1, 1, 0])
-  const cardOpacity   = lerp(frame, [108, 128], [0, 1])
-  const chatOpacity   = lerp(frame, [138, 158], [0, 1])
-  const plantBright   = lerp(frame, [90, 145], [0.75, 1.15])
-
-  // ── Act 3: Brand reveal (195–299) ─────────────────────────────────────────
-  const act3Opacity   = lerp(frame, [200, 218], [0, 1])
-  const hlOpacity     = lerp(frame, [205, 228], [0, 1])
-  const hlScale       = sp(frame - 205, 0.82, 1, 14, 100)
-  const subOpacity    = lerp(frame, [232, 252], [0, 1])
-  const ctaOpacity    = lerp(frame, [252, 272], [0, 1])
-  const breathe       = frame >= 195 ? Math.sin((frame - 195) * 0.09) * 0.028 + 1 : 1
-
-  const plantEmoji    = frame < 90 ? "🪴" : "🌿"
-  const plantScale    = frame >= 195 ? breathe : 1
-
-  return (
-    <AbsoluteFill
-      style={{
-        backgroundColor: `rgb(${bgR},${bgG},${bgB})`,
-        fontFamily: "'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif",
-        overflow: "hidden",
-      }}
-    >
-      {/* ── Act 1 decorations ── */}
-      <span style={{ position: "absolute", fontSize: 48, top: "16%", left: "10%", opacity: dropOpacity }}>💧</span>
-      <span style={{ position: "absolute", fontSize: 30, top: "60%", left: "71%", opacity: dropOpacity * 0.65 }}>💧</span>
-      <span style={{ position: "absolute", fontSize: 20, top: "35%", left: "80%", opacity: dropOpacity * 0.4 }}>💧</span>
-
-      <div
-        style={{
-          position: "absolute",
-          bottom: "17%",
-          left: 0,
-          right: 0,
-          textAlign: "center",
-          opacity: text1Opacity,
-          color: "#8A8A8A",
-          fontSize: 26,
-          fontWeight: 500,
-          letterSpacing: "1px",
-        }}
-      >
-        물 주기를 깜빡했어...
-      </div>
-
-      {/* ── Plant (all acts) ── */}
-      <div
-        style={{
-          position: "absolute",
-          top: "42%",
-          left: "50%",
-          fontSize: 108,
-          lineHeight: 1,
-          opacity: plantOpacity,
-          filter: frame >= 90 && frame < 195 ? `brightness(${plantBright})` : "none",
-          transform: `translateX(-50%) translateY(-55%) rotate(${plantRotate}deg) scale(${plantScale})`,
-          transformOrigin: "50% 100%",
-        }}
-      >
-        {plantEmoji}
-      </div>
-
-      {/* ── Act 2: Phone mockup ── */}
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          right: "7%",
-          opacity: phoneOpacity,
-          transform: `translateX(${phoneXOffset}px) translateY(-50%)`,
-          width: 206,
-          height: 366,
-          backgroundColor: "#1C1C1E",
-          borderRadius: 38,
-          padding: 8,
-          boxShadow: "0 20px 64px rgba(0,0,0,0.38), 0 0 0 1px rgba(255,255,255,0.06)",
-        }}
-      >
-        {/* Screen */}
-        <div
-          style={{
-            width: "100%",
-            height: "100%",
-            backgroundColor: "#F8F5F0",
-            borderRadius: 30,
-            overflow: "hidden",
-            padding: "14px 12px",
-            display: "flex",
-            flexDirection: "column",
-            gap: 10,
-          }}
-        >
-          {/* Status bar */}
-          <div style={{ fontSize: 10, color: "#aaa", textAlign: "center", fontWeight: 700, letterSpacing: "0.5px" }}>
-            GREENMATE
-          </div>
-
-          {/* Watering reminder card */}
-          <div
-            style={{
-              backgroundColor: "#fff",
-              borderRadius: 14,
-              padding: "11px 13px",
-              boxShadow: "0 2px 12px rgba(0,0,0,0.07)",
-              opacity: cardOpacity,
-            }}
-          >
-            <div style={{ fontSize: 10, color: "#2D6A4F", fontWeight: 800, marginBottom: 3 }}>💧 물 주기 알림</div>
-            <div style={{ fontSize: 13, fontWeight: 700, color: "#1B3A2D" }}>🌱 몬스테라</div>
-            <div style={{ fontSize: 11, color: "#666", marginTop: 2 }}>오늘 물 줄 날이에요!</div>
-          </div>
-
-          {/* AI chat bubble */}
-          <div
-            style={{
-              backgroundColor: "#EAF4EE",
-              borderRadius: "13px 13px 13px 4px",
-              padding: "10px 12px",
-              opacity: chatOpacity,
-            }}
-          >
-            <div style={{ fontSize: 10, color: "#2D6A4F", fontWeight: 800, marginBottom: 3 }}>🤖 AI 전문가</div>
-            <div style={{ fontSize: 11, color: "#333", lineHeight: 1.6 }}>
-              잎이 노래진다면
-              <br />
-              과습일 수 있어요 🤔
-            </div>
-          </div>
-
-          {/* Day counter badge */}
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 4,
-              backgroundColor: "rgba(45,106,79,0.1)",
-              borderRadius: 20,
-              padding: "5px 10px",
-              alignSelf: "flex-start",
-              opacity: cardOpacity,
-            }}
-          >
-            <span style={{ fontSize: 10 }}>🗓</span>
-            <span style={{ fontSize: 10, fontWeight: 700, color: "#2D6A4F" }}>14일째</span>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Act 3: Brand reveal ── */}
-      <div style={{ position: "absolute", inset: 0, opacity: act3Opacity, pointerEvents: "none" }}>
-        {/* Background glow */}
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: 520,
-            height: 520,
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(45,106,79,0.13) 0%, transparent 68%)",
-          }}
-        />
-
-        {/* Headline */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: "28%",
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            opacity: hlOpacity,
-            transform: `scale(${hlScale})`,
-          }}
-        >
-          <div style={{ fontSize: 40, fontWeight: 900, color: "#1B3A2D", letterSpacing: "-0.5px" }}>
-            내 손으로 키우는 싱그러운 텃밭
-          </div>
-        </div>
-
-        {/* Subtitle */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: "19%",
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            opacity: subOpacity,
-            color: "#4A7C59",
-            fontSize: 20,
-            fontWeight: 400,
-            letterSpacing: "0.5px",
-          }}
-        >
-          AI가 지켜주는 홈 가드닝
-        </div>
-
-        {/* CTA pill */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: "8%",
-            left: "50%",
-            transform: "translateX(-50%)",
-            opacity: ctaOpacity,
-            backgroundColor: "#2D6A4F",
-            color: "#fff",
-            fontSize: 15,
-            fontWeight: 700,
-            padding: "12px 28px",
-            borderRadius: 999,
-            whiteSpace: "nowrap",
-            letterSpacing: "0.3px",
-            boxShadow: "0 4px 20px rgba(45,106,79,0.35)",
-          }}
-        >
-          무료로 시작하기 →
-        </div>
-      </div>
-    </AbsoluteFill>
-  )
-}
-
-// ─── Player wrapper (exported) ────────────────────────────────────────────────
+const STATS = [
+  { icon: "🔥", label: "7일 연속" },
+  { icon: "🌱", label: "3개 관리" },
+  { icon: "💧", label: "오늘 완료" },
+]
 
 export function HeroAnimation() {
   return (
-    <Player
-      component={PlantStory}
-      durationInFrames={300}
-      fps={30}
-      compositionWidth={800}
-      compositionHeight={500}
-      style={{ width: "100%", borderRadius: 24, overflow: "hidden" }}
-      autoPlay
-      loop
-      acknowledgeRemotionLicense
-      numberOfSharedAudioTags={0}
-    />
+    <div
+      className="aspect-[8/5] w-full relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(145deg,#091710 0%,#122219 30%,#1a3528 60%,#0d2118 100%)",
+        fontFamily: "'Nunito','Noto Sans KR',system-ui,sans-serif",
+      }}
+    >
+      {/* ── ambient glow ── */}
+      <div
+        style={{
+          position: "absolute",
+          top: "35%",
+          left: "50%",
+          transform: "translate(-50%,-50%)",
+          width: "85%",
+          height: "65%",
+          background:
+            "radial-gradient(ellipse at center,rgba(45,106,79,0.32) 0%,transparent 68%)",
+          animation: "hero-glow-pulse 4s ease-in-out infinite",
+          pointerEvents: "none",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          top: "-15%",
+          right: "-8%",
+          width: "45%",
+          height: "45%",
+          background:
+            "radial-gradient(ellipse at center,rgba(82,183,136,0.12) 0%,transparent 70%)",
+          animation: "hero-glow-pulse 6s 2s ease-in-out infinite",
+          pointerEvents: "none",
+        }}
+      />
+
+      {/* ── floating particles ── */}
+      {PARTICLES.map((p, i) => (
+        <span
+          key={i}
+          style={{
+            position: "absolute",
+            left: p.left,
+            bottom: "4%",
+            fontSize: 17,
+            pointerEvents: "none",
+            userSelect: "none",
+            opacity: 0,
+            animation: `hero-leaf-drift ${p.dur} ${p.delay} ease-in-out infinite`,
+          }}
+        >
+          {p.char}
+        </span>
+      ))}
+
+      {/* ── phone mockup (center) ── */}
+      <div
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%,-50%)",
+        }}
+      >
+        {/* phone body — floats */}
+        <div style={{ width: 200, animation: "hero-float 5s ease-in-out infinite" }}>
+          {/* shell */}
+          <div
+            style={{
+              backgroundColor: "#181818",
+              borderRadius: 42,
+              padding: 7,
+              boxShadow:
+                "0 36px 88px rgba(0,0,0,0.7),0 0 0 1px rgba(255,255,255,0.07),inset 0 1px 0 rgba(255,255,255,0.1)",
+              position: "relative",
+            }}
+          >
+            {/* dynamic island */}
+            <div
+              style={{
+                position: "absolute",
+                top: 11,
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: 66,
+                height: 20,
+                backgroundColor: "#181818",
+                borderRadius: 10,
+                zIndex: 10,
+              }}
+            />
+
+            {/* screen */}
+            <div
+              style={{
+                backgroundColor: "#f4f1ec",
+                borderRadius: 35,
+                overflow: "hidden",
+                minHeight: 370,
+              }}
+            >
+              {/* app header */}
+              <div
+                style={{
+                  background:
+                    "linear-gradient(180deg,#1B3A2D 0%,#2D6A4F 100%)",
+                  padding: "30px 13px 11px",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <div>
+                  <div
+                    style={{
+                      color: "rgba(255,255,255,0.55)",
+                      fontSize: 7.5,
+                      fontWeight: 700,
+                      letterSpacing: "1.6px",
+                    }}
+                  >
+                    GREENMATE
+                  </div>
+                  <div
+                    style={{ color: "#fff", fontSize: 12, fontWeight: 800, marginTop: 2 }}
+                  >
+                    내 텃밭 🌿
+                  </div>
+                </div>
+                <div
+                  style={{
+                    backgroundColor: "rgba(255,255,255,0.14)",
+                    borderRadius: 10,
+                    width: 28,
+                    height: 28,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 12,
+                    position: "relative",
+                  }}
+                >
+                  🔔
+                  {/* ping dot */}
+                  <span
+                    style={{
+                      position: "absolute",
+                      top: 4,
+                      right: 4,
+                      width: 6,
+                      height: 6,
+                      backgroundColor: "#ff6b6b",
+                      borderRadius: "50%",
+                    }}
+                  />
+                  <span
+                    style={{
+                      position: "absolute",
+                      top: 4,
+                      right: 4,
+                      width: 6,
+                      height: 6,
+                      backgroundColor: "#ff6b6b",
+                      borderRadius: "50%",
+                      animation: "hero-ping-dot 1.8s 0.5s ease-out infinite",
+                    }}
+                  />
+                </div>
+              </div>
+
+              {/* content */}
+              <div
+                style={{
+                  padding: "9px 9px 12px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 6,
+                }}
+              >
+                {/* plant card */}
+                <div
+                  style={{
+                    backgroundColor: "#fff",
+                    borderRadius: 15,
+                    padding: "11px 11px",
+                    boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
+                    animation: "hero-fade-up 0.7s 0.15s both",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      marginBottom: 7,
+                    }}
+                  >
+                    <div style={{ display: "flex", alignItems: "center", gap: 7 }}>
+                      <div
+                        style={{
+                          fontSize: 22,
+                          width: 36,
+                          height: 36,
+                          backgroundColor: "#EAF4EE",
+                          borderRadius: 10,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          animation: "hero-breathe 3s ease-in-out infinite",
+                        }}
+                      >
+                        🌿
+                      </div>
+                      <div>
+                        <div style={{ fontSize: 11.5, fontWeight: 800, color: "#1B3A2D" }}>
+                          몬스테라
+                        </div>
+                        <div style={{ fontSize: 8.5, color: "#aaa", marginTop: 1 }}>
+                          키운 지 42일째
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        background: "linear-gradient(135deg,#2D6A4F,#52b788)",
+                        borderRadius: 10,
+                        padding: "3px 7px",
+                        fontSize: 8.5,
+                        fontWeight: 800,
+                        color: "#fff",
+                      }}
+                    >
+                      +42일
+                    </div>
+                  </div>
+
+                  {/* water bar */}
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      marginBottom: 3,
+                    }}
+                  >
+                    <span style={{ fontSize: 7.5, color: "#999", fontWeight: 600 }}>
+                      💧 물주기 건강도
+                    </span>
+                    <span style={{ fontSize: 7.5, color: "#2D6A4F", fontWeight: 700 }}>
+                      양호
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      backgroundColor: "#E8F5EE",
+                      borderRadius: 4,
+                      height: 4.5,
+                      overflow: "hidden",
+                    }}
+                  >
+                    <div
+                      style={{
+                        height: "100%",
+                        borderRadius: 4,
+                        background: "linear-gradient(90deg,#2D6A4F,#52b788)",
+                        width: 0,
+                        animation: "hero-bar-fill 1.8s 0.6s ease-out forwards",
+                      }}
+                    />
+                  </div>
+
+                  {/* done button */}
+                  <div
+                    style={{
+                      marginTop: 7,
+                      backgroundColor: "#EAF4EE",
+                      borderRadius: 9,
+                      padding: "5px 8px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 4,
+                    }}
+                  >
+                    <span style={{ fontSize: 10 }}>✅</span>
+                    <span style={{ fontSize: 8.5, fontWeight: 700, color: "#2D6A4F" }}>
+                      오늘 물 주기 완료!
+                    </span>
+                  </div>
+                </div>
+
+                {/* AI chat */}
+                <div
+                  style={{
+                    background: "linear-gradient(135deg,#E8F5EE,#d4edda)",
+                    borderRadius: "12px 12px 12px 4px",
+                    padding: "10px 11px 9px",
+                    animation: "hero-fade-up 0.7s 0.45s both",
+                    position: "relative",
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: -6,
+                      left: 9,
+                      backgroundColor: "#2D6A4F",
+                      borderRadius: 7,
+                      padding: "2px 6px",
+                    }}
+                  >
+                    <span style={{ fontSize: 7, color: "#fff", fontWeight: 800 }}>
+                      🤖 AI 전문가
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      marginTop: 3,
+                      fontSize: 9.5,
+                      color: "#1B3A2D",
+                      lineHeight: 1.7,
+                      fontWeight: 500,
+                    }}
+                  >
+                    잎이 노랗다면 과습을<br />의심해 보세요 💡
+                  </div>
+                </div>
+
+                {/* stats row */}
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 5,
+                    animation: "hero-fade-up 0.7s 0.75s both",
+                  }}
+                >
+                  {STATS.map((s) => (
+                    <div
+                      key={s.label}
+                      style={{
+                        flex: 1,
+                        backgroundColor: "#fff",
+                        borderRadius: 10,
+                        padding: "6px 4px",
+                        textAlign: "center",
+                        boxShadow: "0 1px 4px rgba(0,0,0,0.05)",
+                      }}
+                    >
+                      <div style={{ fontSize: 15 }}>{s.icon}</div>
+                      <div
+                        style={{
+                          fontSize: 7,
+                          color: "#666",
+                          fontWeight: 600,
+                          marginTop: 1,
+                        }}
+                      >
+                        {s.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── floating badge: AI ── */}
+      <div
+        style={{
+          position: "absolute",
+          top: "9%",
+          right: "4%",
+          animation:
+            "hero-fade-up 0.7s 1s both, hero-float-slow 6s 1.5s ease-in-out infinite",
+          background:
+            "linear-gradient(135deg,rgba(45,106,79,0.95),rgba(74,138,26,0.9))",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          borderRadius: 22,
+          padding: "8px 13px",
+          display: "flex",
+          alignItems: "center",
+          gap: 5,
+          boxShadow:
+            "0 8px 24px rgba(0,0,0,0.45),0 0 0 1px rgba(255,255,255,0.1)",
+        }}
+      >
+        <span style={{ fontSize: 13 }}>✨</span>
+        <span style={{ color: "#fff", fontSize: 9.5, fontWeight: 800 }}>
+          AI 식물 상담 가능
+        </span>
+      </div>
+
+      {/* ── floating badge: streak ── */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: "9%",
+          left: "4%",
+          animation:
+            "hero-fade-up 0.7s 1.3s both, hero-float-slow-rev 7s 1.5s ease-in-out infinite",
+          backgroundColor: "rgba(9,23,16,0.92)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          borderRadius: 22,
+          padding: "8px 13px",
+          display: "flex",
+          alignItems: "center",
+          gap: 5,
+          boxShadow: "0 8px 24px rgba(0,0,0,0.45)",
+          border: "1px solid rgba(45,106,79,0.45)",
+        }}
+      >
+        <span style={{ fontSize: 13 }}>🌿</span>
+        <span style={{ color: "#b7e4c7", fontSize: 9.5, fontWeight: 600 }}>
+          30일 연속 관리 중
+        </span>
+      </div>
+
+      {/* ── floating badge: shop ── */}
+      <div
+        style={{
+          position: "absolute",
+          top: "9%",
+          left: "4%",
+          animation:
+            "hero-fade-up 0.7s 1.6s both, hero-float-slow 8s 2s ease-in-out infinite",
+          backgroundColor: "rgba(9,23,16,0.85)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          borderRadius: 22,
+          padding: "8px 13px",
+          display: "flex",
+          alignItems: "center",
+          gap: 5,
+          boxShadow: "0 8px 24px rgba(0,0,0,0.4)",
+          border: "1px solid rgba(255,255,255,0.07)",
+        }}
+      >
+        <span style={{ fontSize: 13 }}>🛒</span>
+        <span style={{ color: "#c8e6c9", fontSize: 9.5, fontWeight: 600 }}>
+          그린마트 오픈
+        </span>
+      </div>
+    </div>
   )
 }

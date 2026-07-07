@@ -1,0 +1,84 @@
+- generic [ref=e2]:
+  - link "본문 바로가기" [ref=e4] [cursor=pointer]:
+    - /url: https://www.naver.com
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - link "NAVER" [ref=e7] [cursor=pointer]:
+        - /url: https://www.naver.com
+        - heading "NAVER" [level=1] [ref=e8]
+      - combobox "언어선택" [ref=e10] [cursor=pointer]:
+        - option "한국어" [selected]
+        - option "English"
+        - option "中文(简体)"
+        - option "中文(台灣)"
+  - generic [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - emphasis [ref=e16]: searchadvisor
+          - text: 이용을 위해 네이버에 로그인해 주세요.
+        - generic [ref=e17]:
+          - text: ⚠️
+          - strong [ref=e18]: 여러 사람이 쓰는 PC
+          - text: 라면
+          - text: ➀ '로그인 상태 유지' 체크하지 않기 ➁ 사용 후 로그아웃하기
+      - tablist [ref=e19]:
+        - tab "ID/전화번호" [selected] [ref=e21] [cursor=pointer]:
+          - generic [ref=e22]: ID/전화번호
+        - tab "일회용 번호" [ref=e24] [cursor=pointer]:
+          - generic [ref=e25]: 일회용 번호
+        - tab "QR코드" [ref=e27] [cursor=pointer]:
+          - generic [ref=e28]: QR코드
+      - list [ref=e30]:
+        - listitem [ref=e31]:
+          - tabpanel [ref=e32]:
+            - generic [ref=e34]:
+              - generic [ref=e35]:
+                - textbox "아이디 또는 전화번호" [active] [ref=e36] [cursor=pointer]
+                - generic: 아이디 또는 전화번호
+              - generic [ref=e37]:
+                - textbox "비밀번호" [ref=e38] [cursor=pointer]
+                - generic: 비밀번호
+            - generic [ref=e39]:
+              - checkbox "로그인 상태 유지" [ref=e40] [cursor=pointer]:
+                - generic [ref=e41]: 로그인 상태 유지
+              - generic [ref=e42]:
+                - link "IP보안" [ref=e43] [cursor=pointer]:
+                  - /url: /login/ext/help_ip3.html
+                  - generic [ref=e44]: IP보안
+                - generic [ref=e45]:
+                  - checkbox [checked] [ref=e46] [cursor=pointer]
+                  - generic [ref=e48] [cursor=pointer]: "ON"
+            - button "로그인" [ref=e50] [cursor=pointer]
+            - generic [ref=e52]: 지문 · 얼굴 인증을 설정했다면
+            - button "패스키 로그인" [ref=e54] [cursor=pointer]
+    - list [ref=e55]:
+      - listitem [ref=e56]:
+        - link "비밀번호 찾기" [ref=e57] [cursor=pointer]:
+          - /url: https://nid.naver.com/user2/api/route?m=routePwInquiry&lang=ko_KR
+      - listitem [ref=e58]:
+        - link "아이디 찾기" [ref=e59] [cursor=pointer]:
+          - /url: https://nid.naver.com/user2/api/route?m=routeIdInquiry&lang=ko_KR
+      - listitem [ref=e60]:
+        - link "회원가입" [ref=e61] [cursor=pointer]:
+          - /url: https://nid.naver.com/user2/V2Join?m=agree&lang=ko_KR&realname=N
+  - generic [ref=e64]:
+    - list [ref=e65]:
+      - listitem [ref=e66]:
+        - link "이용약관" [ref=e67] [cursor=pointer]:
+          - /url: http://www.naver.com/rules/service.html
+      - listitem [ref=e68]:
+        - link "개인정보처리방침" [ref=e69] [cursor=pointer]:
+          - /url: http://www.naver.com/rules/privacy.html
+          - strong [ref=e71]: 개인정보처리방침
+      - listitem [ref=e72]:
+        - link "책임의 한계와 법적고지" [ref=e73] [cursor=pointer]:
+          - /url: http://www.naver.com/rules/disclaimer.html
+      - listitem [ref=e74]:
+        - link "회원정보 고객센터" [ref=e75] [cursor=pointer]:
+          - /url: https://help.naver.com/alias/membership/p.membership/main.naver
+    - generic [ref=e76]:
+      - link "네이버" [ref=e77] [cursor=pointer]:
+        - /url: https://www.navercorp.com
+        - generic [ref=e79]: 네이버
+      - text: Copyright © NAVER Corp. All Rights Reserved.

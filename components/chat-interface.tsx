@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import { Textarea } from "@/components/ui/textarea"
 import { cn } from "@/lib/utils"
 import { MessageContent } from "@/components/message-content"
-import type { Plant } from "@/lib/db/schema"
+import type { Plant, Chat } from "@/lib/db/schema"
 import { plantEmoji, plantDisplayName, daysSincePlanted, waterStatus } from "@/lib/plant-utils"
 
 const QUICK_QUESTIONS = [
@@ -20,28 +20,34 @@ const QUICK_QUESTIONS = [
   { emoji: "🐛", label: "벌레가 생겼어요!" },
 ]
 
-export function ChatInterface({ plant }: { plant: Plant }) {
+export function ChatInterface({ plant, history = [] }: { plant: Plant; history?: Chat[] }) {
   const status = waterStatus(plant.lastWatered)
   const [input, setInput] = useState("")
   const scrollRef = useRef<HTMLDivElement>(null)
+
+  const welcomeMessage: UIMessage = {
+    id: "welcome",
+    role: "assistant",
+    parts: [
+      {
+        type: "text" as const,
+        text: `안녕하세요! 저는 GreenMate AI 전문가예요. 🌿 **${plant.nickname}**(${plantDisplayName(plant.type)}, ${daysSincePlanted(plant.plantedDate)}일째)의 케어를 도와드릴게요. 무엇이든 물어보세요!`,
+      },
+    ],
+  }
+
+  const historyMessages: UIMessage[] = history.map((c) => ({
+    id: String(c.id),
+    role: c.role as "user" | "assistant",
+    parts: [{ type: "text" as const, text: c.content }],
+  }))
 
   const { messages, sendMessage, status: chatStatus } = useChat({
     transport: new DefaultChatTransport({
       api: "/api/chat",
       body: { plantId: plant.id },
     }),
-    messages: [
-      {
-        id: "welcome",
-        role: "assistant",
-        parts: [
-          {
-            type: "text" as const,
-            text: `안녕하세요! 저는 GreenMate AI 전문가예요. 🌿 **${plant.nickname}**(${plantDisplayName(plant.type)}, ${daysSincePlanted(plant.plantedDate)}일째)의 케어를 도와드릴게요. 무엇이든 물어보세요!`,
-          },
-        ],
-      },
-    ] as UIMessage[],
+    messages: [welcomeMessage, ...historyMessages] as UIMessage[],
   })
 
   useEffect(() => {
